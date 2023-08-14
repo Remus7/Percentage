@@ -37,7 +37,7 @@ import Home from "./components/Home.vue";
       >
     </p>
 
-    <Greet />
+    <Home />
   </div>
 </template>
 
