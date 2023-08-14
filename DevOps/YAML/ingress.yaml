@@ -1,18 +1,18 @@
 apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
-  name: myingress
+  name: entrypoint
   labels:
-    name: myingress
+    name: entrypoint
 spec:
+  ingressClassName: nginx
   rules:
-  - host: <Host>
-    http:
+  - http:
       paths:
       - pathType: Prefix
         path: "/"
         backend:
           service:
-            name: <Service>
-            port: 
-              number: <Port>
+            name: papi
+            port:
+              number: 5000
