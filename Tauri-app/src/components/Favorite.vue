@@ -4,5 +4,5 @@ import { invoke } from "@tauri-apps/api/tauri";
 </script>
 
 <template>
-    
+
 </template>
