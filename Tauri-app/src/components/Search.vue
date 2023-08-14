@@ -3,25 +3,29 @@ import { ref, Ref } from "vue";
 import { invoke } from "@tauri-apps/api/tauri";
 
 const Ingredients: Ref<string[]> = ref([]);
-const AvailbleDrinks: Ref<string[]> = ref([]);
 const Ingredient = ref("");
-const areDrinks = ref(true); //catches if there are drinks possible to be served
 
-async function addIngredient(){
-    Ingredients.value.push(Ingredient.value);
-    try{
-    AvailbleDrinks.value = await invoke ("drink_from_ingredients", {ingredients: Ingredients})
-    }catch(error){
-        isDrinks.value = false;
-    }
-}
+const areDrinks = ref(true); //catches if there are drinks possible to be served
+const AvailableDrinks: Ref<string[]> = ref([]);
+const favoriteDrinks: Ref<string[]> = ref([]);
+
+AvailableDrinks.value = ["Vodka","Margarita","Tequila"];
 
 function removeIngredient(index: Number){
     Ingredients.value.splice(index, 1);
 }
 
-// async function findIngredient{
-//     
+async function addIngredient(){
+    Ingredients.value.push(Ingredient.value);
+    try{
+        AvailableDrinks.value = await invoke ("drink_from_ingredients", {ingredients: Ingredients.value})
+    } catch(error){
+        areDrinks.value = false;
+    }
+}
+
+// function addFavorite(){
+//     favoriteDrinks.value.push()
 // }
 </script>
 
@@ -35,7 +39,12 @@ function removeIngredient(index: Number){
     <button class="remove" @click="removeIngredient(index)">X</button>
 </button>
 
-<p v-if="!areDrinks">There is no drink available with these ingredients!</p>
+<p v-if="!areDrinks">There is no drink available!</p>
+<br/>
+
+<button v-cloak="drink-button" v-for="(drink, index) in AvailableDrinks" class="drink-button">{{ drink }}
+    <button class="favorite" @click="addFavorite(index)">&hearts;</button>
+</button>
 
 </template>
 
@@ -49,7 +58,6 @@ function removeIngredient(index: Number){
   border: 1px solid #ccc;
   border-radius: 4px;
 }
-
 .remove {
   background-color: #f44336;
   color: white;
@@ -59,34 +67,35 @@ function removeIngredient(index: Number){
   cursor: pointer;
   transition: background-color 0.3s ease-in-out;
 }
-
 .remove:hover {
+    background-color: #d32f2f;
+}
+
+.drink-button {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 8px;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  background-color: #a360b1;
+}
+
+.drink-button:hover {
+  background-color: #45a049;
+}
+.favorite {
+  background-color: #751414;
+  color: red;
+  border: none;
+  border-radius: 50%;
+  padding: 4px 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease-in-out;
+}
+.favorite:hover {
   background-color: #d32f2f;
 }
+
 </style>
-
-
-<!-- <style>
-.input{
-    position:absolute;
-    top:200px;
-   border-radius:0px;
-    border-width:2px;
-    border-color:#0E4749;
-    width: 250px;
-    /* border-radius:10px; */
-}
-.butNewIngredient{
-    height: 35px;
-    width: 200px;
-    border-width:2px;
-    border-color: #0E4749;
-    border-radius: 0px;
-}
-.butAdd{
-    border-width: 2px;
-    border-radius:0px;
-    border-color: #0E4749;
-    width: 250px;
-}
-</style> -->
