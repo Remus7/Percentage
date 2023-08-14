@@ -17,6 +17,7 @@ def get_drinks(ingredient):
     else:
         return jsonify({"error":"no drinks found"})
     for drink in drinks:
+        drink = drink.lower()
         glass = r.hget(drink, "glass")
         ingredients = json.loads(r.hget(drink, "ingredients"))
         preparation = r.hget(drink, "preparation")
