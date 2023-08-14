@@ -11,7 +11,11 @@ r = redis.Redis(host=os.environ['REDIS_HOST'], port=6379, decode_responses=True)
 def get_drinks(ingredient):
     ingredient = ingredient.lower()
     dic_drinks = {}
-    drinks = json.loads(r.hget("INGREDIENTS", ingredient))
+    drinks = r.hget("INGREDIENTS", ingredient)
+    if drinks != None:
+        drinks = json.loads(drinks)
+    else:
+        return jsonify({"error":"no drinks found"})
     for drink in drinks:
         glass = r.hget(drink, "glass")
         ingredients = json.loads(r.hget(drink, "ingredients"))
