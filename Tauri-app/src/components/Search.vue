@@ -13,9 +13,9 @@ function removeIngredient(index: Number){
     Ingredients.value.splice(index, 1);
 }
 
-// async function findIngredient{
-//     
-// }
+async function findIngredient{
+    await invoke("drink_from_ingredients")
+}
 </script>
 
 <template>
@@ -32,7 +32,7 @@ function removeIngredient(index: Number){
 <style>
 .input{
     position:absolute;
-    top:117px;
+    top:200 px;
    border-radius:0px;
     border-width:2px;
     border-color:#0E4749;
