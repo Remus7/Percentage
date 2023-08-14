@@ -8,7 +8,11 @@ import Favorite from "./components/Favorite.vue";
 
 <template>
 
+<<<<<<< HEAD
     <div clsas="navbar">
+=======
+    <div class="navbar">
+>>>>>>> ff1baba25773c9095b65b142fde26b4f43326f47
      <RouterLink class="links" to="/">Home </RouterLink>
      <RouterLink class="links" to="/search">Search</RouterLink>
      <RouterLink class="links" to="/favorite">Favorite</RouterLink>
