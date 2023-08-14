@@ -28,7 +28,7 @@ function removeIngredient(index: Number){
 </button>
 
 </template>
-
+<!--
 <style>
 .input{
     position:absolute;
@@ -53,3 +53,4 @@ function removeIngredient(index: Number){
     width: 250px;
 }
 </style>
+-->
