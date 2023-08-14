@@ -8,6 +8,10 @@ const Ingredient = ref("");
 async function addIngredient(){
     Ingredients.value.push(Ingredient.value);
 }
+
+function removeIngredient(index: Number){
+    Ingredients.value.splice(index, 1);
+}
 </script>
 
 <template>
@@ -15,7 +19,7 @@ async function addIngredient(){
 <input v-model="Ingredient" placeholder="">
 <button @click="addIngredient">Add Ingredient</button>
 
-<button v-for="ingredient in Ingredients">
+<button @click="removeIngredient(index)" v-for="(ingredient, index) in Ingredients">
     {{ ingredient }}
 </button>
 
