@@ -12,26 +12,24 @@ const debugMsg = ref("");
 
 AvailableDrinks.value = ["Vodka", "Margarita", "Tequila"];
 
-async function testButton() {
-  try {
-    AvailableDrinks.value = await invoke("drink_from_ingredients", {
-      ingredientVec: Ingredients.value,
-    });
-  } catch (error) {
-    debugMsg.value = error as string;
-  }
+async function testButton(){
+  try{
+        AvailableDrinks.value = await invoke ("drink_from_ingredients", {ingredientVec: Ingredients.value})
+    } catch(error){
+        areDrinks.value = false;
+    }
 }
-function removeIngredient(index: Number) {
-  Ingredients.value.splice(index, 1);
+function removeIngredient(index: Number){
+    Ingredients.value.splice(index, 1);
 }
 
 async function addIngredient() {
   Ingredients.value.push(Ingredient.value);
 }
 
-// function addFavorite(){
-//     favoriteDrinks.value.push()
-// }
+function addFavorite(drink: string){
+    favoriteDrinks.value.push(drink);
+}
 </script>
 <template>
   <p>{{ debugMsg }}</p>
@@ -51,15 +49,10 @@ async function addIngredient() {
   <p v-if="!areDrinks">There is no drink available!</p>
   <br />
 
-  <button
-    v-cloak="drink - button"
-    v-for="(drink, index) in AvailableDrinks"
-    class="drink-button"
-  >
-    {{ drink }}
-    <!-- <button class="favorite" @click="addFavorite(index)">&hearts;</button> -->
-    
-  </button>
+<button v-for="drink in AvailableDrinks" class="drink-button">{{ drink }}
+    <button class="favorite" @click="addFavorite(drink)">&hearts;</button>
+</button>
+
 </template>
 
 <style scoped>

@@ -20,3 +20,32 @@ spec:
             cpu: "100m"
         ports:
         - containerPort: 6379
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: redis
+spec:
+  selector:
+    app: redis
+  ports:
+  - port: 6379
+    targetPort: 6379
+---
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: myjob
+spec:
+  ttlSecondsAfterFinished: 100
+  template:
+    spec:
+      containers:
+      - name: myjob
+        image: dynow/papi-script:1.3
+        resources:
+          limits:
+            cpu: "0"
+            memory: "0"
+      restartPolicy: Never
+  backoffLimit: 3
