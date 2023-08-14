@@ -30,12 +30,12 @@ async fn request_value(_url: String) -> Result<Value, CommandError>{
 async fn drink_from_ingredients(ingredient_vec: Vec<String>) -> Result< Vec<String>, CommandError >{
     println!("{:?}",ingredient_vec);
     for i in 0..ingredient_vec.len(){
-        let url = format!("REQUESTUL");
+        let url = format!("REQUESTUL"); 
         let drinks = request_value(url).await?;
         println!("{}", drinks[i]);
-        for j in 0..drinks.as_array().unwrap().len(){
-            // println!(ingredient[i]);
-            let ingr = &drinks[j]["ingredients"];
+        for j in drinks.into_iter(){
+            println!("muie badea");
+            let ingr = j["ingredients"];
             for k in 0..ingr.as_array().unwrap().len(){
                 println!("{:?}", ingr[k]);
             }
