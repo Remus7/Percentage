@@ -20,6 +20,11 @@ import Favorite from "./components/Favorite.vue";
 
 <style scoped>
 
+@font-face {
+  font-family: 'Abyssinica SIL';
+  src: url('https://www.fontsaddict.com/fontface/abyssinica-sil.ttf');
+}
+
 .navbar{
   height: 40px;
   background-color: #1EAF90;
