@@ -11,17 +11,19 @@ const favoriteDrinks: Ref<string[]> = ref([]);
 
 AvailableDrinks.value = ["Vodka","Margarita","Tequila"];
 
+ async function testButton(){
+  try{
+        AvailbleDrinks.value = await invoke ("drink_from_ingredients", {ingredientVec: Ingredients.value})
+    } catch(error){
+        areDrinks.value = false;
+    }
+ }
 function removeIngredient(index: Number){
     Ingredients.value.splice(index, 1);
 }
 
 async function addIngredient(){
     Ingredients.value.push(Ingredient.value);
-    try{
-        AvailableDrinks.value = await invoke ("drink_from_ingredients", {ingredients: Ingredients.value})
-    } catch(error){
-        areDrinks.value = false;
-    }
 }
 
 function addFavorite(drink: string){
@@ -32,6 +34,7 @@ function addFavorite(drink: string){
 
 <input class="input" v-model="Ingredient" placeholder="Type ingredient name">
 <button class="butAdd" @click="addIngredient">Add Ingredient</button>
+<button @click="testButton">test button</button>
 
 <button class="ingredient-item" v-for="(ingredient, index) in Ingredients">
     {{ ingredient }}
