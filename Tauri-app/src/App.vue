@@ -8,8 +8,6 @@ import Favorite from "./components/Favorite.vue";
 
 <template>
   <div class="container">
-    <Home />
-
     <div class="navbar">
      <RouterLink class="links" to="/">Home </RouterLink>
      <RouterLink class="links" to="/search">Search</RouterLink>
@@ -21,6 +19,11 @@ import Favorite from "./components/Favorite.vue";
 </template>
 
 <style scoped>
+
+@font-face {
+  font-family: 'Abyssinica SIL';
+  src: url('https://www.fontsaddict.com/fontface/abyssinica-sil.ttf');
+}
 
 .navbar{
   height: 40px;
