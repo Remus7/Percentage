@@ -1,0 +1,115 @@
+{
+    "Gin": [
+        "Vesper",
+        "Negroni",
+        "Martinez",
+        "Singapore Sling"
+    ],
+    "Vodka": [
+        "Vesper",
+        "Bacardi",
+        "Cosmopolitan"
+    ],
+    "Lillet Blonde": [
+        "Vesper"
+    ],
+    "Lime juice": [
+        "Bacardi",
+        "Margarita",
+        "Daiquiri"
+    ],
+    "Syrup": [
+        "Bacardi",
+        "Rose",
+        "Daiquiri"
+    ],
+    "Campari": [
+        "Negroni"
+    ],
+    "Vermouth": [
+        "Negroni",
+        "Rose",
+        "Manhattan",
+        "Martinez"
+    ],
+    "Kirsch": [
+        "Rose"
+    ],
+    "Whiskey": [
+        "Old Fashioned"
+    ],
+    "Angostura bitters": [
+        "Old Fashioned",
+        "Manhattan"
+    ],
+    "Sugar cube": [
+        "Old Fashioned"
+    ],
+    "White rum": [
+        "Mojito",
+        "Piña Colada",
+        "Daiquiri",
+        "Mai Tai"
+    ],
+    "Mint leaves": [
+        "Mojito"
+    ],
+    "Simple syrup": [
+        "Mojito",
+        "Daiquiri",
+        "Whiskey Sour"
+    ],
+    "Club soda": [
+        "Mojito"
+    ],
+    "Cranberry juice": [
+        "Cosmopolitan"
+    ],
+    "Triple sec": [
+        "Cosmopolitan",
+        "Margarita",
+        "Singapore Sling"
+    ],
+    "Tequila": [
+        "Margarita"
+    ],
+    "Salt": [
+        "Margarita"
+    ],
+    "Coconut cream": [
+        "Piña Colada"
+    ],
+    "Pineapple juice": [
+        "Piña Colada",
+        "Singapore Sling",
+        "Mai Tai"
+    ],
+    "Bourbon": [
+        "Whiskey Sour"
+    ],
+    "Rye whiskey": [
+        "Manhattan"
+    ],
+    "Sweet vermouth": [
+        "Manhattan",
+        "Martinez"
+    ],
+    "Cherry liqueur": [
+        "Singapore Sling"
+    ],
+    "Orange curaçao": [
+        "Mai Tai"
+    ],
+    "Orgeat syrup": [
+        "Mai Tai"
+    ],
+    "Coffee liqueur": [
+        "White Russian"
+    ],
+    "Cream": [
+        "White Russian"
+    ],
+    "Grenadine": [
+        "Singapore Sling"
+    ]
+}
