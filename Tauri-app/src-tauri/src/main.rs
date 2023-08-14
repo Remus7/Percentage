@@ -26,8 +26,17 @@ async fn request_value(url: String) -> Result<Value, CommandError>{
 
 // Learn more about Tauri commands at https://tauri.app/v1/guides/features/command
 #[tauri::command]
-fn drink_from_ingredients (ingredients: Vec<String> ) -> Result<Vec<String>, CommandError>{
-    Err(CommandError::Error("DemoError".to_owned()))
+async fn drink_from_ingredients(ingredients: Vec<String>) -> Result< Vec<String>, CommandError >{
+    for i in 0..ingredients.len(){
+        let url = format!("REQUESTUL");
+        let drinks = request_value(url).await?;
+        println!("{}", drinks[i]);
+        // for j in 0..drinks{
+        //     println!(ingredient[i]);
+        // }
+    }
+    
+    Ok(vec!["Drink1".to_owned(), "Drink2".to_owned(), "Drink3".to_owned()])
 }
 
 fn main() {
@@ -37,16 +46,4 @@ fn main() {
         ])
         .run(tauri::generate_context!())
         .expect("error while running tauri application");
-}
-
-async fn  drink_from_ingredients(ingredients: Vec<String>)->Result<Vec<String>,CommandError>{
-    let url = format!("REQUESTUL").expect(CommandError);
-    for i in 0..ingredients.len(){
-    let ingredient = reqwest::get(url);
-    .await.unwrap()
-    .text()
-    .await.unwrap()
-}
-    let drink_list: Value = serde_json::from_str(&body_of_request).expect("Eroare la deserializare");
-    
 }

@@ -21,16 +21,6 @@ async function addIngredient(){
     }
 }
 </script>
-
-<template>
-
-<input class="input" v-model="Ingredient" placeholder="Type ingredient name">
-<button class="butAdd" @click="addIngredient">Add Ingredient</button>
-
-<button @click="removeIngredient(index)" v-for="(ingredient, index) in Ingredients">
-    {{ ingredient }}
-</button>
-
 <template>
 
 <input class="input" v-model="Ingredient" placeholder="Type ingredient name">
