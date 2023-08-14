@@ -13,7 +13,7 @@ spec:
     spec:
       containers:
       - name: papi
-        image: cr0minus/papi:latest
+        image: dynow/papi:1.1
         resources:
           limits:
             memory: "128Mi"
@@ -27,10 +27,10 @@ spec:
 apiVersion: v1
 kind: Service
 metadata:
-  name: myapp
+  name: papi
 spec:
   selector:
-    app: myapp
+    app: papi
   ports:
   - port: 5000
     targetPort: 5000

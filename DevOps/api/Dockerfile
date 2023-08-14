@@ -1,4 +1,4 @@
-FROM python:latest
+FROM python
 
 RUN pip install flask requests redis
 
