@@ -5,10 +5,8 @@ import Home from "./components/Home.vue";
 </script>
 
 <template>
-  <div class="container">
-    <h1>Welcome to Tauri!</h1>
 
-    <div class="row">
+    <!-- <div class="row">
       <a href="https://vitejs.dev" target="_blank">
         <img src="/vite.svg" class="logo vite" alt="Vite logo" />
       </a>
@@ -18,35 +16,40 @@ import Home from "./components/Home.vue";
       <a href="https://vuejs.org/" target="_blank">
         <img src="./assets/vue.svg" class="logo vue" alt="Vue logo" />
       </a>
+    </div> -->
+
+    <div class="navbar">
+     <RouterLink class="links" to="/">Home </RouterLink>
+     <RouterLink class="links" to="/search">Search</RouterLink>
+     <RouterLink class="links" to="/favorite">Favorite</RouterLink>
     </div>
+<button>  </button>
 
-    <p>Click on the Tauri, Vite, and Vue logos to learn more.</p>
 
-    <p>
-      Recommended IDE setup:
-      <a href="https://code.visualstudio.com/" target="_blank">VS Code</a>
-      +
-      <a href="https://github.com/johnsoncodehk/volar" target="_blank">Volar</a>
-      +
-      <a href="https://github.com/tauri-apps/tauri-vscode" target="_blank"
-        >Tauri</a
-      >
-      +
-      <a href="https://github.com/rust-lang/rust-analyzer" target="_blank"
-        >rust-analyzer</a
-      >
-    </p>
-
-    <Home />
-  </div>
 </template>
 
 <style scoped>
-.logo.vite:hover {
-  filter: drop-shadow(0 0 2em #747bff);
+
+.navbar{
+  height: 40px;
+  background-color: #1EAF90;
+  overflow:hidden;
+  padding-top:12px;
+  margin-top: 25px;
+}
+.links{
+  color: white;
+  text-align: center;
+  padding:10px;
+  /* text-decoration: none; */
+  font-size: 17px;
 }
 
-.logo.vue:hover {
-  filter: drop-shadow(0 0 2em #249b73);
+.links:hover{
+  opacity:0.7;
+  /* color:black; */
 }
+
+
+
 </style>
