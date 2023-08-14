@@ -1,6 +1,7 @@
 // Prevents additional console window on Windows in release, DO NOT REMOVE!!
 #![cfg_attr(not(debug_assertions), windows_subsystem = "windows")]
 
+use reqwest;
 #[allow(unused_imports)]
 use reqwest::get;
 #[allow(unused_imports)]
@@ -25,13 +26,15 @@ async fn request_value(url: String) -> Result<Value, CommandError>{
 
 // Learn more about Tauri commands at https://tauri.app/v1/guides/features/command
 #[tauri::command]
-fn drink_from_ingredients (ingredients: Vect<String> ) -> Result<Vec<String>, CommandError>{
-    Result<CommandError::Error("DemoError".to_owned())
+fn drink_from_ingredients (ingredients: Vec<String> ) -> Result<Vec<String>, CommandError>{
+    Err(CommandError::Error("DemoError".to_owned()))
 }
 
 fn main() {
     tauri::Builder::default()
-        .invoke_handler(tauri::generate_handler![greet])
+        .invoke_handler(tauri::generate_handler![
+            drink_from_ingredients
+        ])
         .run(tauri::generate_context!())
         .expect("error while running tauri application");
 }
