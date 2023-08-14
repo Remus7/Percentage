@@ -13,9 +13,9 @@ function removeIngredient(index: Number){
     Ingredients.value.splice(index, 1);
 }
 
-async function findIngredient{
-    
-}
+// async function findIngredient{
+//     
+// }
 </script>
 
 <template>
@@ -23,7 +23,6 @@ async function findIngredient{
 <input class="input" v-model="Ingredient" placeholder="Type ingredient name">
 <button class="butAdd" @click="addIngredient">Add Ingredient</button>
 
-<button class="butNewIngredient" v-for="ingredient in Ingredients">
 <button @click="removeIngredient(index)" v-for="(ingredient, index) in Ingredients">
     {{ ingredient }}
 </button>
