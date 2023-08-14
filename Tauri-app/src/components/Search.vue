@@ -13,7 +13,7 @@ AvailableDrinks.value = ["Vodka","Margarita","Tequila"];
 
  async function testButton(){
   try{
-        AvailbleDrinks.value = await invoke ("drink_from_ingredients", {ingredientVec: Ingredients.value})
+        AvailableDrinks.value = await invoke ("drink_from_ingredients", {ingredientVec: Ingredients.value})
     } catch(error){
         areDrinks.value = false;
     }
