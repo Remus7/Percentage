@@ -12,6 +12,10 @@ async function addIngredient(){
 function removeIngredient(index: Number){
     Ingredients.value.splice(index, 1);
 }
+
+async function findIngredient{
+    
+}
 </script>
 
 <template>
