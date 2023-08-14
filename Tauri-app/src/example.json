@@ -1,0 +1,6 @@
+{ 
+    "Martinez": { "glass": "martini", "ingredients": [ "Old Tom gin", "Sweet vermouth", "Maraschino liqueur", "Orange bitters" ], "preparation": "Stir all ingredients with ice and strain into a chilled martini glass. Garnish with a lemon twist." }, 
+    "Negroni": { "glass": "old-fashioned", "ingredients": [ "Gin", "Campari", "Vermouth" ], "preparation": "Build into an old-fashioned glass filled with ice. Stir gently." }, 
+    "Singapore Sling": { "glass": "hurricane", "ingredients": [ "Gin", "Cherry liqueur", "Triple sec", "Pineapple juice", "Lime juice", "Grenadine" ], "preparation": "Shake all ingredients with ice except grenadine. Strain into a hurricane glass with ice. Float grenadine on top. Garnish with a cherry and a slice of pineapple." }, 
+    "Vesper": { "glass": "martini", "ingredients": [ "Gin", "Vodka", "Lillet Blonde" ], "preparation": "Shake and strain into a chilled cocktail glass." 
+}

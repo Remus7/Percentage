@@ -8,23 +8,26 @@ const Ingredient = ref("");
 const areDrinks = ref(true); //catches if there are drinks possible to be served
 const AvailbleDrinks: Ref<string[]> = ref([]);
 
+ async function testButton(){
+  try{
+        AvailbleDrinks.value = await invoke ("drink_from_ingredients", {ingredientVec: Ingredients.value})
+    } catch(error){
+        areDrinks.value = false;
+    }
+ }
 function removeIngredient(index: Number){
     Ingredients.value.splice(index, 1);
 }
 
 async function addIngredient(){
     Ingredients.value.push(Ingredient.value);
-    try{
-        AvailbleDrinks.value = await invoke ("drink_from_ingredients", {ingredients: Ingredients.value})
-    } catch(error){
-        areDrinks.value = false;
-    }
 }
 </script>
 <template>
 
 <input class="input" v-model="Ingredient" placeholder="Type ingredient name">
 <button class="butAdd" @click="addIngredient">Add Ingredient</button>
+<button @click="testButton">test button</button>
 
 <button class="ingredient-item" v-for="(ingredient, index) in Ingredients">
     {{ ingredient }}
