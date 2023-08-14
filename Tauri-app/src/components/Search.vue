@@ -24,11 +24,11 @@ async function addIngredient(){
     }
 }
 
-// function addFavorite(){
-//     favoriteDrinks.value.push()
-// }
+function addFavorite(drink: string){
+    favoriteDrinks.value.push(drink);
+}
 </script>
-<template>
+<template>  
 
 <input class="input" v-model="Ingredient" placeholder="Type ingredient name">
 <button class="butAdd" @click="addIngredient">Add Ingredient</button>
@@ -41,8 +41,8 @@ async function addIngredient(){
 <p v-if="!areDrinks">There is no drink available!</p>
 <br/>
 
-<button v-cloak="drink-button" v-for="(drink, index) in AvailableDrinks" class="drink-button">{{ drink }}
-    <!-- <button class="favorite" @click="addFavorite(index)">&hearts;</button> -->
+<button v-for="drink in AvailableDrinks" class="drink-button">{{ drink }}
+    <button class="favorite" @click="addFavorite(drink)">&hearts;</button>
 </button>
 
 </template>
