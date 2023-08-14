@@ -8,22 +8,25 @@ const Ingredient = ref("");
 const areDrinks = ref(true); //catches if there are drinks possible to be served
 const AvailableDrinks: Ref<string[]> = ref([]);
 const favoriteDrinks: Ref<string[]> = ref([]);
+const debugMsg = ref("");
 
-AvailableDrinks.value = ["Vodka","Margarita","Tequila"];
+AvailableDrinks.value = ["Vodka", "Margarita", "Tequila"];
 
- async function testButton(){
-  try{
-        AvailbleDrinks.value = await invoke ("drink_from_ingredients", {ingredientVec: Ingredients.value})
-    } catch(error){
-        areDrinks.value = false;
-    }
- }
-function removeIngredient(index: Number){
-    Ingredients.value.splice(index, 1);
+async function testButton() {
+  try {
+    AvailableDrinks.value = await invoke("drink_from_ingredients", {
+      ingredientVec: Ingredients.value,
+    });
+  } catch (error) {
+    debugMsg.value = error as string;
+  }
+}
+function removeIngredient(index: Number) {
+  Ingredients.value.splice(index, 1);
 }
 
-async function addIngredient(){
-    Ingredients.value.push(Ingredient.value);
+async function addIngredient() {
+  Ingredients.value.push(Ingredient.value);
 }
 
 // function addFavorite(){
@@ -31,23 +34,32 @@ async function addIngredient(){
 // }
 </script>
 <template>
+  <p>{{ debugMsg }}</p>
+  <input
+    class="input"
+    v-model="Ingredient"
+    placeholder="Type ingredient name"
+  />
+  <button class="butAdd" @click="addIngredient">Add Ingredient</button>
+  <button @click="testButton">test button</button>
 
-<input class="input" v-model="Ingredient" placeholder="Type ingredient name">
-<button class="butAdd" @click="addIngredient">Add Ingredient</button>
-<button @click="testButton">test button</button>
-
-<button class="ingredient-item" v-for="(ingredient, index) in Ingredients">
+  <button class="ingredient-item" v-for="(ingredient, index) in Ingredients">
     {{ ingredient }}
     <button class="remove" @click="removeIngredient(index)">X</button>
-</button>
+  </button>
 
-<p v-if="!areDrinks">There is no drink available!</p>
-<br/>
+  <p v-if="!areDrinks">There is no drink available!</p>
+  <br />
 
-<button v-cloak="drink-button" v-for="(drink, index) in AvailableDrinks" class="drink-button">{{ drink }}
+  <button
+    v-cloak="drink - button"
+    v-for="(drink, index) in AvailableDrinks"
+    class="drink-button"
+  >
+    {{ drink }}
     <!-- <button class="favorite" @click="addFavorite(index)">&hearts;</button> -->
-</button>
-
+    
+  </button>
 </template>
 
 <style scoped>
@@ -70,7 +82,7 @@ async function addIngredient(){
   transition: background-color 0.3s ease-in-out;
 }
 .remove:hover {
-    background-color: #d32f2f;
+  background-color: #d32f2f;
 }
 
 .drink-button {
