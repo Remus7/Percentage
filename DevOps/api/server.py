@@ -9,6 +9,7 @@ r = redis.Redis(host=os.environ['REDIS_HOST'], port=6379, decode_responses=True)
 
 @app.route("/get_drinks/<ingredient>", methods=["GET"])
 def get_drinks(ingredient):
+    ingredient = ingredient.lower()
     dic_drinks = {}
     drinks = json.loads(r.hget("INGREDIENTS", ingredient))
     for drink in drinks:
