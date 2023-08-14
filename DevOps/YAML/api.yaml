@@ -22,7 +22,7 @@ spec:
         - containerPort: 5000
         env:
         - name: "REDIS_HOST"
-          value: "database"
+          value: "redis"
 ---
 apiVersion: v1
 kind: Service
