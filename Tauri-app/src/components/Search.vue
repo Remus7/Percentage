@@ -12,11 +12,36 @@ async function addIngredient(){
 
 <template>
 
-<input v-model="Ingredient" placeholder="">
-<button @click="addIngredient">Add Ingredient</button>
+<input class="input" v-model="Ingredient" placeholder="Type ingredient name">
+<button class="butAdd" @click="addIngredient">Add Ingredient</button>
 
-<button v-for="ingredient in Ingredients">
+<button class="butNewIngredient" v-for="ingredient in Ingredients">
     {{ ingredient }}
 </button>
 
 </template>
+
+<style>
+.input{
+    position:absolute;
+    top:117px;
+   border-radius:0px;
+    border-width:2px;
+    border-color:#0E4749;
+    width: 250px;
+    /* border-radius:10px; */
+}
+.butNewIngredient{
+    height: 35px;
+    width: 200px;
+    border-width:2px;
+    border-color: #0E4749;
+    border-radius: 0px;
+}
+.butAdd{
+    border-width: 2px;
+    border-radius:0px;
+    border-color: #0E4749;
+    width: 250px;
+}
+</style>
