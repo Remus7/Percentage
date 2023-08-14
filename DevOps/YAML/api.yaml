@@ -1,0 +1,36 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: papi
+spec:
+  selector:
+    matchLabels:
+      app: papi
+  template:
+    metadata:
+      labels:
+        app: papi
+    spec:
+      containers:
+      - name: papi
+        image: dynow/papi:1.1
+        resources:
+          limits:
+            memory: "128Mi"
+            cpu: "100m"
+        ports:
+        - containerPort: 5000
+        env:
+        - name: "REDIS_HOST"
+          value: "database"
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: papi
+spec:
+  selector:
+    app: papi
+  ports:
+  - port: 5000
+    targetPort: 5000

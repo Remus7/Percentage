@@ -28,7 +28,6 @@ async function addIngredient(){
 //     favoriteDrinks.value.push()
 // }
 </script>
-
 <template>
 
 <input class="input" v-model="Ingredient" placeholder="Type ingredient name">
@@ -43,7 +42,7 @@ async function addIngredient(){
 <br/>
 
 <button v-cloak="drink-button" v-for="(drink, index) in AvailableDrinks" class="drink-button">{{ drink }}
-    <button class="favorite" @click="addFavorite(index)">&hearts;</button>
+    <!-- <button class="favorite" @click="addFavorite(index)">&hearts;</button> -->
 </button>
 
 </template>
@@ -97,5 +96,4 @@ async function addIngredient(){
 .favorite:hover {
   background-color: #d32f2f;
 }
-
 </style>
