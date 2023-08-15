@@ -71,6 +71,9 @@ async fn get_details(drink: String) -> Vec<String> {
         println!("{:?}", name);
         return cocktail.ingredients;
     }
+    let a = vec![String::from("No Ingredients found!")];
+    return a;
+
 }
 
 fn main() {
