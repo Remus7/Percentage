@@ -13,7 +13,7 @@ spec:
     spec:
       containers:
       - name: papi
-        image: dynow/papi:1.1
+        image: dynow/papi:1.3
         resources:
           limits:
             memory: "128Mi"

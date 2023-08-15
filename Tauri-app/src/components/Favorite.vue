@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { ref } from "vue";
+import { ref, Ref } from "vue";
 import { invoke } from "@tauri-apps/api/tauri";
 import { favoriteDrinks } from "../App.vue";
 
@@ -7,10 +7,17 @@ function removeFavorite(index: Number){
     favoriteDrinks.value.splice(index, 1);
 }
 
+const drinkDetails: Ref<string> = ref([]);
+
+async function getDetails(drink: string) {
+  drinkDetails.value = await invoke ("get_details", {drink: drink});
+}
+
 </script>
 
 <template>
-<button class="favorite-drink" v-for="(drink, index) in favoriteDrinks" :key="drink">
+
+<button class="favorite-drink" v-for="(drink, index) in favoriteDrinks" :key="drink" @click="getDetails(drink)">
     {{ drink }}
     <button class="remove" @click="removeFavorite(index)">X</button>
 </button>

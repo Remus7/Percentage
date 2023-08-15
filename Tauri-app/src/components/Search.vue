@@ -29,8 +29,8 @@ async function addIngredient() {
 }
 
 function addFavorite(drink: string){ 
+  if(favoriteDrinks.value.indexOf(drink) === -1)
     favoriteDrinks.value.push(drink);                        
-    console.log(favoriteDrinks.value);
 }
 
 </script>
@@ -92,7 +92,7 @@ function addFavorite(drink: string){
   display: flex;
   align-items: center;
   justify-content: space-between;
-  margin-bottom: 2px;
+  margin-bottom: 5px;
   padding: 8px;
   border: 1px solid #ccc;
   border-radius: 4px;
@@ -101,7 +101,7 @@ function addFavorite(drink: string){
 }
 
 .drink-button:hover {
-  background-color: #904C77;
+  opacity:0.9;
 }
 .favorite {
 
