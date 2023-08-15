@@ -4,14 +4,31 @@ import os
 
 r = redis.Redis(host=os.environ["REDIS_HOST"], port=6379, decode_responses=True)
 
-f = open('Cocktails.json')
+f = open('cocktails.json')
 
 cocktails = json.load(f)
 
 for cocktail in cocktails:
-    cocktail2 = cocktail.lower()
-    print(cocktail2)
-    r.hmset(cocktail2, {"glass": cocktails[cocktail]["glass"], "ingredients": json.dumps(cocktails[cocktail]["ingredients"]), "preparation": cocktails[cocktail]["preparation"]})
+    print(cocktail)
+    cocktail["name"]=cocktail["name"].lower()
+    try:
+        r.hmset(cocktail["name"], {"colors": json.dumps(cocktail["colors"]), "glass": cocktail["glass"], "category": cocktail["category"], "ingredients": json.dumps(cocktail["ingredients"]), "garnish": cocktail["garnish"], "preparation": cocktail["preparation"]})
+    except:
+        try:
+            r.hmset(cocktail["name"], {"colors": json.dumps(cocktail["colors"]), "glass": cocktail["glass"], "category": cocktail["category"], "ingredients": json.dumps(cocktail["ingredients"]), "garnish": "", "preparation": cocktail["preparation"]})
+        except:
+            try:
+                r.hmset(cocktail["name"], {"colors": json.dumps(cocktail["colors"]), "glass": cocktail["glass"], "category": cocktail["category"], "ingredients": json.dumps(cocktail["ingredients"]), "garnish": cocktail["garnish"], "preparation": cocktail["preparation"]})
+            except:
+                try:
+                    r.hmset(cocktail["name"], {"colors": json.dumps(cocktail["colors"]), "glass": cocktail["glass"], "category": "", "ingredients": json.dumps(cocktail["ingredients"]), "garnish": "", "preparation": cocktail["preparation"]})
+                except:
+                    try:
+                        r.hmset(cocktail["name"], {"colors": json.dumps(cocktail["colors"]), "glass": cocktail["glass"], "category": cocktail["category"], "ingredients": json.dumps(cocktail["ingredients"]), "garnish": cocktail["garnish"], "preparation": ""})
+                    except:
+                        r.hmset(cocktail["name"], {"colors": json.dumps(cocktail["colors"]), "glass": cocktail["glass"], "category": cocktail["category"], "ingredients": json.dumps(cocktail["ingredients"]), "garnish": "", "preparation": ""})
+                
+
 
 g = open('Ingredients.json')
 
