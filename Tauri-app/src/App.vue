@@ -16,6 +16,7 @@ export const favoriteDrinks: Ref<string[]> = ref([]);
      <RouterLink class="links" to="/"> <img class="navImage" src="/images/home_icon.png" alt="Home"> </RouterLink>
      <RouterLink class="links" to="/search"><img class="navImage" src="/images/search_icon.png" alt="Search"></RouterLink>
      <RouterLink class="links" to="/favorite"><img class="navImage" src="/images/fav_icon.png" alt="Favourites"></RouterLink>
+     <RouterLink class="links" to="/github" ><img class="navImage" src="/images/github_icon.png" alt="GitHub"> </RouterLink>
     </div>
 
     <RouterView />

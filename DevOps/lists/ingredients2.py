@@ -12,5 +12,5 @@ for cocktail in data:
     for ingredient in data[cocktail]["ingredients"]:
         ingredients_dic[ingredient].append(cocktail)
 
-with open("ingredients2.json", "w") as save_here:
+with open("../db/ingredients.json", "w") as save_here:
     save_here.write(json.dumps(ingredients_dic))
