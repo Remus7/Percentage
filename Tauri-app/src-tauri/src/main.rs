@@ -54,7 +54,6 @@ async fn drink_from_ingredients(ingredient_vec: Vec<String>) -> Result< Vec<Stri
     }
     
     Ok(vec!["Drink1".to_owned(), "Drink2".to_owned(), "Drink3".to_owned()])
-}
 
 fn main() {
     tauri::Builder::default()

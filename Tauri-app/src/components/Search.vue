@@ -28,8 +28,8 @@ async function addIngredient() {
 }
 
 function addFavorite(drink: string){ 
+  if(favoriteDrinks.value.indexOf(drink) === -1)
     favoriteDrinks.value.push(drink);                        
-    console.log(favoriteDrinks.value);
 }
 </script>
 
