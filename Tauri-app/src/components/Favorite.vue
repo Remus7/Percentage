@@ -3,11 +3,11 @@ import { ref, Ref } from "vue";
 import { invoke } from "@tauri-apps/api/tauri";
 import { favoriteDrinks } from "../App.vue";
 
-function removeFavorite(index: Number){
+function removeFavorite(index: number): void {
     favoriteDrinks.value.splice(index, 1);
 }
 
-const drinkDetails: Ref<string> = ref([]);
+const drinkDetails: Ref<string[]> = ref([]);
 
 async function getDetails(drink: string) {
   console.log(await invoke ("get_details", {drink: drink}));

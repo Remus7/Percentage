@@ -2,9 +2,7 @@
 // This starter template is using Vue 3 <script setup> SFCs
 // Check out https://vuejs.org/api/sfc-script-setup.html#script-setup
 import { ref, Ref } from "vue";
-import Home from "./components/Home.vue";
-import Search from "./components/Search.vue";
-import Favorite from "./components/Favorite.vue";
+import { RouterLink, RouterView } from 'vue-router'
 </script>
 
 <script lang="ts">

@@ -63,7 +63,7 @@ async fn drink_from_ingredients(ingredient_vec: Vec<String>) -> Result< Vec<Stri
 
 #[tauri::command]
 async fn get_details(drink: String) -> Result<Vec<String>, CommandError> {
-    let response: String = reqwest::get(format!("http://172.20.50.2/get/{}", drink))
+    let response: String = reqwest::get(format!("http://172.20.50.2/get_ingredients/{}", drink))
         .await.map_err(|err| CommandError::Error(format!("{:?}", err)))?
         .text()
         .await.map_err(|err| CommandError::Error(format!("{:?}", err)))?;

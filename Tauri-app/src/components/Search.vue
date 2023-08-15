@@ -20,9 +20,9 @@ async function SearchDrink(){
       debugMsg.value = error as string;
   }
 }
-function removeIngredient(index: Number){
+function removeIngredient(index: number): void {
     Ingredients.value.splice(index, 1);
-}
+};
 
 async function addIngredient() {
   Ingredients.value.push(Ingredient.value);
