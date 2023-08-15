@@ -1,6 +1,6 @@
 <script setup lang="ts">
 
-import LogoSVG from '/full_icon.svg'
+import LogoSVG from '/images/full_icon.svg'
 </script>
 
 <template>
