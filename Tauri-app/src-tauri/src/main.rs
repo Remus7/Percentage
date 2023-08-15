@@ -54,15 +54,9 @@ async fn drink_from_ingredients(ingredient_vec: Vec<String>) -> Result< Vec<Stri
     }
 
     let mut sorted_pairs: Vec<(String, u64)> = freq.into_iter().collect();
-    sorted_pairs.sort_by(|a, b| a.1.cmp(&b.1));
+    sorted_pairs.sort_by(|a, b| b.1.cmp(&a.1));
 
     let sorted_key:Vec<String> = sorted_pairs.into_iter().map(|(k, _)| k).collect();
-
-    //let sorted_keys: Vec<&S;
-    // // Print the sorted keys
-    // for key in sorted_keys {
-    //     response.append(key);
-    // }
 
     return Ok(sorted_key);
 }
