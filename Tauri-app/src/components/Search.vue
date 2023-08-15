@@ -12,7 +12,7 @@ const debugMsg = ref("");
 
 AvailableDrinks.value = ["Vodka", "Margarita", "Tequila"];
 
-async function testButton(){
+async function SearchDrink(){
   try{
         AvailableDrinks.value = await invoke ("drink_from_ingredients", {ingredientVec: Ingredients.value})
     } catch(error){
@@ -39,7 +39,7 @@ function addFavorite(drink: string){
     placeholder="Type ingredient name"
   />
   <button class="butAdd" @click="addIngredient">Add Ingredient</button>
-  <button @click="testButton">test button</button>
+  <button class="searchbut" @click="SearchDrink">Search for drinks</button>
 
   <button class="ingredient-item" v-for="(ingredient, index) in Ingredients">
     {{ ingredient }}
@@ -62,7 +62,9 @@ function addFavorite(drink: string){
   justify-content: space-between;
   margin-bottom: 8px;
   padding: 8px;
-  border: 1px solid #ccc;
+  border: 1px solid white;
+  background-color: #0E4749;
+  color: white;
   border-radius: 4px;
 }
 .remove {
@@ -82,7 +84,7 @@ function addFavorite(drink: string){
   display: flex;
   align-items: center;
   justify-content: space-between;
-  margin-bottom: 8px;
+  margin-bottom: 2px;
   padding: 8px;
   border: 1px solid #ccc;
   border-radius: 4px;
@@ -103,5 +105,35 @@ function addFavorite(drink: string){
 }
 .favorite:hover {
   background-color: #d32f2f;
+}
+.searchbut{
+  margin-top:6px; 
+  margin-bottom: 25px;
+  border-radius: 15px;
+  box-shadow: 5px 5px  black;
+}
+.searchbut:hover{
+  opacity:0.8;
+  transition:1.5 s;
+}
+.butAdd{
+  margin-top:4px; ;
+  border-radius: 15px;
+  box-shadow: 5px 5px  black;
+}
+.butAdd:hover{
+  opacity:0.8;
+  transition:1.5 s;
+}
+
+input{
+  width: 100%;
+  padding: 10px;
+  border: 2px solid #2BB4B4; 
+  border-radius: 5px;
+  background-color: #F0F7F7; 
+  color: #333;
+  font-size: 16px;
+  transition: border-color 0.3s, background-color 0.3s;
 }
 </style>
