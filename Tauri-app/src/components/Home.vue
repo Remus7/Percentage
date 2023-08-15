@@ -1,6 +1,5 @@
 <script setup lang="ts">
 
-import LogoSVG from '/images/full_icon.svg'
 </script>
 
 <template>
@@ -18,7 +17,7 @@ import LogoSVG from '/images/full_icon.svg'
     </svg>
   </div> -->
 
-  <LogoSVG />
+  <img src = "/images/full_icon.svg" alt="% percentage"/>
 
 </template>
 
