@@ -4,15 +4,17 @@ import os
 
 r = redis.Redis(host=os.environ["REDIS_HOST"], port=6379, decode_responses=True)
 
-f = open('Cocktails.json')
+f = open('Cocktails2.json')
 
 cocktails = json.load(f)
 
 for cocktail in cocktails:
     cocktail2 = cocktail.lower()
     print(cocktail2)
-    r.hmset(cocktail2, {"glass": cocktails[cocktail]["glass"], "ingredients": json.dumps(cocktails[cocktail]["ingredients"]), "preparation": cocktails[cocktail]["preparation"]})
-
+    try:
+        r.hmset(cocktail2, {"colors": json.dump(cocktails[cocktail]["colors"]), "glass": cocktails[cocktail]["glass"], "ingredients": json.dumps(cocktails[cocktail]["ingredients"]), "preparation": cocktails[cocktail]["preparation"]})
+    except:
+        r.hmset(cocktail2, {"colors": "", "glass": cocktails[cocktail]["glass"], "ingredients": json.dumps(cocktails[cocktail]["ingredients"]), "preparation": cocktails[cocktail]["preparation"]})
 g = open('Ingredients.json')
 
 ingredients = json.load(g)

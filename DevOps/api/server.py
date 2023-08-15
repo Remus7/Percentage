@@ -19,6 +19,7 @@ def get_drinks(ingredient):
     for drink in drinks:
         drink = drink.lower()
         glass = r.hget(drink, "glass")
+        print(drink)
         ingredients = json.loads(r.hget(drink, "ingredients"))
         preparation = r.hget(drink, "preparation")
         dic_drinks[drink] = {"glass":glass, "ingredients":ingredients, "preparation":preparation}
