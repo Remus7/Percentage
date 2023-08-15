@@ -12,7 +12,7 @@ for cocktail in cocktails:
     cocktail2 = cocktail.lower()
     r.hmset(cocktail2, {"colors": json.dumps(cocktails[cocktail]["colors"]), "glass": cocktails[cocktail]["glass"], "ingredients": json.dumps(cocktails[cocktail]["ingredients"]), "preparation": cocktails[cocktail]["preparation"]})
     
-g = open('ingredients2.json')
+g = open('Ingredients.json')
 ingredients = json.load(g)
 
 for ingredient in ingredients:

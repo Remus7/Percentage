@@ -6,10 +6,8 @@ import LogoSVG from '../../../images/full_icon.svg'
 </script>
 
 <template>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" >
+  
   <!-- <div class="animation-container">
-  <link href="https://fonts.googleapis.com/css2?family=Abyssinica+SIL&display=swap" rel="stylesheet">
     <svg class="animation-svg" xmlns="http://www.w3.org/2000/svg" 
         xmlns:xlink="http://www.w3.org/1999/xlink"
         xmlns:krita="http://krita.org/namespaces/svg/krita"
@@ -28,10 +26,11 @@ import LogoSVG from '../../../images/full_icon.svg'
 
 
 <style>
-  html {
-    font-family: 'Abyssinica SIL', serif;
+  @font-face {
+      font-family: "QueensidesLight";
+      src: url("/QueensidesLight.ttf");
   }
-
+  
   body {
     display: flex;
     flex-direction: column;
