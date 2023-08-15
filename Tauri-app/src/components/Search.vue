@@ -9,6 +9,7 @@ const Ingredient = ref("");
 const areDrinks = ref(true); //catches if there are drinks possible to be served
 const AvailableDrinks: Ref<string[]> = ref([]); //VECTORUL PRIMIT DIN RUST CU BAUTURILE AVAILABLE
 const debugMsg = ref("");
+const showMore: Ref<boolean> = ref(false);
 
 async function SearchDrink(){
   try{
@@ -33,6 +34,10 @@ function addFavorite(drink: string){
     favoriteDrinks.value.push(drink);                        
 }
 
+function showMoreDrinks(): void{
+  showMore.value = true;
+}
+
 </script>
 
 <template>
@@ -45,18 +50,22 @@ function addFavorite(drink: string){
   <button class="butAdd" @click="addIngredient">Add Ingredient</button>
   <button class="searchbut" @click="SearchDrink">Search for drinks</button>
 
-  <button class="ingredient-item" v-for="(ingredient, index) in Ingredients">
+  <button class="ingredient-item" v-for="(ingredient, index) in Ingredients" :key="index">
     {{ ingredient }}
     <button class="remove" @click="removeIngredient(index)">X</button>
   </button>
-
+  
   <p v-if="!areDrinks">ingredients are invalid. No drink available.</p>
   <br />
 
-<button v-for="drink in AvailableDrinks" class="drink-button">{{ drink }}
+  <div v-for="(drink, index) in AvailableDrinks">
+    <button v-if="index < 5 || showMore === true" class="drink-button">
+      <span class="drink-name">{{ drink }}</span>
     <button class="favorite" @click="addFavorite(drink)">	&#127864;</button>
-</button> 
-
+  </button> 
+  </div>
+  <button @click="showMoreDrinks">Show more</button>
+  
 </template>
 
 <style scoped>
@@ -88,7 +97,7 @@ function addFavorite(drink: string){
   background-color: #d32f2f;
 }
 
-.drink-button {
+/* .drink-button {
   color: white;
   display: flex;
   align-items: center;
@@ -99,6 +108,25 @@ function addFavorite(drink: string){
   border-radius: 4px;
   background-color:#A3333D;
   border-color: white;
+}
+` */
+.drink-button {
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 5px;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  background-color: #A3333D;
+  border-color: white;
+  width: 100%; /* Make the buttons occupy the full width */
+}
+
+.drink-name {
+  flex: 1; /* Expand to take remaining space */
+  text-align: center; /* Center-align the text */
 }
 
 .drink-button:hover {
