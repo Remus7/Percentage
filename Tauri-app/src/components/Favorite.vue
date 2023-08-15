@@ -4,6 +4,12 @@ import { invoke } from "@tauri-apps/api/tauri";
 import { favoriteDrinks } from "../App.vue";
 const ingredientList: Ref<String[]> = ref([])
 const activ: Ref<boolean> = ref(false);
+
+const glassText: Ref<string> = ref("");
+const imageUrl: Ref<string> = ref("");
+const preparationText: Ref<string> = ref("");
+const debugMsg: Ref<string> = ref("");
+
 function removeFavorite(index: number): void{
     favoriteDrinks.value.splice(index, 1);
 }
@@ -11,12 +17,21 @@ function removeFavorite(index: number): void{
 const drinkDetails: Ref<string[]> = ref([]);
 
 async function getDetails(drink: string) {
-  activ.value= true;
-  console.log(await invoke ("get_details", {drink: drink}));
+  debugMsg.value = "";
+  activ.value = true;
+  // console.log(await invoke ("get_details", {drink: drink}));
+
+  imageUrl.value = "";
+  glassText.value = "Loading ..."
+  preparationText.value = "Loading ..."
+
   try{
-  drinkDetails.value = await invoke ("get_details", {drink: drink});
-  }catch{
-    console.log("No ingredients found!");
+    drinkDetails.value = await invoke ("get_ingredients", {drink: drink});
+    imageUrl.value = await invoke("get_details", {drink: drink, requestType: 0});
+    glassText.value = await invoke("get_details", {drink: drink, requestType: 1});
+    preparationText.value = await invoke("get_details", {drink: drink, requestType: 2});
+  } catch (e) {
+    debugMsg.value = e as string;
   }
 }
 
@@ -44,7 +59,7 @@ async function getDetails(drink: string) {
   </div>
 </div> -->
 
-<button class="favorite-drink" data-toggle="dropdown" v-for="(drink, index) in favoriteDrinks" :key="drink" @click="getDetails(drink)">
+<button class="favorite-drink" data-toggle="dropdown" v-for="(drink, index) in favoriteDrinks" :key="drink" @mouseover="getDetails(drink)">
     {{ drink }}:
     <!-- <div v-for="(ingredient, index) in drinkDetails">{{ ingredient}}, &nbsp;</div> -->
     <div class="dropdown">
@@ -55,10 +70,9 @@ async function getDetails(drink: string) {
         <option v-for="(detail, detailIndex) in drinkDetails" :key="detailIndex">{{ detail }}</option>
       </select>
     </button>
-    <button @click="showGlassType" id="asd">Glass type
-    </button>
-    <button @click="showPreparationMethod" id="asd">Preparation</button>
-    <button @click="showImage" id="asd">Example image</button>
+    <button class="dropdown-square" id="asd">{{ glassText }} </button>
+    <button class="dropdown-square" id="asd">{{ preparationText }}</button>
+    <button class="dropdown-square" id="asd"><img :src="imageUrl" /></button>
   </div>
 </div>
     <button class="remove" @click="removeFavorite(index)">X</button>
@@ -68,6 +82,10 @@ async function getDetails(drink: string) {
 </template>
 
 <style>
+.dropdown-square{
+  color: white;
+}
+
 .custom-button {
     display: inline-block;
     padding: 10px 20px;
