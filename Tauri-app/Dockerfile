@@ -17,3 +17,6 @@ ENV PATH="/root/.cargo/bin:${PATH}"
 COPY . /src/
 WORKDIR /src/
 RUN npm install
+RUN npm run build
+RUN npm run tauri build
+CMD ["npm", "run", "preview"]
