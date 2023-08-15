@@ -17,6 +17,7 @@ async function testButton(){
         AvailableDrinks.value = await invoke ("drink_from_ingredients", {ingredientVec: Ingredients.value})
     } catch(error){
         areDrinks.value = false;
+        debugMsg.value = error as string;
     }
 }
 function removeIngredient(index: Number){
