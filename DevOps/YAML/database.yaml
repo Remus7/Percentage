@@ -42,7 +42,7 @@ spec:
     spec:
       containers:
       - name: myjob
-        image: dynow/papi-script:1.15
+        image: dynow/papi-script:1.16
         resources:
           limits:
             cpu: "0"

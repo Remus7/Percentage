@@ -3,6 +3,7 @@
 // Check out https://vuejs.org/api/sfc-script-setup.html#script-setup
 import { ref, Ref } from "vue";
 import { RouterLink, RouterView } from 'vue-router'
+
 </script>
 
 <script lang="ts">
@@ -12,9 +13,9 @@ export const favoriteDrinks: Ref<string[]> = ref([]);
 <template>
   <div class="container">
     <div class="navbar">
-     <RouterLink class="links" to="/"> <img class="navImage" src="/home_icon.png" alt="Home"> </RouterLink>
-     <RouterLink class="links" to="/search"><img class="navImage" src="/search_icon.png" alt="Search"></RouterLink>
-     <RouterLink class="links" to="/favorite"><img class="navImage" src="/fav_icon.png" alt="Favourites"></RouterLink>
+     <RouterLink class="links" to="/"> <img class="navImage" src="/images/home_icon.png" alt="Home"> </RouterLink>
+     <RouterLink class="links" to="/search"><img class="navImage" src="/images/search_icon.png" alt="Search"></RouterLink>
+     <RouterLink class="links" to="/favorite"><img class="navImage" src="/images/fav_icon.png" alt="Favourites"></RouterLink>
     </div>
 
     <RouterView />
@@ -23,15 +24,17 @@ export const favoriteDrinks: Ref<string[]> = ref([]);
 
 <style scoped>
 
-.imgg{
-  height: 4000px;
-  width: 4000px;
+.navImage{
+  height: 40px;
+  width: auto;
+  z-index: 1;
+  color: white;
 }
 
 .navbar{
   height: 40px;
   background-color: #1EAF90;
-  overflow:hidden;
+  overflow: hidden;
   padding-top:12px;
   margin-top: 25px;
 }

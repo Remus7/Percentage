@@ -22,7 +22,8 @@ def get_drinks_by_i(ingredient):
         glass = r.hget(drink, "glass")
         ingredients = json.loads(r.hget(drink, "ingredients"))
         preparation = r.hget(drink, "preparation")
-        dic_drinks[drink] = {"colors": colors, "glass":glass, "ingredients":ingredients, "preparation":preparation}
+        image = r.hget(drink, "image")
+        dic_drinks[drink] = {"colors": colors, "glass":glass, "ingredients":ingredients, "preparation":preparation, "image":image}
     return jsonify(dic_drinks)
 
 @app.route("/get_ingredients/<drink>", methods=["GET"])
@@ -32,7 +33,8 @@ def get_ingredients_by_d(drink):
     glass = r.hget(drink, "glass")
     ingredients = json.loads(r.hget(drink, "ingredients"))
     preparation = r.hget(drink, "preparation")
-    dic_drink = {drink:{"colors": colors,"glass":glass, "ingredients":ingredients, "preparation":preparation}}
+    image = r.hget(drink, "image")
+    dic_drink = {drink:{"colors": colors,"glass":glass, "ingredients":ingredients, "preparation":preparation, "image":image}}
     return jsonify(dic_drink)
 
 @app.route("/get_drinks", methods=["GET"])
@@ -45,7 +47,8 @@ def get_drinks():
             glass = r.hget(drink, "glass")
             ingredients = json.loads(r.hget(drink, "ingredients"))
             preparation = r.hget(drink, "preparation")
-            dic_drink = {"name": drink, "colors": colors,"glass":glass, "ingredients":ingredients, "preparation":preparation}
+            image = r.hget(drink, "image")
+            dic_drink = {"name": drink, "colors": colors,"glass":glass, "ingredients":ingredients, "preparation":preparation, "image":image}
             list_drinks = list_drinks + [dic_drink]
             print(key)
     return jsonify(list_drinks)
