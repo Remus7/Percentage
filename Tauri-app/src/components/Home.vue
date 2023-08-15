@@ -14,7 +14,6 @@ import { invoke } from "@tauri-apps/api/tauri";
         height="85pt"
         viewBox="0 0 85 85">
     <defs/>
-    <
     <text id="shape0" transform="matrix(1 0 0 1 10 75)" fill="#ffffff" class="font_a" font-size="100" font-size-adjust="0.349432" font-stretch="normal"><tspan x="0">%</tspan></text>
     </svg>
   </div>
