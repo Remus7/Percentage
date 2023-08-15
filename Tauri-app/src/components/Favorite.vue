@@ -19,6 +19,7 @@ async function getDetails(drink: string) {
 
 <button class="favorite-drink" v-for="(drink, index) in favoriteDrinks" :key="drink" @click="getDetails(drink)">
     {{ drink }}
+    {{ drinkDetails }}
     <button class="remove" @click="removeFavorite(index)">X</button>
 </button>
 
