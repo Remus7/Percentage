@@ -39,7 +39,7 @@ function filteredSuggestions() {
      
     suggestions.value.filter(suggestion => suggestion.toLowerCase().startsWith(Ingredient.value))
   }
-  function selectSuggestion(){
+  function selectSuggestion(suggestion.value){
      Ingredient.value = suggestion.value;
      showSuggestions.value = false;
 }

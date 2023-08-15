@@ -13,7 +13,7 @@ edition = "2021"
 tauri-build = { version = "1.4", features = [] }
 
 [dependencies]
-tauri = { version = "1.4", features = ["shell-open"] }
+tauri = { version = "1.4", features = [ "window-set-closable", "shell-open"] }
 serde = { version = "1.0", features = ["derive"] }
 reqwest = "0.11.18"
 serde_json = "1.0"

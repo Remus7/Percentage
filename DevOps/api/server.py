@@ -53,5 +53,12 @@ def get_drinks():
             print(key)
     return jsonify(list_drinks)
 
+@app.route("/get_ingredients", methods=["GET"])
+def get_ingredients():
+    list_ingredients = []
+    for key in r.hgetall("INGREDIENTS"):
+        list_ingredients = list_ingredients + [key]
+    return jsonify(list_ingredients)
+
 if __name__ == "__main__":
     app.run(host="0.0.0.0", port=5000, debug=True)

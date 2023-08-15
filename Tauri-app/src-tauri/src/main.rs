@@ -102,6 +102,21 @@ async fn get_details(drink: String, request_type: u32) -> Result<String, Command
     }
 }
 
+#[tauri::command]
+async fn get_possible_ingredients() -> Result<Vec<String>, CommandError> {
+    let url = format!("http://172.20.50.2/get_ingredients");
+    let response = reqwest::get(url).await.map_err(|err| CommandError::Error(format!("{:?}", err)))?.text().await.map_err(|err| CommandError::Error(format!("{:?}", err)))?;
+    let details: HashMap<u32, String> = serde_json::from_str(&response).map_err(|err| CommandError::Error(format!("Bonus: {:?}", err)))?;
+
+    let mut ingredients = vec![];
+
+    for (_id, name) in details{
+        ingredients.push(name);
+    }
+
+    Ok(ingredients)
+}
+
 fn main() {
     tauri::Builder::default()
         .invoke_handler(tauri::generate_handler![
