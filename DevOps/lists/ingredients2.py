@@ -1,6 +1,6 @@
 import json
 
-with open('Cocktails2.json', 'r') as json_file:
+with open('../db/cocktails2.json', 'r') as json_file:
     data = json.load(json_file)
 
 ingredients_dic = {}
