@@ -17,9 +17,8 @@ use serde_json::from_str;
 
 #[derive(Debug, Serialize)]
 pub enum CommandError {
-    Error(String),
+    Error(String)
 }
-
 
 #[derive(Debug, Deserialize)]
 struct Cocktail {
@@ -44,13 +43,13 @@ async fn drink_from_ingredients(ingredient_vec: Vec<String>) -> Result< Vec<Stri
     for i in 0..ingredient_vec.len(){
         let url = format!("http://172.20.50.2/get_drinks/{}", ingredient_vec[i]); 
         let drinks: HashMap<String, Cocktail>= request_value(url).await?;
-        for (name, cocktail) in drinks.into_iter(){
+        for (name, _cocktail) in drinks.into_iter(){
             println!("{}",name);
-            let ingr = cocktail.ingredients;
-            for k in 0..ingr.len(){
-                println!("{:?}", ingr[k]);
-                freq.entry(ingr[k].clone()).and_modify(|value| *value+=1 ).or_insert(1);
-            }
+            // let ingr = cocktail.ingredients;
+            // for k in 0..ingr.len(){
+            //     println!("{:?}", ingr[k]);
+            // }
+            freq.entry(name.clone()).and_modify(|value| *value+=1 ).or_insert(1);
         }
     }
 
