@@ -2,7 +2,7 @@ import requests
 import json
 from time import sleep
 def get_image(search_term):
-    access_key = 'JSuDqS3gX7Xafj547bZYmPWOwEAIFrL4-Ho5zZmTvAs'
+    access_key = '_uR4KUdc76jVMmG5oTct3ghQEBsCKubvBEUZQGHoHFs'
     url = f'https://api.unsplash.com/search/photos/?query="{search_term} drink"&client_id={access_key}'
 
     response = requests.get(url)
