@@ -10,6 +10,7 @@ use serde_json::{Map, Value};
 use std::{thread, time};
 #[allow(unused_imports)]
 use tauri::Window;
+use serde_json::from_str;
 
 use serde::{Deserialize, Serialize};
 use std::collections::HashMap;
@@ -24,7 +25,7 @@ struct Cocktail {
     glass: String,
     ingredients: Vec<String>,
     preparation: String,
-    url: String,
+    image: String,
 }
 
 async fn request_value(url: String) -> Result<HashMap<String,Cocktail>, CommandError>{
@@ -40,11 +41,16 @@ async fn request_value(url: String) -> Result<HashMap<String,Cocktail>, CommandE
 async fn drink_from_ingredients(ingredient_vec: Vec<String>) -> Result< Vec<String>, CommandError >{
     let mut freq : HashMap<String, u64> = HashMap::new();
     println!("{:?}",ingredient_vec);
+    println!("muie1");
     for i in 0..ingredient_vec.len(){
+    println!("muie2");
         let url = format!("http://172.20.50.2/get_drinks/{}", ingredient_vec[i]); 
-        let drinks: HashMap<String, Cocktail>= request_value(url).await?;
+        let drinks: HashMap<String, Cocktail> = request_value(url).await?;
+        println!("muie");
         for (name, _cocktail) in drinks.into_iter(){
-            println!("{}",name);
+        println!("muie");
+
+    println!("{}",name);
             // let ingr = cocktail.ingredients;
             // for k in 0..ingr.len(){
             //     println!("{:?}", ingr[k]);
@@ -84,7 +90,7 @@ async fn get_url(drink: String) -> Result<String, CommandError> {
     let mut details = request_value(url).await?;
 
     if let Some(cocktail) = details.remove(&drink.to_lowercase()) {
-        Ok(cocktail.url)
+        Ok(cocktail.image)
     } else{
         Err(CommandError::Error("No image url found!".to_owned()))
     }

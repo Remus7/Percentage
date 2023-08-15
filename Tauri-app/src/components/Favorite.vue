@@ -55,10 +55,10 @@ async function getDetails(drink: string) {
         <option v-for="(detail, detailIndex) in drinkDetails" :key="detailIndex">{{ detail }}</option>
       </select>
     </button>
-    <button @click="showGlassType" id="asd">Glass type
+    <!-- <button @click="showGlassType" id="asd">Glass type
     </button>
     <button @click="showPreparationMethod" id="asd">Preparation</button>
-    <button @click="showImage" id="asd">Example image</button>
+    <button @click="showImage" id="asd">Example image</button> -->
   </div>
 </div>
     <button class="remove" @click="removeFavorite(index)">X</button>
@@ -86,7 +86,8 @@ async function getDetails(drink: string) {
     background-image: linear-gradient(to bottom, #0E4749, #002626);
     transform: scale(1.05);
   }
-.favorite-drink {
+.favorite-drink { 
+  margin-top: 10px;
   display: flex;
   align-items: center;
   justify-content: space-between;
