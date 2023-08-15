@@ -702,7 +702,8 @@
             "peychaud\u2019s bitters",
             "sugar"
         ],
-        "preparation": "Rinse a chilled old-fashioned glass with the absinthe, add crushed ice and set it aside. Stir the remaining ingredients over ice and set it aside. Discard the ice and any excess absinthe from the prepared glass, and strain the drink into the glass. Note: The original recipe changed after the American Civil War, rye whiskey substituted cognac as it became hard to obtain."
+        "preparation": "Rinse a chilled old-fashioned glass with the absinthe, add crushed ice and set it aside. Stir the remaining ingredients over ice and set it aside. Discard the ice and any excess absinthe from the prepared glass, and strain the drink into the glass. Note: The original recipe changed after the American Civil War, rye whiskey substituted cognac as it became hard to obtain.",
+        "image": "https://images.unsplash.com/photo-1547383698-faaaf2368d3b?w=500&h=500&fit=crop"
     },
     "americano": {
         "colors": [
@@ -715,7 +716,8 @@
             "vermouth",
             "soda water"
         ],
-        "preparation": "Build into old fashioned glass filled with ice cubes. Add a splash of soda water."
+        "preparation": "Build into old fashioned glass filled with ice cubes. Add a splash of soda water.",
+        "image": "https://images.unsplash.com/photo-1499638673689-79a0b5115d87?w=500&h=500&fit=crop"
     },
     "singapore sling": {
         "colors": [
@@ -732,7 +734,8 @@
             "syrup",
             "angostura bitters"
         ],
-        "preparation": "Shake with ice cubes. Strain into highball glass."
+        "preparation": "Shake with ice cubes. Strain into highball glass.",
+        "image": "https://images.unsplash.com/photo-1508964942454-1a56651d54ac?w=500&h=500&fit=crop"
     },
     "french connection": {
         "colors": [
@@ -743,7 +746,8 @@
             "cognac",
             "disaronno"
         ],
-        "preparation": "Build into old fashioned glass filled with ice cubes. Stir gently."
+        "preparation": "Build into old fashioned glass filled with ice cubes. Stir gently.",
+        "image": "https://images.unsplash.com/photo-1416453072034-c8dbfa2856b5?w=500&h=500&fit=crop"
     },
     "moscow mule": {
         "colors": [
@@ -756,7 +760,8 @@
             "lime juice",
             "lime"
         ],
-        "preparation": "Combine the vodka and ginger beer. Add lime juice."
+        "preparation": "Combine the vodka and ginger beer. Add lime juice.",
+        "image": "https://images.unsplash.com/photo-1530991808291-7e157454758c?w=500&h=500&fit=crop"
     },
     "john collins": {
         "colors": [
@@ -770,7 +775,8 @@
             "soda water",
             "angostura bitters"
         ],
-        "preparation": "Build into highball glass filled with ice. Stir gently. Add a dash of Angostura bitters. (Note: Use Old Tom Gin for Tom Collins)"
+        "preparation": "Build into highball glass filled with ice. Stir gently. Add a dash of Angostura bitters. (Note: Use Old Tom Gin for Tom Collins)",
+        "image": "https://images.unsplash.com/photo-1500217052183-bc01eee1a74e?w=500&h=500&fit=crop"
     },
     "kir": {
         "colors": [
@@ -781,7 +787,8 @@
             "dry white wine",
             "cr\u00e9me de cassis"
         ],
-        "preparation": "Pour Cr\u00e9me de Cassis into glass, top up with white wine. For Kir Royal: Use champagne instead of white wine."
+        "preparation": "Pour Cr\u00e9me de Cassis into glass, top up with white wine. For Kir Royal: Use champagne instead of white wine.",
+        "image": "https://images.unsplash.com/photo-1500217052183-bc01eee1a74e?w=500&h=500&fit=crop"
     },
     "mint julep": {
         "colors": [
@@ -794,7 +801,8 @@
             "mint",
             "sugar"
         ],
-        "preparation": "In a highball glass gently muddle the mint, sugar and water. Fill the glass with cracked ice, add Bourbon and stir well until the glass is frost."
+        "preparation": "In a highball glass gently muddle the mint, sugar and water. Fill the glass with cracked ice, add Bourbon and stir well until the glass is frost.",
+        "image": "https://images.unsplash.com/photo-1527661591475-527312dd65f5?w=500&h=500&fit=crop"
     },
     "tommy's margarita": {
         "colors": [
@@ -806,7 +814,8 @@
             "lime juice",
             "agave nectar"
         ],
-        "preparation": "Shake and strain into a chilled cocktail glass."
+        "preparation": "Shake and strain into a chilled cocktail glass.",
+        "image": "https://images.unsplash.com/photo-1496318447583-f524534e9ce1?w=500&h=500&fit=crop"
     },
     "paradise": {
         "colors": [
@@ -818,7 +827,8 @@
             "apricot brandy",
             "orange juice"
         ],
-        "preparation": "Shake with ice cubes. Strain into chilled cocktail glass."
+        "preparation": "Shake with ice cubes. Strain into chilled cocktail glass.",
+        "image": "https://images.unsplash.com/photo-1501426026826-31c667bdf23d?w=500&h=500&fit=crop"
     },
     "dirty martini": {
         "colors": [
@@ -830,7 +840,8 @@
             "vermouth",
             "olive juice"
         ],
-        "preparation": "Stir in mixing glass with ice cubes. Strain into chilled martini glass."
+        "preparation": "Stir in mixing glass with ice cubes. Strain into chilled martini glass.",
+        "image": "https://images.unsplash.com/photo-1541807243774-518bdde38627?w=500&h=500&fit=crop"
     },
     "champagne cocktail": {
         "colors": [
@@ -843,7 +854,8 @@
             "angostura bitters",
             "sugar"
         ],
-        "preparation": "Add dash of Angostura bitter onto sugar cube and drop it into champagne flute. Add cognac followed by pouring gently chilled champagne."
+        "preparation": "Add dash of Angostura bitter onto sugar cube and drop it into champagne flute. Add cognac followed by pouring gently chilled champagne.",
+        "image": "https://images.unsplash.com/photo-1470337458703-46ad1756a187?w=500&h=500&fit=crop"
     },
     "mary pickford": {
         "colors": [
@@ -856,7 +868,8 @@
             "pineapple juice",
             "syrup"
         ],
-        "preparation": "Shake and strain into a chilled large cocktail glass."
+        "preparation": "Shake and strain into a chilled large cocktail glass.",
+        "image": "https://images.unsplash.com/photo-1496318447583-f524534e9ce1?w=500&h=500&fit=crop"
     },
     "hemingway special": {
         "colors": [
@@ -869,7 +882,8 @@
             "cherry liqueur",
             "lime juice"
         ],
-        "preparation": "Shake with ice cubes. Strain into a double cocktail glass."
+        "preparation": "Shake with ice cubes. Strain into a double cocktail glass.",
+        "image": "https://images.unsplash.com/photo-1496318447583-f524534e9ce1?w=500&h=500&fit=crop"
     },
     "dark 'n' stormy": {
         "colors": [
@@ -882,7 +896,8 @@
             "dark rum",
             "ginger beer"
         ],
-        "preparation": "Build into highball glass filled with ice. Add rum first and top it with ginger beer."
+        "preparation": "Build into highball glass filled with ice. Add rum first and top it with ginger beer.",
+        "image": "https://images.unsplash.com/photo-1496318447583-f524534e9ce1?w=500&h=500&fit=crop"
     },
     "ramos fizz": {
         "colors": [
@@ -900,7 +915,8 @@
             "orange flower water",
             "vanilla extract"
         ],
-        "preparation": "Pour all ingredients (except soda) in a mixing glass, dry shake (no ice) for two minutes, add ice and hard shake for another minute. Strain into a highball glass without ice, top with soda."
+        "preparation": "Pour all ingredients (except soda) in a mixing glass, dry shake (no ice) for two minutes, add ice and hard shake for another minute. Strain into a highball glass without ice, top with soda.",
+        "image": "https://images.unsplash.com/photo-1603095291533-02c2e906c5ac?w=500&h=500&fit=crop"
     },
     "russian spring punch": {
         "colors": [
@@ -914,7 +930,8 @@
             "syrup",
             "sparkling wine"
         ],
-        "preparation": "Shake the ingredients and pour into highball glass. Top with Sparkling wine."
+        "preparation": "Shake the ingredients and pour into highball glass. Top with Sparkling wine.",
+        "image": "https://images.unsplash.com/photo-1493589976221-c2357c31ad77?w=500&h=500&fit=crop"
     },
     "godfather": {
         "colors": [
@@ -925,7 +942,8 @@
             "whiskey",
             "disaronno"
         ],
-        "preparation": "Build into old fashioned glass filled with ice cubes. Stir gently."
+        "preparation": "Build into old fashioned glass filled with ice cubes. Stir gently.",
+        "image": "https://images.unsplash.com/photo-1586122067054-c6af39b26fe0?w=500&h=500&fit=crop"
     },
     "cosmopolitan": {
         "colors": [
@@ -938,7 +956,8 @@
             "lime juice",
             "cranberry juice"
         ],
-        "preparation": "Shake with ice cubes. Strain into a large cocktail glass."
+        "preparation": "Shake with ice cubes. Strain into a large cocktail glass.",
+        "image": "https://images.unsplash.com/photo-1512103865222-dcf9531c9961?w=500&h=500&fit=crop"
     },
     "dry martini": {
         "colors": [
@@ -949,7 +968,8 @@
             "gin",
             "vermouth"
         ],
-        "preparation": "Stir in mixing glass with ice cubes. Strain into chilled martini glass. Squeeze oil from lemon peel onto the drink, or garnish with olive."
+        "preparation": "Stir in mixing glass with ice cubes. Strain into chilled martini glass. Squeeze oil from lemon peel onto the drink, or garnish with olive.",
+        "image": "https://images.unsplash.com/photo-1600787392022-f9622c979716?w=500&h=500&fit=crop"
     },
     "between the sheets": {
         "colors": [
@@ -962,7 +982,8 @@
             "triple sec",
             "lemon juice"
         ],
-        "preparation": "Shake with ice cubes. Strain into chilled cocktail glass."
+        "preparation": "Shake with ice cubes. Strain into chilled cocktail glass.",
+        "image": "https://images.unsplash.com/photo-1500217052183-bc01eee1a74e?w=500&h=500&fit=crop"
     },
     "casino": {
         "colors": [
@@ -976,7 +997,8 @@
             "orange bitters",
             "lemon juice"
         ],
-        "preparation": "Shake with ice cubes. Strain into chilled cocktail glass."
+        "preparation": "Shake with ice cubes. Strain into chilled cocktail glass.",
+        "image": "https://images.unsplash.com/photo-1515806632622-e6b9358ef804?w=500&h=500&fit=crop"
     },
     "caipirinha": {
         "colors": [
@@ -990,7 +1012,8 @@
             "sugar",
             "lime"
         ],
-        "preparation": "Place lime and sugar in old fashion glass and muddle. Fill glass with ice and Cachaca (note:Caipiroska- use Vodka instead of Cachaca)."
+        "preparation": "Place lime and sugar in old fashion glass and muddle. Fill glass with ice and Cachaca (note:Caipiroska- use Vodka instead of Cachaca).",
+        "image": "https://images.unsplash.com/photo-1563894417364-b8cd2940baa7?w=500&h=500&fit=crop"
     },
     "vampiro": {
         "colors": [
@@ -1005,7 +1028,8 @@
             "worcestershire sauce",
             "honey"
         ],
-        "preparation": "Shake with ice cubes. Strain into a highball glass, filled with ice."
+        "preparation": "Shake with ice cubes. Strain into a highball glass, filled with ice.",
+        "image": "https://images.unsplash.com/photo-1496318447583-f524534e9ce1?w=500&h=500&fit=crop"
     },
     "kamikaze": {
         "colors": [
@@ -1017,7 +1041,8 @@
             "triple sec",
             "lime juice"
         ],
-        "preparation": "Shake and strain into a chilled cocktail glass."
+        "preparation": "Shake and strain into a chilled cocktail glass.",
+        "image": "https://images.unsplash.com/photo-1500217052183-bc01eee1a74e?w=500&h=500&fit=crop"
     },
     "white lady": {
         "colors": [
@@ -1029,7 +1054,8 @@
             "triple sec",
             "lemon juice"
         ],
-        "preparation": "Shake with ice cubes. Strain into large cocktail glass."
+        "preparation": "Shake with ice cubes. Strain into large cocktail glass.",
+        "image": "https://images.unsplash.com/photo-1470468969717-61d5d54fd036?w=500&h=500&fit=crop"
     },
     "harvey wallbanger": {
         "colors": [
@@ -1041,7 +1067,8 @@
             "galliano",
             "orange juice"
         ],
-        "preparation": "Build vodka and orange juice into a highball glass filled with ice. Stir gently and float Galliano on top."
+        "preparation": "Build vodka and orange juice into a highball glass filled with ice. Stir gently and float Galliano on top.",
+        "image": "https://images.unsplash.com/photo-1496318447583-f524534e9ce1?w=500&h=500&fit=crop"
     },
     "gimlet": {
         "colors": [
@@ -1052,7 +1079,8 @@
             "gin",
             "lime juice"
         ],
-        "preparation": "Shake with ice."
+        "preparation": "Shake with ice.",
+        "image": "https://images.unsplash.com/photo-1601491641387-035a4ae3c7cb?w=500&h=500&fit=crop"
     },
     "white russian": {
         "colors": [
@@ -1064,7 +1092,8 @@
             "coffee liqueur",
             "cream"
         ],
-        "preparation": "Shake and pour over ice."
+        "preparation": "Shake and pour over ice.",
+        "image": "https://images.unsplash.com/photo-1500043471691-62605d884af8?w=500&h=500&fit=crop"
     },
     "bluebird": {
         "colors": [
@@ -1076,6 +1105,7 @@
             "blue cura\u00e7ao",
             "angostura bitters"
         ],
-        "preparation": "Stir with crushed ice and strain. Alternatively you could use half Blue Cura\u00e7ao and half Triple Sec."
+        "preparation": "Stir with crushed ice and strain. Alternatively you could use half Blue Cura\u00e7ao and half Triple Sec.",
+        "image": "https://images.unsplash.com/photo-1633944284204-0a3b678890ca?w=500&h=500&fit=crop"
     }
 }
