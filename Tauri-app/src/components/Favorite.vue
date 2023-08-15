@@ -9,7 +9,6 @@ function removeFavorite(index: number): void{
 }
 
 const drinkDetails: Ref<string[]> = ref([]);
-const drinkDetails: Ref<string[]> = ref([]);
 
 async function getDetails(drink: string) {
   console.log(await invoke ("get_details", {drink: drink}));
