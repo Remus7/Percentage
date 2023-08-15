@@ -28,11 +28,11 @@ struct Cocktail {
     preparation: String,
 }
 
-async fn request_value(_url: String) -> Result<HashMap<String,Cocktail>, CommandError>{
-    // let response = reqwest::get(url).await.map_err(|err| CommandError::Error(format!("{:?}", err)))?.text().await.map_err(|err| CommandError::Error(format!("{:?}", err)))?;
-    let response = std::fs::read_to_string("../src/example.json").map_err(|err| CommandError::Error(format!("{:?}", err)))?;
+async fn request_value(url: String) -> Result<HashMap<String,Cocktail>, CommandError>{
+    let response = reqwest::get(url).await.map_err(|err| CommandError::Error(format!("{:?}", err)))?.text().await.map_err(|err| CommandError::Error(format!("{:?}", err)))?;
+    // let response = std::fs::read_to_string("../src/example.json").map_err(|err| CommandError::Error(format!("{:?}", err)))?;
 
-    let cocktails: std::collections::HashMap<String, Cocktail> = serde_json::from_str(&response).unwrap();
+    let cocktails: std::collections::HashMap<String, Cocktail> = serde_json::from_str(&response).map_err(|err| CommandError::Error(format!("{:?}", err)))?;
 
     Ok(cocktails)
 }
@@ -42,7 +42,7 @@ async fn request_value(_url: String) -> Result<HashMap<String,Cocktail>, Command
 async fn drink_from_ingredients(ingredient_vec: Vec<String>) -> Result< Vec<String>, CommandError >{
     println!("{:?}",ingredient_vec);
     for i in 0..ingredient_vec.len(){
-        let url = format!("REQUESTUL"); 
+        let url = format!("https://172.20.50.2/get_drinks/{}", ingredient_vec[i]); 
         let drinks: std::collections::HashMap<String, Cocktail>= request_value(url).await?;
         for (name, cocktail) in drinks.into_iter(){
             println!("{}",name);
