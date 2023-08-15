@@ -69,8 +69,9 @@ async fn drink_from_ingredients(ingredient_vec: Vec<String>) -> Result< Vec<Stri
 
 #[tauri::command]
 async fn get_details(drink: String) -> Result<Vec<String>, &'static str> {
-    let response: String = reqwest::get(format!("http://172.20.50.2/get/{}", drink))
-        .await.unwrap()
+    println!("{}",drink);
+    let response: String = reqwest::get(format!("http://172.20.50.2/get_ingredients/{}", drink))
+        .await.expect("errorrrrr")     
         .text()
         .await.unwrap();
     let mut details: std::collections::HashMap<String, Cocktail> = serde_json::from_str(&response)

@@ -75,6 +75,7 @@ function addFavorite(drink: string){
   opacity:0.8;
 }
 .remove {
+  text-align: center  ;
   background-color: #f44336;
   color: white;
   border: none;
