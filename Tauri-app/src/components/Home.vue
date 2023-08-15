@@ -2,13 +2,14 @@
 import { ref } from "vue";
 import { invoke } from "@tauri-apps/api/tauri";
 
+import LogoSVG from '../../../images/full_icon.svg'
 </script>
 
 <template>
   <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preconnect" href="https://fonts.gstatic.com" >
+  <!-- <div class="animation-container">
   <link href="https://fonts.googleapis.com/css2?family=Abyssinica+SIL&display=swap" rel="stylesheet">
-  <div class="animation-container">
     <svg class="animation-svg" xmlns="http://www.w3.org/2000/svg" 
         xmlns:xlink="http://www.w3.org/1999/xlink"
         xmlns:krita="http://krita.org/namespaces/svg/krita"
@@ -19,7 +20,10 @@ import { invoke } from "@tauri-apps/api/tauri";
     <defs/>
     <text id="shape0" transform="matrix(1 0 0 1 10 75)" fill="#ffffff" font-family="Abyssinica SIL" font-size="100" font-size-adjust="0.349432" font-stretch="normal"><tspan x="0">%</tspan></text>
     </svg>
-  </div>
+  </div> -->
+
+  <LogoSVG />
+
 </template>
 
 
