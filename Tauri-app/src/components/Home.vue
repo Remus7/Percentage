@@ -14,13 +14,18 @@ import { invoke } from "@tauri-apps/api/tauri";
         height="85pt"
         viewBox="0 0 85 85">
     <defs/>
-    <text id="shape0" transform="matrix(1 0 0 1 10 75)" fill="#ffffff" font-family="Abyssinica SIL" font-size="100" font-size-adjust="0.349432" font-stretch="normal"><tspan x="0">%</tspan></text>
+    <
+    <text id="shape0" transform="matrix(1 0 0 1 10 75)" fill="#ffffff" class="font_a" font-size="100" font-size-adjust="0.349432" font-stretch="normal"><tspan x="0">%</tspan></text>
     </svg>
   </div>
 </template>
 
 
 <style>
+  .font_a {
+    font-family: "Abyssinica SIL";
+    src: url(../assets/font.ttf);
+  }
   body {
     display: flex;
     flex-direction: column;
