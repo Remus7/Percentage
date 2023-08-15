@@ -9,9 +9,9 @@ function removeFavorite(index: number): void{
 }
 
 const drinkDetails: Ref<string[]> = ref([]);
-const drinkDetails: Ref<string[]> = ref([]);
 
 async function getDetails(drink: string) {
+  activ.value= true;
   console.log(await invoke ("get_details", {drink: drink}));
   try{
   drinkDetails.value = await invoke ("get_details", {drink: drink});
@@ -19,17 +19,18 @@ async function getDetails(drink: string) {
     console.log("No ingredients found!");
   }
 }
-async function showIngredientList(){
-  try{
-  activ.value= true;
-  console.log(activ.value);
-  console.log(ingredientList.value);
-  drinkDetails.value = await invoke ("get_details", {drink: drink});
-  console.log(ingredientList.value);
-  }catch{
-    console.log("No details found");
-  }
-}
+
+// async function showIngredientList(){
+//   try{
+//   console.log(activ.value);
+//   console.log(ingredientList.value);
+//   drinkDetails.value = await invoke ("get_details", {drink: drink});
+//   console.log(ingredientList.value);
+//   }catch{
+//     console.log("No details found");
+//   }
+// }
+
 </script>
 
 <template>
@@ -55,7 +56,7 @@ async function showIngredientList(){
       </select>
     </button>
     <button @click="showGlassType" id="asd">Glass type
-    <p></p></button>
+    </button>
     <button @click="showPreparationMethod" id="asd">Preparation</button>
     <button @click="showImage" id="asd">Example image</button>
   </div>
