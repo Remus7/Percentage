@@ -14,11 +14,11 @@ const debugMsg = ref("");
 
 async function SearchDrink(){
   try{
-        AvailableDrinks.value = await invoke ("drink_from_ingredients", {ingredientVec: Ingredients.value})
-    } catch(error){
-        areDrinks.value = false;
-        debugMsg.value = error as string;
-    }
+      AvailableDrinks.value = await invoke ("drink_from_ingredients", {ingredientVec: Ingredients.value})
+  } catch(error){
+      areDrinks.value = false;
+      debugMsg.value = error as string;
+  }
 }
 function removeIngredient(index: Number){
     Ingredients.value.splice(index, 1);
@@ -26,6 +26,7 @@ function removeIngredient(index: Number){
 
 async function addIngredient() {
   Ingredients.value.push(Ingredient.value);
+  Ingredient.value = "";
 }
 
 function addFavorite(drink: string){ 

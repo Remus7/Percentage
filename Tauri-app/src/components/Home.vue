@@ -5,6 +5,9 @@ import { invoke } from "@tauri-apps/api/tauri";
 </script>
 
 <template>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Abyssinica+SIL&display=swap" rel="stylesheet">
   <div class="animation-container">
     <svg class="animation-svg" xmlns="http://www.w3.org/2000/svg" 
         xmlns:xlink="http://www.w3.org/1999/xlink"
@@ -21,6 +24,10 @@ import { invoke } from "@tauri-apps/api/tauri";
 
 
 <style>
+  html {
+    font-family: 'Abyssinica SIL', serif;
+  }
+
   body {
     display: flex;
     flex-direction: column;
