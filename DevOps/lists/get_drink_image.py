@@ -16,7 +16,7 @@ def get_image(search_term):
         return first_image_url
     else:
         print("No images found.")
-with open("Cocktails3.json", "r") as read_from_here:
+with open("../db/cocktails3.json", "r") as read_from_here:
     dictionary = json.load(read_from_here)
 i=0
 for cocktail in dictionary:
@@ -24,7 +24,7 @@ for cocktail in dictionary:
     
     if i > 40: 
         dictionary[cocktail]["image"] = get_image(cocktail)
-        with open("Cocktails3.json", "w") as write_in_here:
+        with open("../db/cocktails3.json", "w") as write_in_here:
             write_in_here.write(json.dumps(dictionary))
         
 

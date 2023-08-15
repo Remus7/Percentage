@@ -22,5 +22,5 @@ for drink in data:
         dic_drinks[drink["name"].lower()] = {"colors": drink["colors"], "glass":drink["glass"], "ingredients": dr, "preparation": drink["preparation"]}
     except:
         dic_drinks[drink["name"].lower()] = {"colors": drink["colors"], "glass":drink["glass"], "ingredients": dr, "preparation": "No preparation!"}
-save_file = open("Cocktails2.json", "w")  
+save_file = open("../db/cocktails2.json", "w")  
 json.dump(dic_drinks, save_file, indent = 2)
