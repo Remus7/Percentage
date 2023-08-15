@@ -53,7 +53,8 @@ async function showIngredientList(){
         <option v-for="(detail, detailIndex) in drinkDetails" :key="detailIndex">{{ detail }}</option>
       </select>
     </button>
-    <button @click="showGlassType" id="asd">Glass type</button>
+    <button @click="showGlassType" id="asd">Glass type
+    <p></p></button>
     <button @click="showPreparationMethod" id="asd">Preparation</button>
     <button @click="showImage" id="asd">Example image</button>
   </div>
