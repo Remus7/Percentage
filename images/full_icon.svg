@@ -1,18 +1,13 @@
-<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="1920" height="1080" viewBox="0 0 1920 1080">
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="960" height="540" viewBox="0 0 1920 1080">
   <defs>
     <style>
-      @font-face {
-        font-family: Queensides;
-        src: url(Tauri-app/src/assets/QueensidesLight.ttf);
-      }
-
       .cls-1 {
         fill-rule: evenodd;
       }
 
       .cls-2 {
         font-size: 250px;
-        font-family: Queensides;
+        font-family: "QueensidesLight";
         font-weight: 300;
       }
     </style>

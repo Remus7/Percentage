@@ -25,9 +25,10 @@ import LogoSVG from '../../../images/full_icon.svg'
 
 <style>
   @font-face {
-      font-family: QueensidesLight;
-      src: url(QueensidesLight.ttf);
+      font-family: "QueensidesLight";
+      src: url("/QueensidesLight.ttf");
   }
+  
   body {
     display: flex;
     flex-direction: column;
