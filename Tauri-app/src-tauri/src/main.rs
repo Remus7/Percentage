@@ -13,39 +13,60 @@ use tauri::Window;
 
 use serde::{Deserialize, Serialize};
 use std::collections::HashMap;
+use serde_json::from_str;
 
 #[derive(Debug, Serialize)]
 pub enum CommandError {
     Error(String),
 }
 
-#[derive(Serialize, Deserialize)]
-pub struct Drink {
+
+#[derive(Debug, Deserialize)]
+struct Cocktail {
     glass: String,
     ingredients: Vec<String>,
     preparation: String,
 }
 
-async fn request_value(_url: String) -> Result<HashMap<String, Drink>, CommandError> {
+// async fn request_value(_url: String) -> Result<HashMap<String, Drink>, CommandError> {
+//     // let response = reqwest::get(url).await.map_err(|err| CommandError::Error(format!("{:?}", err)))?.text().await.map_err(|err| CommandError::Error(format!("{:?}", err)))?;
+//     let response = std::fs::read_to_string("../src/example.json")
+//         .map_err(|err| CommandError::Error(format!("{:?}", err)))?;
+//     let drinks: HashMap<String, Drink> = serde_json::from_str(&response).unwrap();
+//     // Ok( serde_json::from_str(&response).map_err(|_err| CommandError::Error("Unable to unwrap to Value".to_owned()))? )
+//     Ok(drinks)
+
+async fn request_value(_url: String) -> Result<HashMap<String,Cocktail>, CommandError>{
     // let response = reqwest::get(url).await.map_err(|err| CommandError::Error(format!("{:?}", err)))?.text().await.map_err(|err| CommandError::Error(format!("{:?}", err)))?;
-    let response = std::fs::read_to_string("../src/example.json")
-        .map_err(|err| CommandError::Error(format!("{:?}", err)))?;
-    let drinks: HashMap<String, Drink> = serde_json::from_str(&response).unwrap();
-    // Ok( serde_json::from_str(&response).map_err(|_err| CommandError::Error("Unable to unwrap to Value".to_owned()))? )
-    Ok(drinks)
+    let response = std::fs::read_to_string("../src/example.json").map_err(|err| CommandError::Error(format!("{:?}", err)))?;
+
+    let cocktails: std::collections::HashMap<String, Cocktail> = serde_json::from_str(&response).unwrap();
+
+    Ok(cocktails)
 }
 
 // Learn more about Tauri commands at https://tauri.app/v1/guides/features/command
-#[tauri::command]
-async fn drink_from_ingredients(ingredient_vec: Vec<String>) -> Result<Vec<String>, CommandError> {
-    println!("{:?}", ingredient_vec);
-    for i in 0..ingredient_vec.len() {
-        let url = format!("REQUESTUL");
-        let drinks = request_value(url).await?;
-        for (name, drink) in drinks {
-            let ingredients = drink.ingredients;
-            for ingredient in ingredients {
-                println!("{:?}", ingredient);
+// #[tauri::command]
+// async fn drink_from_ingredients(ingredient_vec: Vec<String>) -> Result<Vec<String>, CommandError> {
+//     println!("{:?}", ingredient_vec);
+//     for i in 0..ingredient_vec.len() {
+//         let url = format!("REQUESTUL");
+//         let drinks = request_value(url).await?;
+//         for (name, drink) in drinks {
+//             let ingredients = drink.ingredients;
+//             for ingredient in ingredients {
+//                 println!("{:?}", ingredient);
+
+async fn drink_from_ingredients(ingredient_vec: Vec<String>) -> Result< Vec<String>, CommandError >{
+    println!("{:?}",ingredient_vec);
+    for i in 0..ingredient_vec.len(){
+        let url = format!("REQUESTUL"); 
+        let drinks: std::collections::HashMap<String, Cocktail>= request_value(url).await?;
+        for (name, cocktail) in drinks.into_iter(){
+            println!("{}",name);
+            let ingr = cocktail.ingredients;
+            for k in 0..ingr.len(){
+                println!("{:?}", ingr[k]);
             }
         }
     }

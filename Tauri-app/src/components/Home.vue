@@ -2,13 +2,6 @@
 import { ref } from "vue";
 import { invoke } from "@tauri-apps/api/tauri";
 
-const greetMsg = ref("");
-const name = ref("");
-
-async function greet() {
-  // Learn more about Tauri commands at https://tauri.app/v1/guides/features/command
-  greetMsg.value = await invoke("greet", { name: name.value });
-}
 </script>
 
 <template>
@@ -24,7 +17,6 @@ async function greet() {
     <text id="shape0" transform="matrix(1 0 0 1 10 75)" fill="#ffffff" font-family="Abyssinica SIL" font-size="100" font-size-adjust="0.349432" font-stretch="normal"><tspan x="0">%</tspan></text>
     </svg>
   </div>
-  <p>{{ greetMsg }}</p>
 </template>
 
 

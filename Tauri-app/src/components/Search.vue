@@ -1,13 +1,13 @@
 <script setup lang="ts">
 import { ref, Ref } from "vue";
 import { invoke } from "@tauri-apps/api/tauri";
+import { favoriteDrinks } from "../App.vue";
 
 const Ingredients: Ref<string[]> = ref([]);
 const Ingredient = ref("");
 
 const areDrinks = ref(true); //catches if there are drinks possible to be served
 const AvailableDrinks: Ref<string[]> = ref([]);
-const favoriteDrinks: Ref<string[]> = ref([]);
 const debugMsg = ref("");
 
 AvailableDrinks.value = ["Vodka", "Margarita", "Tequila"];
@@ -27,10 +27,12 @@ async function addIngredient() {
   Ingredients.value.push(Ingredient.value);
 }
 
-function addFavorite(drink: string){
-    favoriteDrinks.value.push(drink);
+function addFavorite(drink: string){ 
+    favoriteDrinks.value.push(drink);                        
+    console.log(favoriteDrinks.value);
 }
 </script>
+
 <template>
   <p>{{ debugMsg }}</p>
   <input

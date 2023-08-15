@@ -1,9 +1,14 @@
 <script setup lang="ts">
 // This starter template is using Vue 3 <script setup> SFCs
 // Check out https://vuejs.org/api/sfc-script-setup.html#script-setup
+import { ref, Ref } from "vue";
 import Home from "./components/Home.vue";
 import Search from "./components/Search.vue";
 import Favorite from "./components/Favorite.vue";
+</script>
+
+<script lang="ts">
+export const favoriteDrinks: Ref<string[]> = ref([]);
 </script>
 
 <template>
@@ -19,11 +24,6 @@ import Favorite from "./components/Favorite.vue";
 </template>
 
 <style scoped>
-
-@font-face {
-  font-family: 'Abyssinica SIL';
-  src: url('https://www.fontsaddict.com/fontface/abyssinica-sil.ttf');
-}
 
 .navbar{
   height: 40px;
