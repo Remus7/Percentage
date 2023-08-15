@@ -24,7 +24,7 @@ struct Cocktail {
     glass: String,
     ingredients: Vec<String>,
     preparation: String,
-    url: String,
+    image: String,
 }
 
 async fn request_value(url: String) -> Result<HashMap<String,Cocktail>, CommandError>{
@@ -84,7 +84,7 @@ async fn get_url(drink: String) -> Result<String, CommandError> {
     let mut details = request_value(url).await?;
 
     if let Some(cocktail) = details.remove(&drink.to_lowercase()) {
-        Ok(cocktail.url)
+        Ok(cocktail.image)
     } else{
         Err(CommandError::Error("No image url found!".to_owned()))
     }
