@@ -1,11 +1,11 @@
 <script setup lang="ts">
-import { ref } from "vue";
-import { invoke } from "@tauri-apps/api/tauri";
 
+import LogoSVG from '/images/full_icon.svg'
 </script>
 
 <template>
-  <div class="animation-container">
+  
+  <!-- <div class="animation-container">
     <svg class="animation-svg" xmlns="http://www.w3.org/2000/svg" 
         xmlns:xlink="http://www.w3.org/1999/xlink"
         xmlns:krita="http://krita.org/namespaces/svg/krita"
@@ -16,11 +16,19 @@ import { invoke } from "@tauri-apps/api/tauri";
     <defs/>
     <text id="shape0" transform="matrix(1 0 0 1 10 75)" fill="#ffffff" font-family="Abyssinica SIL" font-size="100" font-size-adjust="0.349432" font-stretch="normal"><tspan x="0">%</tspan></text>
     </svg>
-  </div>
+  </div> -->
+
+  <LogoSVG />
+
 </template>
 
 
 <style>
+  @font-face {
+      font-family: "QueensidesLight";
+      src: url("/QueensidesLight.ttf");
+  }
+  
   body {
     display: flex;
     flex-direction: column;

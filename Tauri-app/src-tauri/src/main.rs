@@ -54,34 +54,28 @@ async fn drink_from_ingredients(ingredient_vec: Vec<String>) -> Result< Vec<Stri
     }
 
     let mut sorted_pairs: Vec<(String, u64)> = freq.into_iter().collect();
-    sorted_pairs.sort_by(|a, b| a.1.cmp(&b.1));
+    sorted_pairs.sort_by(|a, b| b.1.cmp(&a.1));
 
     let sorted_key:Vec<String> = sorted_pairs.into_iter().map(|(k, _)| k).collect();
-
-    //let sorted_keys: Vec<&S;
-    // // Print the sorted keys
-    // for key in sorted_keys {
-    //     response.append(key);
-    // }
 
     return Ok(sorted_key);
 }
 
 #[tauri::command]
-async fn get_details(drink: String) -> Result<Vec<String>, &'static str> {
-    println!("{}",drink);
+async fn get_details(drink: String) -> Result<Vec<String>, CommandError> {
     let response: String = reqwest::get(format!("http://172.20.50.2/get_ingredients/{}", drink))
-        .await.expect("errorrrrr")     
+        .await.map_err(|err| CommandError::Error(format!("{:?}", err)))?
         .text()
-        .await.unwrap();
+        .await.map_err(|err| CommandError::Error(format!("{:?}", err)))?;
+
     let mut details: std::collections::HashMap<String, Cocktail> = serde_json::from_str(&response)
     .map_err(|err| CommandError::Error(format!("{:?}", err))).unwrap();
+
     if let Some(cocktail) = details.remove(&drink.to_lowercase()) {
         Ok(cocktail.ingredients)
-    }else {
-        Err("No ingredients found!")
+    } else{
+        Err(CommandError::Error("No ingredients found!".to_owned()))
     }
-
 }
 
 fn main() {

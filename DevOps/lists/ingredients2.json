@@ -1,0 +1,427 @@
+{
+    "gin": [
+        "vesper",
+        "negroni",
+        "tuxedo",
+        "long island iced tea",
+        "clover club",
+        "angel face",
+        "gin fizz",
+        "french 75",
+        "aviation",
+        "bramble",
+        "monkey gland",
+        "derby",
+        "singapore sling",
+        "john collins",
+        "paradise",
+        "ramos fizz",
+        "dry martini",
+        "casino",
+        "white lady",
+        "gimlet",
+        "bluebird"
+    ],
+    "vodka": [
+        "vesper",
+        "sea breeze",
+        "long island iced tea",
+        "screwdriver",
+        "espresso martini",
+        "godmother",
+        "french martini",
+        "black russian",
+        "bloody mary",
+        "sex on the beach",
+        "moscow mule",
+        "dirty martini",
+        "russian spring punch",
+        "kamikaze",
+        "harvey wallbanger",
+        "white russian"
+    ],
+    "lillet blonde": [
+        "vesper"
+    ],
+    "white rum": [
+        "bacardi",
+        "mojito",
+        "long island iced tea",
+        "cuba libre",
+        "yellow bird",
+        "pina colada",
+        "daiquiri",
+        "mai tai",
+        "mary pickford",
+        "hemingway special",
+        "between the sheets"
+    ],
+    "lime juice": [
+        "bacardi",
+        "mojito",
+        "cuba libre",
+        "margarita",
+        "yellow bird",
+        "daiquiri",
+        "mai tai",
+        "barracuda",
+        "singapore sling",
+        "moscow mule",
+        "tommy's margarita",
+        "hemingway special",
+        "ramos fizz",
+        "cosmopolitan",
+        "vampiro",
+        "kamikaze",
+        "gimlet"
+    ],
+    "syrup": [
+        "bacardi",
+        "rose",
+        "planter's punch",
+        "planter's punch",
+        "pisco sour",
+        "long island iced tea",
+        "whiskey sour",
+        "gin fizz",
+        "espresso martini",
+        "french 75",
+        "tequila sunrise",
+        "daiquiri",
+        "bramble",
+        "mai tai",
+        "monkey gland",
+        "singapore sling",
+        "john collins",
+        "mary pickford",
+        "ramos fizz",
+        "russian spring punch"
+    ],
+    "campari": [
+        "negroni",
+        "americano"
+    ],
+    "vermouth": [
+        "negroni",
+        "rose",
+        "tuxedo",
+        "manhattan",
+        "americano",
+        "dirty martini",
+        "dry martini"
+    ],
+    "kirsch": [
+        "rose"
+    ],
+    "whiskey": [
+        "old fashioned",
+        "whiskey sour",
+        "manhattan",
+        "rusty nail",
+        "irish coffee",
+        "mint julep",
+        "godfather"
+    ],
+    "angostura bitters": [
+        "old fashioned",
+        "planter's punch",
+        "manhattan",
+        "singapore sling",
+        "john collins",
+        "champagne cocktail",
+        "bluebird"
+    ],
+    "sugar": [
+        "old fashioned",
+        "mojito",
+        "irish coffee",
+        "sazerac",
+        "mint julep",
+        "champagne cocktail",
+        "caipirinha"
+    ],
+    "absinthe": [
+        "tuxedo",
+        "monkey gland",
+        "sazerac"
+    ],
+    "cherry liqueur": [
+        "tuxedo",
+        "aviation",
+        "singapore sling",
+        "mary pickford",
+        "hemingway special",
+        "casino"
+    ],
+    "orange bitters": [
+        "tuxedo",
+        "casino"
+    ],
+    "soda water": [
+        "mojito",
+        "gin fizz",
+        "spritz veneziano",
+        "americano",
+        "john collins",
+        "ramos fizz"
+    ],
+    "mint": [
+        "mojito",
+        "derby",
+        "mint julep"
+    ],
+    "cognac": [
+        "horse's neck",
+        "porto flip",
+        "stinger",
+        "brandy alexander",
+        "sidecar",
+        "sazerac",
+        "french connection",
+        "champagne cocktail",
+        "between the sheets"
+    ],
+    "ginger ale": [
+        "horse's neck"
+    ],
+    "dark rum": [
+        "planter's punch",
+        "mai tai",
+        "barracuda",
+        "dark 'n' stormy"
+    ],
+    "orange juice": [
+        "planter's punch",
+        "mimosa",
+        "screwdriver",
+        "tequila sunrise",
+        "golden dream",
+        "sex on the beach",
+        "monkey gland",
+        "paradise",
+        "vampiro",
+        "harvey wallbanger"
+    ],
+    "pineapple juice": [
+        "planter's punch",
+        "pina colada",
+        "french martini",
+        "barracuda",
+        "singapore sling",
+        "mary pickford"
+    ],
+    "lemon juice": [
+        "planter's punch",
+        "pisco sour",
+        "long island iced tea",
+        "clover club",
+        "whiskey sour",
+        "gin fizz",
+        "french 75",
+        "aviation",
+        "bramble",
+        "lemon drop",
+        "bloody mary",
+        "sidecar",
+        "john collins",
+        "ramos fizz",
+        "russian spring punch",
+        "between the sheets",
+        "casino",
+        "white lady"
+    ],
+    "cranberry juice": [
+        "sea breeze",
+        "sex on the beach",
+        "cosmopolitan"
+    ],
+    "grapefruit juice": [
+        "sea breeze",
+        "hemingway special"
+    ],
+    "pisco": [
+        "pisco sour"
+    ],
+    "egg white": [
+        "pisco sour",
+        "clover club",
+        "whiskey sour",
+        "ramos fizz"
+    ],
+    "tequila": [
+        "long island iced tea",
+        "margarita",
+        "tequila sunrise",
+        "tommy's margarita",
+        "vampiro"
+    ],
+    "triple sec": [
+        "long island iced tea",
+        "margarita",
+        "yellow bird",
+        "b-52",
+        "golden dream",
+        "lemon drop",
+        "mai tai",
+        "sidecar",
+        "singapore sling",
+        "cosmopolitan",
+        "between the sheets",
+        "kamikaze",
+        "white lady"
+    ],
+    "cola": [
+        "long island iced tea",
+        "cuba libre"
+    ],
+    "raspberry syrup": [
+        "clover club"
+    ],
+    "apricot brandy": [
+        "angel face",
+        "paradise"
+    ],
+    "calvados": [
+        "angel face"
+    ],
+    "champagne": [
+        "mimosa",
+        "french 75",
+        "champagne cocktail"
+    ],
+    "red port": [
+        "porto flip"
+    ],
+    "egg yolk": [
+        "porto flip"
+    ],
+    "coffee liqueur": [
+        "espresso martini",
+        "b-52",
+        "black russian",
+        "white russian"
+    ],
+    "coffee": [
+        "espresso martini",
+        "irish coffee"
+    ],
+    "galliano": [
+        "yellow bird",
+        "golden dream",
+        "barracuda",
+        "harvey wallbanger"
+    ],
+    "coconut milk": [
+        "pina colada"
+    ],
+    "cr\u00e8me de violette": [
+        "aviation"
+    ],
+    "prosecco": [
+        "bellini",
+        "spritz veneziano"
+    ],
+    "peach puree": [
+        "bellini"
+    ],
+    "cr\u00e9me de cacao": [
+        "grasshopper",
+        "brandy alexander"
+    ],
+    "cr\u00e9me de menthe": [
+        "grasshopper",
+        "stinger"
+    ],
+    "cream": [
+        "grasshopper",
+        "golden dream",
+        "brandy alexander",
+        "irish coffee",
+        "ramos fizz",
+        "white russian"
+    ],
+    "drambuie": [
+        "rusty nail"
+    ],
+    "cream liqueur": [
+        "b-52"
+    ],
+    "disaronno": [
+        "godmother",
+        "french connection",
+        "godfather"
+    ],
+    "aperol": [
+        "spritz veneziano"
+    ],
+    "blackberry liqueur": [
+        "bramble"
+    ],
+    "citron vodka": [
+        "lemon drop",
+        "cosmopolitan"
+    ],
+    "raspberry liqueur": [
+        "french martini"
+    ],
+    "tomato juice": [
+        "bloody mary",
+        "vampiro"
+    ],
+    "worcestershire sauce": [
+        "bloody mary",
+        "vampiro"
+    ],
+    "sparkling wine": [
+        "barracuda",
+        "russian spring punch"
+    ],
+    "peach schnapps": [
+        "sex on the beach"
+    ],
+    "peach bitters": [
+        "derby"
+    ],
+    "peychaud\u2019s bitters": [
+        "sazerac"
+    ],
+    "dom b\u00e9n\u00e9dictine": [
+        "singapore sling"
+    ],
+    "ginger beer": [
+        "moscow mule",
+        "dark 'n' stormy"
+    ],
+    "lime": [
+        "moscow mule",
+        "caipirinha"
+    ],
+    "dry white wine": [
+        "kir"
+    ],
+    "cr\u00e9me de cassis": [
+        "kir",
+        "russian spring punch"
+    ],
+    "agave nectar": [
+        "tommy's margarita"
+    ],
+    "olive juice": [
+        "dirty martini"
+    ],
+    "orange flower water": [
+        "ramos fizz"
+    ],
+    "vanilla extract": [
+        "ramos fizz"
+    ],
+    "cachaca": [
+        "caipirinha"
+    ],
+    "honey": [
+        "vampiro"
+    ],
+    "blue cura\u00e7ao": [
+        "bluebird"
+    ]
+}

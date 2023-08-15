@@ -10,22 +10,22 @@ const areDrinks = ref(true); //catches if there are drinks possible to be served
 const AvailableDrinks: Ref<string[]> = ref([]); //VECTORUL PRIMIT DIN RUST CU BAUTURILE AVAILABLE
 const debugMsg = ref("");
 
-;
-
 async function SearchDrink(){
   try{
-        AvailableDrinks.value = await invoke ("drink_from_ingredients", {ingredientVec: Ingredients.value})
-    } catch(error){
-        areDrinks.value = false;
-        debugMsg.value = error as string;
-    }
+      AvailableDrinks.value = await invoke ("drink_from_ingredients", {ingredientVec: Ingredients.value})
+      areDrinks.value = true;
+  } catch(error){
+      areDrinks.value = false;
+      debugMsg.value = error as string;
+  }
 }
-function removeIngredient(index: Number){
+function removeIngredient(index: number): void {
     Ingredients.value.splice(index, 1);
-}
+};
 
 async function addIngredient() {
   Ingredients.value.push(Ingredient.value);
+  Ingredient.value = "";
 }
 
 function addFavorite(drink: string){ 
@@ -50,7 +50,7 @@ function addFavorite(drink: string){
     <button class="remove" @click="removeIngredient(index)">X</button>
   </button>
 
-  <p v-if="!areDrinks">There is no drink available!</p>
+  <p v-if="!areDrinks">ingredients are invalid. No drink available.</p>
   <br />
 
 <button v-for="drink in AvailableDrinks" class="drink-button">{{ drink }}
