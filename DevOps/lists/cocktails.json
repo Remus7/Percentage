@@ -187,7 +187,7 @@
   {
     "iba": true,
     "name": "Sea Breeze",
-    "colors": ["#f20010", "#89c134"],
+    "colors": ["#F20010", "#89C134"],
     "glass": "highball",
     "category": "Longdrink",
     "ingredients": [
@@ -248,7 +248,7 @@
   {
     "iba": true,
     "name": "Clover Club",
-    "colors": ["#B1061D", "#E65259", "#f4edee"],
+    "colors": ["#B1061D", "#E65259", "#F4EDEE"],
     "glass": "martini",
     "category": "All Day Cocktail",
     "ingredients": [
@@ -809,7 +809,7 @@
   {
     "iba": true,
     "name": "Barracuda",
-    "colors": ["#f2dd21"],
+    "colors": ["#F2DD21"],
     "glass": "margarita",
     "category": "Sparkling Cocktail",
     "ingredients": [
@@ -1110,7 +1110,7 @@
   {
     "iba": true,
     "name": "Champagne Cocktail",
-    "colors": ["#efde8b"],
+    "colors": ["#EFDE8B"],
     "glass": "champagne-flute",
     "category": "Sparkling Cocktail",
     "ingredients": [
@@ -1287,7 +1287,7 @@
   {
     "iba": true,
     "name": "Between the Sheets",
-    "colors": ["#ffe066"],
+    "colors": ["#FFE066"],
     "glass": "martini",
     "category": "All Day Cocktail",
     "ingredients": [
@@ -1326,7 +1326,7 @@
   {
     "iba": true,
     "name": "Caipirinha",
-    "colors": ["#4A8C03", "#e7ea96", "#f3f9ed"],
+    "colors": ["#4A8C03", "#E7EA96", "#F3F9ED"],
     "glass": "old-fashioned",
     "category": "All Day Cocktail",
     "ingredients": [
