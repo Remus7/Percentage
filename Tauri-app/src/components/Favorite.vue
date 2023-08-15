@@ -50,7 +50,7 @@ async function getDetails(drink: string) {
     <div class="dropdown">
   <button id="asdf">&#9432;</button>
   <div class="dropdown-content">
-    <button data-toggle="dropdown" @click="showIngredientList" id="asd">Ingredients
+    <button data-toggle="dropdown" id="asd">Ingredients
       <select v-model="ingredientList">
         <option v-for="(detail, detailIndex) in drinkDetails" :key="detailIndex">{{ detail }}</option>
       </select>
