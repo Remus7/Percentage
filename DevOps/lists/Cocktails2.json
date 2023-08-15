@@ -119,8 +119,8 @@
   },
   "sea breeze": {
     "colors": [
-      "#f20010",
-      "#89c134"
+      "#F20010",
+      "#89C134"
     ],
     "glass": "highball",
     "ingredients": [
@@ -164,7 +164,7 @@
     "colors": [
       "#B1061D",
       "#E65259",
-      "#f4edee"
+      "#F4EDEE"
     ],
     "glass": "martini",
     "ingredients": [
@@ -563,7 +563,7 @@
   },
   "barracuda": {
     "colors": [
-      "#f2dd21"
+      "#F2DD21"
     ],
     "glass": "margarita",
     "ingredients": [
@@ -784,7 +784,7 @@
   },
   "champagne cocktail": {
     "colors": [
-      "#efde8b"
+      "#EFDE8B"
     ],
     "glass": "champagne-flute",
     "ingredients": [
@@ -903,7 +903,7 @@
   },
   "between the sheets": {
     "colors": [
-      "#ffe066"
+      "#FFE066"
     ],
     "glass": "martini",
     "ingredients": [
@@ -931,8 +931,8 @@
   "caipirinha": {
     "colors": [
       "#4A8C03",
-      "#e7ea96",
-      "#f3f9ed"
+      "#E7EA96",
+      "#F3F9ED"
     ],
     "glass": "old-fashioned",
     "ingredients": [
