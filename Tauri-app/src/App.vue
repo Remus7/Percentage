@@ -8,9 +8,19 @@ import { RouterLink, RouterView } from 'vue-router'
 
 <script lang="ts">
 export const favoriteDrinks: Ref<string[]> = ref([]);
+const agePrompt: Ref<bool> = ref(false);
+
+export async function ageConfirm() {
+  agePrompt.value = false;
+};
+export async function ageCancel() {
+  agePrompt.value = false;
+  window.close();
+};
 </script>
 
 <template>
+
   <div class="container">
     <div class="navbar">
      <RouterLink class="links" to="/"> <img class="navImage" src="/images/home_icon.png" alt="Home"> </RouterLink>
