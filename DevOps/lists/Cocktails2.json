@@ -1,6 +1,8 @@
 {
   "vesper": {
-    "colors": "#D88317",
+    "colors": [
+      "#D88317"
+    ],
     "glass": "martini",
     "ingredients": [
       "gin",
@@ -22,7 +24,9 @@
     "preparation": "Shake with ice cubes. Strain into chilled cocktail glass."
   },
   "negroni": {
-    "colors": "#ED0200",
+    "colors": [
+      "#ED0200"
+    ],
     "glass": "old-fashioned",
     "ingredients": [
       "gin",
@@ -32,7 +36,9 @@
     "preparation": "Build into old-fashioned glass filled with ice. Stir gently."
   },
   "rose": {
-    "colors": "#FE29BC",
+    "colors": [
+      "#FE29BC"
+    ],
     "glass": "martini",
     "ingredients": [
       "kirsch",
@@ -55,7 +61,9 @@
     "preparation": "Place sugar cube in old-fashioned glass and saturate with bitters, add a dash of plain water. Muddle until dissolve. Fill the glass with ice cubes and add whisky."
   },
   "tuxedo": {
-    "colors": "#FDC78B",
+    "colors": [
+      "#FDC78B"
+    ],
     "glass": "martini",
     "ingredients": [
       "gin",
@@ -82,7 +90,9 @@
     "preparation": "Muddle mint sprigs with sugar and lime juice. Add splash of soda water and fill glass with cracked ice. Pour rum and top with soda water. Serve with straw."
   },
   "horse's neck": {
-    "colors": "#D9A031",
+    "colors": [
+      "#D9A031"
+    ],
     "glass": "highball",
     "ingredients": [
       "cognac",
@@ -121,7 +131,9 @@
     "preparation": "Build all ingredients in a rock glass filled with ice."
   },
   "pisco sour": {
-    "colors": "#B5AB90",
+    "colors": [
+      "#B5AB90"
+    ],
     "glass": "old-fashioned",
     "ingredients": [
       "pisco",
@@ -132,7 +144,9 @@
     "preparation": "Shake and strain into a chilled champagne flute. Dash some Angostura bitters on top."
   },
   "long island iced tea": {
-    "colors": "#C18450",
+    "colors": [
+      "#C18450"
+    ],
     "glass": "highball",
     "ingredients": [
       "tequila",
@@ -174,7 +188,9 @@
     "preparation": "Shake with ice cubes. Strain into a cocktail glass."
   },
   "mimosa": {
-    "colors": "#EBC04D",
+    "colors": [
+      "#EBC04D"
+    ],
     "glass": "champagne-flute",
     "ingredients": [
       "champagne",
@@ -183,7 +199,9 @@
     "preparation": "Pour orange juice into flute and gently pour Champagne. Stir gently. Note: Buck's Fizz is a very similar cocktail but made of two parts champagne to one part orange juice."
   },
   "whiskey sour": {
-    "colors": "#F3CA69",
+    "colors": [
+      "#F3CA69"
+    ],
     "glass": "old-fashioned",
     "ingredients": [
       "whiskey",
@@ -194,7 +212,9 @@
     "preparation": "(Optional: if used shake little harder to foam up the egg white). Pour all ingredients into cocktail shaker filled with ice. Shake. Strain into cocktail glass. If served \u2018On the rocks\u2019, strain ingredients into old-fashioned glass filled with ice."
   },
   "screwdriver": {
-    "colors": "#D6C01D",
+    "colors": [
+      "#D6C01D"
+    ],
     "glass": "highball",
     "ingredients": [
       "vodka",
@@ -217,7 +237,9 @@
     "preparation": "Build all ingredients in a highball glass filled with ice."
   },
   "manhattan": {
-    "colors": "#FF000B",
+    "colors": [
+      "#FF000B"
+    ],
     "glass": "martini",
     "ingredients": [
       "whiskey",
@@ -227,7 +249,9 @@
     "preparation": "Stir in mixing glass with ice cubes. Strain into chilled cocktail glass."
   },
   "porto flip": {
-    "colors": "#823D38",
+    "colors": [
+      "#823D38"
+    ],
     "glass": "martini",
     "ingredients": [
       "cognac",
@@ -237,7 +261,9 @@
     "preparation": "Shake with ice cubes. Strain into cocktail glass. Sprinkle with fresh ground nutmeg."
   },
   "gin fizz": {
-    "colors": "#C6C8C3",
+    "colors": [
+      "#C6C8C3"
+    ],
     "glass": "highball",
     "ingredients": [
       "gin",
@@ -262,7 +288,9 @@
     "preparation": "Shake and strain into a chilled cocktail glass."
   },
   "margarita": {
-    "colors": "#B8B781",
+    "colors": [
+      "#B8B781"
+    ],
     "glass": "margarita",
     "ingredients": [
       "tequila",
@@ -285,7 +313,9 @@
     "preparation": "Shake with ice cubes, except for champagne. Strain into a champagne flute. Top up with champagne. Stir gently."
   },
   "yellow bird": {
-    "colors": "#EBCF2E",
+    "colors": [
+      "#EBCF2E"
+    ],
     "glass": "martini",
     "ingredients": [
       "white rum",
@@ -296,7 +326,9 @@
     "preparation": "Shake and strain into a chilled cocktail glass."
   },
   "pina colada": {
-    "colors": "#C5B9A1",
+    "colors": [
+      "#C5B9A1"
+    ],
     "glass": "hurricane",
     "ingredients": [
       "white rum",
@@ -306,7 +338,9 @@
     "preparation": "Blend all the ingredients with ice in a electric blender, pour into a large goblet or Hurricane glass and serve with straws."
   },
   "aviation": {
-    "colors": "#68517B",
+    "colors": [
+      "#68517B"
+    ],
     "glass": "martini",
     "ingredients": [
       "gin",
@@ -328,7 +362,9 @@
     "preparation": "Pour peach puree into chilled glass and add sparkling wine. Stir gently. Variations: Puccini (fresh mandarin juice), Rossini (fresh strawberry puree), Tintoretto (fresh pomegranate juice)"
   },
   "grasshopper": {
-    "colors": "#75CCA6",
+    "colors": [
+      "#75CCA6"
+    ],
     "glass": "martini",
     "ingredients": [
       "cr\u00e9me de cacao",
@@ -351,7 +387,9 @@
     "preparation": "Build tequila and orange juice into highball with ice cubes. Add a splash of grenadine to create sunrise effect. Do not stir."
   },
   "daiquiri": {
-    "colors": "#ACA99C",
+    "colors": [
+      "#ACA99C"
+    ],
     "glass": "martini",
     "ingredients": [
       "white rum",
@@ -361,7 +399,9 @@
     "preparation": "Shake and strain into a cocktail glass."
   },
   "rusty nail": {
-    "colors": "#BD4200",
+    "colors": [
+      "#BD4200"
+    ],
     "glass": "old-fashioned",
     "ingredients": [
       "whiskey",
@@ -384,7 +424,9 @@
     "preparation": "Layer ingredients one at a time starting with Kahl\u00faa, followed by Baileys Irish Cream and top with Grand Marnier. Flame the Grand Marnier, serve while the flame is still on, accompanied with a straw on side plate."
   },
   "stinger": {
-    "colors": "#D66806",
+    "colors": [
+      "#D66806"
+    ],
     "glass": "martini",
     "ingredients": [
       "cognac",
@@ -393,7 +435,9 @@
     "preparation": "Stir in mixing glass with ice cubes. Strain into a cocktail glass."
   },
   "golden dream": {
-    "colors": "#FEEE8E",
+    "colors": [
+      "#FEEE8E"
+    ],
     "glass": "martini",
     "ingredients": [
       "galliano",
@@ -404,7 +448,9 @@
     "preparation": "Shake with ice cubes. Strain into chilled cocktail glass."
   },
   "godmother": {
-    "colors": "#C3660B",
+    "colors": [
+      "#C3660B"
+    ],
     "glass": "old-fashioned",
     "ingredients": [
       "vodka",
@@ -413,7 +459,9 @@
     "preparation": "Build into old fashioned glass filled with ice cubes. Stir gently."
   },
   "spritz veneziano": {
-    "colors": "#DA1903",
+    "colors": [
+      "#DA1903"
+    ],
     "glass": "old-fashioned",
     "ingredients": [
       "prosecco",
@@ -450,7 +498,9 @@
     "preparation": "Shake and strain into a chilled cocktail glass. Sprinkle with fresh ground nutmeg. The IBA simply refers to this drink as an 'Alexander'"
   },
   "lemon drop": {
-    "colors": "#C4B686",
+    "colors": [
+      "#C4B686"
+    ],
     "glass": "martini",
     "ingredients": [
       "citron vodka",
@@ -460,7 +510,9 @@
     "preparation": "Shake and strain into a chilled cocktail glass rimmed with sugar."
   },
   "french martini": {
-    "colors": "#E00001",
+    "colors": [
+      "#E00001"
+    ],
     "glass": "martini",
     "ingredients": [
       "vodka",
@@ -496,7 +548,9 @@
     "preparation": "Stir gently, pour all ingredients into highball glass."
   },
   "mai tai": {
-    "colors": "#FF3006",
+    "colors": [
+      "#FF3006"
+    ],
     "glass": "highball",
     "ingredients": [
       "white rum",
@@ -536,7 +590,9 @@
     "preparation": "Build all ingredients in a highball glass filled with ice."
   },
   "monkey gland": {
-    "colors": "#FD5404",
+    "colors": [
+      "#FD5404"
+    ],
     "glass": "martini",
     "ingredients": [
       "gin",
@@ -547,7 +603,9 @@
     "preparation": "Shake and strain into a chilled cocktail glass."
   },
   "derby": {
-    "colors": "#FEB535",
+    "colors": [
+      "#FEB535"
+    ],
     "glass": "martini",
     "ingredients": [
       "gin",
@@ -557,7 +615,9 @@
     "preparation": "Stir in mixing glass with ice cubes. Strain into a cocktail glass."
   },
   "sidecar": {
-    "colors": "#C7A65F",
+    "colors": [
+      "#C7A65F"
+    ],
     "glass": "martini",
     "ingredients": [
       "cognac",
@@ -582,7 +642,9 @@
     "preparation": "Warm the Irish whiskey over a burner. Pour into the glass (for hot drink) hot coffee, and add a teaspoon of sugar. Float Cream on top."
   },
   "sazerac": {
-    "colors": "#C98502",
+    "colors": [
+      "#C98502"
+    ],
     "glass": "old-fashioned",
     "ingredients": [
       "cognac",
@@ -606,7 +668,9 @@
     "preparation": "Build into old fashioned glass filled with ice cubes. Add a splash of soda water."
   },
   "singapore sling": {
-    "colors": "#FF5542",
+    "colors": [
+      "#FF5542"
+    ],
     "glass": "highball",
     "ingredients": [
       "gin",
@@ -621,7 +685,9 @@
     "preparation": "Shake with ice cubes. Strain into highball glass."
   },
   "french connection": {
-    "colors": "#EF7405",
+    "colors": [
+      "#EF7405"
+    ],
     "glass": "old-fashioned",
     "ingredients": [
       "cognac",
@@ -630,7 +696,9 @@
     "preparation": "Build into old fashioned glass filled with ice cubes. Stir gently."
   },
   "moscow mule": {
-    "colors": "#978540",
+    "colors": [
+      "#978540"
+    ],
     "glass": "highball",
     "ingredients": [
       "vodka",
@@ -641,7 +709,9 @@
     "preparation": "Combine the vodka and ginger beer. Add lime juice."
   },
   "john collins": {
-    "colors": "#D0A254",
+    "colors": [
+      "#D0A254"
+    ],
     "glass": "highball",
     "ingredients": [
       "gin",
@@ -653,7 +723,9 @@
     "preparation": "Build into highball glass filled with ice. Stir gently. Add a dash of Angostura bitters. (Note: Use Old Tom Gin for Tom Collins)"
   },
   "kir": {
-    "colors": "#F73D29",
+    "colors": [
+      "#F73D29"
+    ],
     "glass": "white-wine",
     "ingredients": [
       "dry white wine",
@@ -675,7 +747,9 @@
     "preparation": "In a highball glass gently muddle the mint, sugar and water. Fill the glass with cracked ice, add Bourbon and stir well until the glass is frost."
   },
   "tommy's margarita": {
-    "colors": "#B46F13",
+    "colors": [
+      "#B46F13"
+    ],
     "glass": "martini",
     "ingredients": [
       "tequila",
@@ -685,7 +759,9 @@
     "preparation": "Shake and strain into a chilled cocktail glass."
   },
   "paradise": {
-    "colors": "#ECAE1B",
+    "colors": [
+      "#ECAE1B"
+    ],
     "glass": "martini",
     "ingredients": [
       "gin",
@@ -695,7 +771,9 @@
     "preparation": "Shake with ice cubes. Strain into chilled cocktail glass."
   },
   "dirty martini": {
-    "colors": "#E1E6E3",
+    "colors": [
+      "#E1E6E3"
+    ],
     "glass": "martini",
     "ingredients": [
       "vodka",
@@ -718,7 +796,9 @@
     "preparation": "Add dash of Angostura bitter onto sugar cube and drop it into champagne flute. Add cognac followed by pouring gently chilled champagne."
   },
   "mary pickford": {
-    "colors": "#B11603",
+    "colors": [
+      "#B11603"
+    ],
     "glass": "martini",
     "ingredients": [
       "white rum",
@@ -729,7 +809,9 @@
     "preparation": "Shake and strain into a chilled large cocktail glass."
   },
   "hemingway special": {
-    "colors": "#FFBB6D",
+    "colors": [
+      "#FFBB6D"
+    ],
     "glass": "martini",
     "ingredients": [
       "white rum",
@@ -753,7 +835,9 @@
     "preparation": "Build into highball glass filled with ice. Add rum first and top it with ginger beer."
   },
   "ramos fizz": {
-    "colors": "#D9CAA6",
+    "colors": [
+      "#D9CAA6"
+    ],
     "glass": "highball",
     "ingredients": [
       "gin",
@@ -769,7 +853,9 @@
     "preparation": "Pour all ingredients (except soda) in a mixing glass, dry shake (no ice) for two minutes, add ice and hard shake for another minute. Strain into a highball glass without ice, top with soda."
   },
   "russian spring punch": {
-    "colors": "#C70212",
+    "colors": [
+      "#C70212"
+    ],
     "glass": "highball",
     "ingredients": [
       "vodka",
@@ -781,7 +867,9 @@
     "preparation": "Shake the ingredients and pour into highball glass. Top with Sparkling wine."
   },
   "godfather": {
-    "colors": "#B77F27",
+    "colors": [
+      "#B77F27"
+    ],
     "glass": "old-fashioned",
     "ingredients": [
       "whiskey",
@@ -803,7 +891,9 @@
     "preparation": "Shake with ice cubes. Strain into a large cocktail glass."
   },
   "dry martini": {
-    "colors": "#EFEFEF",
+    "colors": [
+      "#EFEFEF"
+    ],
     "glass": "martini",
     "ingredients": [
       "gin",
@@ -853,7 +943,9 @@
     "preparation": "Place lime and sugar in old fashion glass and muddle. Fill glass with ice and Cachaca (note:Caipiroska- use Vodka instead of Cachaca)."
   },
   "vampiro": {
-    "colors": "#D74339",
+    "colors": [
+      "#D74339"
+    ],
     "glass": "highball",
     "ingredients": [
       "tequila",
@@ -866,7 +958,9 @@
     "preparation": "Shake with ice cubes. Strain into a highball glass, filled with ice."
   },
   "kamikaze": {
-    "colors": "#B6A861",
+    "colors": [
+      "#B6A861"
+    ],
     "glass": "martini",
     "ingredients": [
       "vodka",
@@ -876,7 +970,9 @@
     "preparation": "Shake and strain into a chilled cocktail glass."
   },
   "white lady": {
-    "colors": "#E9E5C2",
+    "colors": [
+      "#E9E5C2"
+    ],
     "glass": "martini",
     "ingredients": [
       "gin",
@@ -886,7 +982,9 @@
     "preparation": "Shake with ice cubes. Strain into large cocktail glass."
   },
   "harvey wallbanger": {
-    "colors": "#FFBC2F",
+    "colors": [
+      "#FFBC2F"
+    ],
     "glass": "highball",
     "ingredients": [
       "vodka",
@@ -896,7 +994,9 @@
     "preparation": "Build vodka and orange juice into a highball glass filled with ice. Stir gently and float Galliano on top."
   },
   "gimlet": {
-    "colors": "#DADEC0",
+    "colors": [
+      "#DADEC0"
+    ],
     "glass": "martini",
     "ingredients": [
       "gin",
@@ -905,7 +1005,9 @@
     "preparation": "Shake with ice."
   },
   "white russian": {
-    "colors": "#BBA69B",
+    "colors": [
+      "#BBA69B"
+    ],
     "glass": "old-fashioned",
     "ingredients": [
       "vodka",
@@ -915,7 +1017,9 @@
     "preparation": "Shake and pour over ice."
   },
   "bluebird": {
-    "colors": "#66B7EC",
+    "colors": [
+      "#66B7EC"
+    ],
     "glass": "martini",
     "ingredients": [
       "gin",

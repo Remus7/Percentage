@@ -18,20 +18,21 @@ def get_drinks(ingredient):
         return jsonify({"error":"no drinks found"})
     for drink in drinks:
         drink = drink.lower()
+        colors = r.hget(drink, "colors")
         glass = r.hget(drink, "glass")
-        print(drink)
         ingredients = json.loads(r.hget(drink, "ingredients"))
         preparation = r.hget(drink, "preparation")
-        dic_drinks[drink] = {"glass":glass, "ingredients":ingredients, "preparation":preparation}
+        dic_drinks[drink] = {"colors": colors, "glass":glass, "ingredients":ingredients, "preparation":preparation}
     return jsonify(dic_drinks)
 
-@app.route("/get/<drink>", methods=["GET"])
+@app.route("/get_ingredients/<drink>", methods=["GET"])
 def get_drink(drink):
     drink = drink.lower()
+    colors = r.hget(drink, "colors")
     glass = r.hget(drink, "glass")
     ingredients = json.loads(r.hget(drink, "ingredients"))
     preparation = r.hget(drink, "preparation")
-    dic_drink = {drink:{"glass":glass, "ingredients":ingredients, "preparation":preparation}}
+    dic_drink = {drink:{"colors": colors,"glass":glass, "ingredients":ingredients, "preparation":preparation}}
     return jsonify(dic_drink)
 
 if __name__ == "__main__":
