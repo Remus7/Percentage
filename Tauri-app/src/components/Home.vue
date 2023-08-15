@@ -23,7 +23,7 @@ import { invoke } from "@tauri-apps/api/tauri";
 <style>
   .font_a {
     font-family: "Abyssinica SIL";
-    src: url(../assets/font.ttf);
+    src: url(../assets/font.woff);
   }
   body {
     display: flex;
