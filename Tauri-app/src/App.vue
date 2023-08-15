@@ -3,6 +3,7 @@
 // Check out https://vuejs.org/api/sfc-script-setup.html#script-setup
 import { ref, Ref } from "vue";
 import { RouterLink, RouterView } from 'vue-router'
+
 </script>
 
 <script lang="ts">
@@ -12,9 +13,9 @@ export const favoriteDrinks: Ref<string[]> = ref([]);
 <template>
   <div class="container">
     <div class="navbar">
-     <RouterLink class="links" to="/"> <img clss="navImage" src="/fav_icon.png" alt="Go Fuck Yourself"> </RouterLink>
-     <RouterLink class="links" to="/search">Search</RouterLink>
-     <RouterLink class="links" to="/favorite">Favorite</RouterLink>
+     <RouterLink class="links" to="/"> <img class="navImage" src="/home_icon.png" alt="Home"> </RouterLink>
+     <RouterLink class="links" to="/search"><img class="navImage" src="/search_icon.png" alt="Search"></RouterLink>
+     <RouterLink class="links" to="/favorite"><img class="navImage" src="/fav_icon.png" alt="Favourites"></RouterLink>
     </div>
 
     <RouterView />
@@ -24,14 +25,16 @@ export const favoriteDrinks: Ref<string[]> = ref([]);
 <style scoped>
 
 .navImage{
-  height: 4px;
-  width: 4px;
+  height: 40px;
+  width: auto;
   z-index: 1;
+  color: white;
 }
 
 .navbar{
   height: 40px;
   background-color: #1EAF90;
+  overflow: hidden;
   padding-top:12px;
   margin-top: 25px;
 }
