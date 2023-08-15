@@ -8,4 +8,4 @@ WORKDIR /src/
 
 ENV REDIS_HOST=redis
 
-CMD ["python", "Script.py"]
+CMD ["python", "script.py"]
