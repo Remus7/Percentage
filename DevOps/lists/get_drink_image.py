@@ -2,7 +2,7 @@ import requests
 import json
 from time import sleep
 def get_image(search_term):
-    access_key = 'k4PiAdwcN80T335PDg2CLJEOeLwb_zx-Kk1viyuD0DE'
+    access_key = 'JSuDqS3gX7Xafj547bZYmPWOwEAIFrL4-Ho5zZmTvAs'
     url = f'https://api.unsplash.com/search/photos/?query="{search_term} drink"&client_id={access_key}'
 
     response = requests.get(url)
@@ -16,17 +16,16 @@ def get_image(search_term):
         return first_image_url
     else:
         print("No images found.")
-with open("Cocktails2.json", "r") as read_from_here:
+with open("Cocktails3.json", "r") as read_from_here:
     dictionary = json.load(read_from_here)
 i=0
 for cocktail in dictionary:
     i+=1
     
-    dictionary[cocktail]["image"] = get_image(cocktail)
-    with open("Cocktails3.json", "w") as write_in_here:
-        write_in_here.write(json.dumps(dictionary))
-    if i == 40: 
-        break
-
+    if i > 40: 
+        dictionary[cocktail]["image"] = get_image(cocktail)
+        with open("Cocktails3.json", "w") as write_in_here:
+            write_in_here.write(json.dumps(dictionary))
+        
 
 
