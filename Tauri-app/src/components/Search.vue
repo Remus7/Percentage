@@ -4,11 +4,14 @@ import { invoke } from "@tauri-apps/api/tauri";
 import { favoriteDrinks } from "../App.vue";
 
 const Ingredients: Ref<string[]> = ref([]);
-const Ingredient = ref("");
+const Ingredient:Ref<string> = ref("");
 
 const areDrinks = ref(true); //catches if there are drinks possible to be served
 const AvailableDrinks: Ref<string[]> = ref([]); //VECTORUL PRIMIT DIN RUST CU BAUTURILE AVAILABLE
 const debugMsg = ref("");
+const showSuggestions:Ref<boolean> = ref(true);
+const suggestions:Ref<string[]> = ref([]);
+const suggestion:Ref<string> = ref("");
 
 async function SearchDrink(){
   try{
@@ -28,11 +31,24 @@ async function addIngredient() {
   Ingredient.value = "";
 }
 
-function addFavorite(drink: string){ 
+function addFavorite(drink: string){
   if(favoriteDrinks.value.indexOf(drink) === -1)
     favoriteDrinks.value.push(drink);                        
 }
-
+function filteredSuggestions() {
+     
+    suggestions.value.filter(suggestion => suggestion.toLowerCase().startsWith(Ingredient.value))
+  }
+  function selectSuggestion(){
+     Ingredient.value = suggestion.value;
+     showSuggestions.value = false;
+}
+function handleInput(){
+  showSuggestions.value  = true;
+}
+function clearSuggestions(){
+  showSuggestions.value = false;
+}
 </script>
 
 <template>
@@ -41,6 +57,8 @@ function addFavorite(drink: string){
     class="input"
     v-model="Ingredient"
     placeholder="Type ingredient name"
+    @input="handleInput" 
+    @blur="clearSuggestions" 
   />
   <button class="butAdd" @click="addIngredient">Add Ingredient</button>
   <button class="searchbut" @click="SearchDrink">Search for drinks</button>
@@ -57,6 +75,17 @@ function addFavorite(drink: string){
     <button class="favorite" @click="addFavorite(drink)">	&#127864;</button>
 </button> 
 
+
+
+
+<!-- <input type="text" v-model="searchText" @input="handleInput" @blur="clearSuggestions" placeholder="Enter a word"> -->
+
+<!-- The autocomplete list -->
+<div v-if="showSuggestions" class="autocomplete-list">
+  <div v-for="suggestion in filteredSuggestions" class="autocomplete-item" @click="selectSuggestion(suggestion)">
+    {{ suggestion }}
+  </div>
+</div>
 </template>
 
 <style scoped>
