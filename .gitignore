@@ -15,5 +15,7 @@ Cargo.lock
 DevOps/lists/Cocktails.json
 DevOps/lists/script.py
 
+tauri.conf.json
+
 dump.rdb
 *(hidden)*
