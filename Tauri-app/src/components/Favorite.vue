@@ -8,7 +8,8 @@ function removeFavorite(index: Number){
 }
 
 </script>
-</template>
+
+<template>
 <button class="favorite-drink" v-for="(drink, index) in favoriteDrinks" :key="drink">
     {{ drink }}
     <button class="remove" @click="removeFavorite(index)">X</button>

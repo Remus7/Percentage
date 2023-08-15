@@ -7,10 +7,10 @@ const Ingredients: Ref<string[]> = ref([]);
 const Ingredient = ref("");
 
 const areDrinks = ref(true); //catches if there are drinks possible to be served
-const AvailableDrinks: Ref<string[]> = ref([]);
+const AvailableDrinks: Ref<string[]> = ref([]); //VECTORUL PRIMIT DIN RUST CU BAUTURILE AVAILABLE
 const debugMsg = ref("");
 
-AvailableDrinks.value = ["Vodka", "Margarita", "Tequila"];
+;
 
 async function SearchDrink(){
   try{
@@ -32,6 +32,7 @@ function addFavorite(drink: string){
     favoriteDrinks.value.push(drink);                        
     console.log(favoriteDrinks.value);
 }
+
 </script>
 
 <template>
@@ -53,8 +54,8 @@ function addFavorite(drink: string){
   <br />
 
 <button v-for="drink in AvailableDrinks" class="drink-button">{{ drink }}
-    <button class="favorite" @click="addFavorite(drink)">&hearts;</button>
-</button>
+    <button class="favorite" @click="addFavorite(drink)">	&#127864;</button>
+</button> 
 
 </template>
 
@@ -70,6 +71,9 @@ function addFavorite(drink: string){
   color: white;
   border-radius: 4px;
 }
+.ingredient-item:hover{
+  opacity:0.8;
+}
 .remove {
   background-color: #f44336;
   color: white;
@@ -84,6 +88,7 @@ function addFavorite(drink: string){
 }
 
 .drink-button {
+  color: white;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -91,20 +96,22 @@ function addFavorite(drink: string){
   padding: 8px;
   border: 1px solid #ccc;
   border-radius: 4px;
-  background-color: #a360b1;
+  background-color:#A3333D;
+  border-color: white;
 }
 
 .drink-button:hover {
-  background-color: #45a049;
+  background-color: #904C77;
 }
 .favorite {
-  background-color: #751414;
+
+  background-color: #F64740;
   color: red;
   border: none;
   border-radius: 50%;
   padding: 4px 8px;
   cursor: pointer;
-  transition: background-color 0.3s ease-in-out;
+  /* transition: background-color 2s ease-in-out; */
 }
 .favorite:hover {
   background-color: #d32f2f;
@@ -130,7 +137,7 @@ function addFavorite(drink: string){
 }
 
 input{
-  width: 100%;
+  width: 90%;
   padding: 10px;
   border: 2px solid #2BB4B4; 
   border-radius: 5px;
