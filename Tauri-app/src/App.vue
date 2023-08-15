@@ -12,7 +12,7 @@ export const favoriteDrinks: Ref<string[]> = ref([]);
 <template>
   <div class="container">
     <div class="navbar">
-     <RouterLink class="links" to="/"> <img src="../../images/fav_icon.png" alt="Go Fuck Yourself"> </RouterLink>
+     <RouterLink class="links" to="/"> <img src="/fav_icon.png" alt="Go Fuck Yourself"> </RouterLink>
      <RouterLink class="links" to="/search">Search</RouterLink>
      <RouterLink class="links" to="/favorite">Favorite</RouterLink>
     </div>
