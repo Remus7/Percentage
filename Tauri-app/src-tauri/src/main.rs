@@ -31,7 +31,7 @@ async fn request_value(url: String) -> Result<HashMap<String,Cocktail>, CommandE
     let response = reqwest::get(url).await.map_err(|err| CommandError::Error(format!("{:?}", err)))?.text().await.map_err(|err| CommandError::Error(format!("{:?}", err)))?;
     // let response = std::fs::read_to_string("../src/example.json").map_err(|err| CommandError::Error(format!("{:?}", err)))?;
 
-    let cocktails: HashMap<String, Cocktail> = serde_json::from_str(&response).map_err(|err| CommandError::Error(format!("{:?}", err)))?;
+    let cocktails: HashMap<String, Cocktail> = serde_json::from_str(&response).map_err(|err| CommandError::Error(format!("Bonus: {:?}", err)))?;
 
     Ok(cocktails)
 }
@@ -39,12 +39,10 @@ async fn request_value(url: String) -> Result<HashMap<String,Cocktail>, CommandE
 #[tauri::command]
 async fn drink_from_ingredients(ingredient_vec: Vec<String>) -> Result< Vec<String>, CommandError >{
     let mut freq : HashMap<String, u64> = HashMap::new();
-    println!("{:?}",ingredient_vec);
     for i in 0..ingredient_vec.len(){
         let url = format!("http://172.20.50.2/get_drinks/{}", ingredient_vec[i]); 
         let drinks: HashMap<String, Cocktail>= request_value(url).await?;
         for (name, _cocktail) in drinks.into_iter(){
-            println!("{}",name);
             // let ingr = cocktail.ingredients;
             // for k in 0..ingr.len(){
             //     println!("{:?}", ingr[k]);
@@ -62,7 +60,7 @@ async fn drink_from_ingredients(ingredient_vec: Vec<String>) -> Result< Vec<Stri
 }
 
 #[tauri::command]
-async fn get_details(drink: String) -> Result<Vec<String>, CommandError> {
+async fn get_ingredients(drink: String) -> Result<Vec<String>, CommandError> {
     let response: String = reqwest::get(format!("http://172.20.50.2/get_ingredients/{}", drink))
         .await.map_err(|err| CommandError::Error(format!("{:?}", err)))?
         .text()
@@ -78,13 +76,24 @@ async fn get_details(drink: String) -> Result<Vec<String>, CommandError> {
     }
 }
 
+/*
+Request types:
+    0 -> image URL
+    1 -> glass type
+    2 -> preparation
+*/
 #[tauri::command]
-async fn get_url(drink: String) -> Result<String, CommandError> {
+async fn get_details(drink: String, request_type: u32) -> Result<String, CommandError> {
     let url = format!("http://172.20.50.2/get_ingredients/{}", drink);
     let mut details = request_value(url).await?;
 
     if let Some(cocktail) = details.remove(&drink.to_lowercase()) {
-        Ok(cocktail.image)
+        match request_type{
+            0 => Ok(cocktail.image),
+            1 => Ok(cocktail.glass),
+            2 => Ok(cocktail.preparation),
+            _ => Err(CommandError::Error("Unknown request".to_owned())),
+        }
     } else{
         Err(CommandError::Error("No image url found!".to_owned()))
     }
@@ -95,7 +104,7 @@ fn main() {
         .invoke_handler(tauri::generate_handler![
             drink_from_ingredients,
             get_details,
-            get_url
+            get_ingredients
         ])
         .run(tauri::generate_context!())
         .expect("error while running tauri application");
