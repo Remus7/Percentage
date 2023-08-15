@@ -765,7 +765,7 @@
   {
     "iba": true,
     "name": "Bloody Mary",
-    "colors": ["#c10000"],
+    "colors": ["#C10000"],
     "glass": "highball",
     "category": "Longdrink",
     "ingredients": [
