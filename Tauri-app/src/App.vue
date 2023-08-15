@@ -12,7 +12,7 @@ export const favoriteDrinks: Ref<string[]> = ref([]);
 <template>
   <div class="container">
     <div class="navbar">
-     <RouterLink class="links" to="/"> <img src="/fav_icon.png" alt="Go Fuck Yourself"> </RouterLink>
+     <RouterLink class="links" to="/"> <img clss="navImage" src="/fav_icon.png" alt="Go Fuck Yourself"> </RouterLink>
      <RouterLink class="links" to="/search">Search</RouterLink>
      <RouterLink class="links" to="/favorite">Favorite</RouterLink>
     </div>
@@ -23,15 +23,15 @@ export const favoriteDrinks: Ref<string[]> = ref([]);
 
 <style scoped>
 
-.imgg{
-  height: 4000px;
-  width: 4000px;
+.navImage{
+  height: 4px;
+  width: 4px;
+  z-index: 1;
 }
 
 .navbar{
   height: 40px;
   background-color: #1EAF90;
-  overflow:hidden;
   padding-top:12px;
   margin-top: 25px;
 }
