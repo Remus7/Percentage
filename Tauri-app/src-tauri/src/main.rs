@@ -68,10 +68,31 @@ async fn drink_from_ingredients(ingredient_vec: Vec<String>) -> Result< Vec<Stri
     return Ok(sorted_key);
 }
 
+#[tauri::command]
+async fn get_details(drink: String) -> Vec<String> {
+    println!("{:?}", drink);
+    let response: String = reqwest::get(format!("http://172.20.50.2/get/{}", drink))
+        .await.unwrap()
+        .text()
+        .await.unwrap();
+    dbg!(&response);
+    let details: std::collections::HashMap<String, Cocktail> = serde_json::from_str(&response)
+    .map_err(|err| CommandError::Error(format!("{:?}", err))).unwrap();
+    println!("{:?}", details);
+    for (name, cocktail) in details.into_iter(){
+        println!("{:?}", name);
+        return cocktail.ingredients;
+    }
+    let a = vec![String::from("No Ingredients found!")];
+    return a;
+
+}
+
 fn main() {
     tauri::Builder::default()
         .invoke_handler(tauri::generate_handler![
-            drink_from_ingredients
+            drink_from_ingredients,
+            get_details
         ])
         .run(tauri::generate_context!())
         .expect("error while running tauri application");

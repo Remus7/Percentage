@@ -31,6 +31,7 @@ def get_drink(drink):
     ingredients = json.loads(r.hget(drink, "ingredients"))
     preparation = r.hget(drink, "preparation")
     dic_drink = {drink:{"glass":glass, "ingredients":ingredients, "preparation":preparation}}
+    return jsonify(dic_drink)
 
 if __name__ == "__main__":
     app.run(host="0.0.0.0", port=5000, debug=True)
