@@ -24,7 +24,7 @@ def get_drinks(ingredient):
         dic_drinks[drink] = {"glass":glass, "ingredients":ingredients, "preparation":preparation}
     return jsonify(dic_drinks)
 
-@app.route("get/<drink>", methods=["GET"])
+@app.route("/get/<drink>", methods=["GET"])
 def get_drink(drink):
     drink = drink.lower()
     glass = r.hget(drink, "glass")
