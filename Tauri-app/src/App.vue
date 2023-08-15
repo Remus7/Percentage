@@ -51,6 +51,9 @@ export const favoriteDrinks: Ref<string[]> = ref([]);
   opacity:0.7;
   /* color:black; */
 }
+.navbar{
+  margin-bottom:50px;
+}
 
 
 

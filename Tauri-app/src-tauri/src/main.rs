@@ -10,6 +10,7 @@ use serde_json::{Map, Value};
 use std::{thread, time};
 #[allow(unused_imports)]
 use tauri::Window;
+use serde_json::from_str;
 
 use serde::{Deserialize, Serialize};
 use std::collections::HashMap;
@@ -40,8 +41,10 @@ async fn request_value(url: String) -> Result<HashMap<String,Cocktail>, CommandE
 async fn drink_from_ingredients(ingredient_vec: Vec<String>) -> Result< Vec<String>, CommandError >{
     let mut freq : HashMap<String, u64> = HashMap::new();
     for i in 0..ingredient_vec.len(){
+    println!("muie2");
         let url = format!("http://172.20.50.2/get_drinks/{}", ingredient_vec[i]); 
-        let drinks: HashMap<String, Cocktail>= request_value(url).await?;
+        let drinks: HashMap<String, Cocktail> = request_value(url).await?;
+        println!("muie");
         for (name, _cocktail) in drinks.into_iter(){
             // let ingr = cocktail.ingredients;
             // for k in 0..ingr.len(){
