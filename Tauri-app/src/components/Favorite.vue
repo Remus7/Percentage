@@ -9,6 +9,7 @@ const glassText: Ref<string> = ref("");
 const imageUrl: Ref<string> = ref("");
 const preparationText: Ref<string> = ref("");
 const debugMsg: Ref<string> = ref("");
+const currentDrink = ref("");
 
 function removeFavorite(index: number): void{
     favoriteDrinks.value.splice(index, 1);
@@ -17,21 +18,24 @@ function removeFavorite(index: number): void{
 const drinkDetails: Ref<string[]> = ref([]);
 
 async function getDetails(drink: string) {
-  debugMsg.value = "";
-  activ.value = true;
-  // console.log(await invoke ("get_details", {drink: drink}));
+  if(drink != currentDrink.value){
+    currentDrink.value = drink;
+    debugMsg.value = "";
+    activ.value = true;
+    // console.log(await invoke ("get_details", {drink: drink}));
 
-  imageUrl.value = "";
-  glassText.value = "Loading ..."
-  preparationText.value = "Loading ..."
+    imageUrl.value = "";
+    glassText.value = "Loading ..."
+    preparationText.value = "Loading ..."
 
-  try{
-    drinkDetails.value = await invoke ("get_ingredients", {drink: drink});
-    imageUrl.value = await invoke("get_details", {drink: drink, requestType: 0});
-    glassText.value = await invoke("get_details", {drink: drink, requestType: 1});
-    preparationText.value = await invoke("get_details", {drink: drink, requestType: 2});
-  } catch (e) {
-    debugMsg.value = e as string;
+    try{
+      drinkDetails.value = await invoke ("get_ingredients", {drink: drink});
+      imageUrl.value = await invoke("get_details", {drink: drink, requestType: 0});
+      glassText.value = await invoke("get_details", {drink: drink, requestType: 1});
+      preparationText.value = await invoke("get_details", {drink: drink, requestType: 2});
+    } catch (e) {
+      debugMsg.value = e as string;
+    }
   }
 }
 
