@@ -11,12 +11,9 @@ cocktails = json.load(f)
 for cocktail in cocktails:
     cocktail2 = cocktail.lower()
     print(cocktail2)
-    try:
-        r.hmset(cocktail2, {"colors": json.dump(cocktails[cocktail]["colors"]), "glass": cocktails[cocktail]["glass"], "ingredients": json.dumps(cocktails[cocktail]["ingredients"]), "preparation": cocktails[cocktail]["preparation"]})
-    except:
-        r.hmset(cocktail2, {"colors": "", "glass": cocktails[cocktail]["glass"], "ingredients": json.dumps(cocktails[cocktail]["ingredients"]), "preparation": cocktails[cocktail]["preparation"]})
+    r.hmset(cocktail2, {"colors": json.dumps(cocktails[cocktail]["colors"]), "glass": cocktails[cocktail]["glass"], "ingredients": json.dumps(cocktails[cocktail]["ingredients"]), "preparation": cocktails[cocktail]["preparation"]})
+    
 g = open('Ingredients.json')
-
 ingredients = json.load(g)
 
 for ingredient in ingredients:

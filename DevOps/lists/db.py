@@ -12,12 +12,15 @@ for drink in data:
         try:
             dri = dri + [drin["ingredient"].lower()]
         except:
-            print(dri)
+            Warning
     dr = dri
+    try:
+        drink["colors"] = drink["colors"].split(",")
+    except:
+        drink["colors"] = drink["colors"]
     try:
         dic_drinks[drink["name"].lower()] = {"colors": drink["colors"], "glass":drink["glass"], "ingredients": dr, "preparation": drink["preparation"]}
     except:
         dic_drinks[drink["name"].lower()] = {"colors": drink["colors"], "glass":drink["glass"], "ingredients": dr, "preparation": "No preparation!"}
-
 save_file = open("Cocktails2.json", "w")  
 json.dump(dic_drinks, save_file, indent = 2)
