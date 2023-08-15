@@ -10,7 +10,12 @@ function removeFavorite(index: Number){
 const drinkDetails: Ref<string> = ref([]);
 
 async function getDetails(drink: string) {
+  console.log(await invoke ("get_details", {drink: drink}));
+  try{
   drinkDetails.value = await invoke ("get_details", {drink: drink});
+  }catch{
+    console.log("No ingredients found!");
+  }
 }
 
 </script>

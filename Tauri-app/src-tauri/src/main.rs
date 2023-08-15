@@ -57,22 +57,18 @@ async fn drink_from_ingredients(ingredient_vec: Vec<String>) -> Result< Vec<Stri
 }
 
 #[tauri::command]
-async fn get_details(drink: String) -> Vec<String> {
-    println!("{:?}", drink);
+async fn get_details(drink: String) -> Result<Vec<String>, &'static str> {
     let response: String = reqwest::get(format!("http://172.20.50.2/get/{}", drink))
         .await.unwrap()
         .text()
         .await.unwrap();
-    dbg!(&response);
-    let details: std::collections::HashMap<String, Cocktail> = serde_json::from_str(&response)
+    let mut details: std::collections::HashMap<String, Cocktail> = serde_json::from_str(&response)
     .map_err(|err| CommandError::Error(format!("{:?}", err))).unwrap();
-    println!("{:?}", details);
-    for (name, cocktail) in details.into_iter(){
-        println!("{:?}", name);
-        return cocktail.ingredients;
+    if let Some(cocktail) = details.remove(&drink.to_lowercase()) {
+        Ok(cocktail.ingredients)
+    }else {
+        Err("No ingredients found!")
     }
-    let a = vec![String::from("No Ingredients found!")];
-    return a;
 
 }
 
