@@ -5,6 +5,9 @@ import { invoke } from "@tauri-apps/api/tauri";
 </script>
 
 <template>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Abyssinica+SIL&display=swap" rel="stylesheet">
   <div class="animation-container">
     <svg class="animation-svg" xmlns="http://www.w3.org/2000/svg" 
         xmlns:xlink="http://www.w3.org/1999/xlink"
@@ -14,17 +17,17 @@ import { invoke } from "@tauri-apps/api/tauri";
         height="85pt"
         viewBox="0 0 85 85">
     <defs/>
-    <text id="shape0" transform="matrix(1 0 0 1 10 75)" fill="#ffffff" class="font_a" font-size="100" font-size-adjust="0.349432" font-stretch="normal"><tspan x="0">%</tspan></text>
+    <text id="shape0" transform="matrix(1 0 0 1 10 75)" fill="#ffffff" font-family="Abyssinica SIL" font-size="100" font-size-adjust="0.349432" font-stretch="normal"><tspan x="0">%</tspan></text>
     </svg>
   </div>
 </template>
 
 
 <style>
-  .font_a {
-    font-family: "Abyssinica SIL";
-    src: url(../assets/font.woff);
+  html {
+    font-family: 'Abyssinica SIL', serif;
   }
+
   body {
     display: flex;
     flex-direction: column;
