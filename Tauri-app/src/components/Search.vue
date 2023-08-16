@@ -57,9 +57,6 @@ async function handleInput() {
     debugMsg.value = e as string;
   }
 }
-function clearSuggestions() {
-  showSuggestions.value = false;
-}
 
 function showMoreDrinks(): void{
   showMore.value = true;
@@ -75,12 +72,12 @@ function showMoreDrinks(): void{
     placeholder="Type ingredient name"
     @input="handleInput"
     v-on:keyup.enter="addIngredient"
-    @blur="clearSuggestions"
+    
   />
   <button class="butAdd" @click="addIngredient">Add Ingredient</button>
   <button class="searchbut" @click="SearchDrink">Search for drinks</button>
 
-  <button class="ingredient-item" @click="selectSuggestion()" v-for="(ingredient, index) in Ingredients">
+  <button class="ingredient-item" @click="selectSuggestion(suggestion)" v-for="(ingredient, index) in Ingredients">
     {{ ingredient }}
     <button class="remove" @click="removeIngredient(index)">X</button>
   </button>
@@ -101,15 +98,24 @@ function showMoreDrinks(): void{
 
   <!-- The autocomplete list -->
   <div v-if="showSuggestions" class="autocomplete-list">
-    <div v-for="suggestion in filteredSuggestions()">
-      <div class="autocomplete-item" @click="selectSuggestion(suggestion)">
-        {{ Ingredient }}
-      </div>
+    <div class="divAutofill" v-for="suggestion in filteredSuggestions()">
+      <button class="autocomplete-item" @click="selectSuggestion(suggestion)">
+         {{ suggestion }}
+      </button>
     </div>
   </div> 
 </template>
 
 <style scoped>
+.autocomplete-item{
+  background-color: white;
+  border-style:none;
+  position:relative;
+}
+.divAutofill{
+  position: absolute;
+  left: 1000px;
+}
 .ingredient-item {
   float:left;
   display: flex;
