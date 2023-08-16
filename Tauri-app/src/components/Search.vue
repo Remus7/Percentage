@@ -6,7 +6,7 @@ import { favoriteDrinks, AvailableDrinks, Ingredients } from "../App.vue";
 
 const Ingredient: Ref<string> = ref("");
 
-const areDrinks = ref(true); //catches if there are drinks possible to be served
+const areDrinks = ref(false); //catches if there are drinks possible to be served
 const debugMsg = ref("");
 const showSuggestions: Ref<boolean> = ref(true);
 const suggestions: Ref<string[]> = ref([]);
@@ -92,17 +92,16 @@ function showMoreDrinks(): void{
     {{ ingredient }}
     <button class="remove" @click="removeIngredient(index)">X</button>
   </button>
-
-  <p v-if="!areDrinks">ingredients are invalid. No drink available.</p>
-  <br />
   
-  <button @click="showMoreDrinks">Show more</button>
-    <div v-for="(drink, index) in AvailableDrinks">
-      <button v-if="index < 5 || showMore === true" class="drink-button">
-        <span class="drink-name">{{ drink }}</span>
-        <button class="favorite" @click="addFavorite(drink)">	&#127864;</button>
-      </button>  
-    </div>  
+  <div class="drink-list-container">
+  <div v-for="(drink, index) in AvailableDrinks">
+    <button v-if="index < 5 || showMore === true" class="drink-button">
+      <span class="drink-name">{{ drink }}</span>
+      <button class="favorite" @click="addFavorite(drink)">	&#127864;</button>
+    </button>  
+  </div>  
+  </div>
+  <button v-if="areDrinks" @click="showMoreDrinks">Show more</button>
 
 </template>
 <style scoped>
@@ -133,6 +132,11 @@ function showMoreDrinks(): void{
 }
 .remove:hover {
   background-color: #d32f2f;
+}
+
+.drink-list-container {
+  max-height: 300px; /* Set the maximum height for the scrollable container */
+  overflow-y: auto; /* Enable vertical scrolling if content overflows */
 }
 
 .drink-button {
