@@ -47,12 +47,14 @@ function selectSuggestion(suggestion: string) {
   showSuggestions.value = false;
 }
 async function handleInput() {
+  debugMsg.value = "";
+
   try {
-    [suggestions.value] = await invoke("get_possible_ingredients");
+    suggestions.value = await invoke("get_possible_ingredients");
+    showSuggestions.value = true;
   } catch (e) {
-    console.log(e);
+    debugMsg.value = e as string;
   }
-  showSuggestions.value = true;
 }
 function clearSuggestions() {
   showSuggestions.value = false;
