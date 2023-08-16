@@ -11,6 +11,7 @@ const AvailableDrinks: Ref<string[]> = ref([]); //VECTORUL PRIMIT DIN RUST CU BA
 const debugMsg = ref("");
 const showSuggestions: Ref<boolean> = ref(true);
 const suggestions: Ref<string[]> = ref([]);
+const showMore: Ref<boolean> = ref(false);
 
 async function SearchDrink() {
   try {
@@ -59,6 +60,11 @@ async function handleInput() {
 function clearSuggestions() {
   showSuggestions.value = false;
 }
+
+function showMoreDrinks(): void{
+  showMore.value = true;
+}
+
 </script>
 
 <template>
@@ -74,29 +80,33 @@ function clearSuggestions() {
   <button class="butAdd" @click="addIngredient">Add Ingredient</button>
   <button class="searchbut" @click="SearchDrink">Search for drinks</button>
 
-  <button class="ingredient-item" v-for="(ingredient, index) in Ingredients">
+  <button class="ingredient-item" @click="selectSuggestion(ingredient)" v-for="(ingredient, index) in Ingredients">
     {{ ingredient }}
     <button class="remove" @click="removeIngredient(index)">X</button>
   </button>
 
   <p v-if="!areDrinks">ingredients are invalid. No drink available.</p>
   <br />
-
-  <button v-for="drink in AvailableDrinks" class="drink-button">
-    {{ drink }}
-    <button class="favorite" @click="addFavorite(drink)">&#127864;</button>
-  </button>
-
+  
+  <button @click="showMoreDrinks">Show more</button>
+    <div v-for="(drink, index) in AvailableDrinks">
+      <button v-if="index < 5 || showMore === true" class="drink-button">
+        <span class="drink-name">{{ drink }}</span>
+        <button class="favorite" @click="addFavorite(drink)">	&#127864;</button>
+      </button>  
+    </div>  
+  
+    
   <!-- <input type="text" v-model="searchText" @input="handleInput" @blur="clearSuggestions" placeholder="Enter a word"> -->
 
   <!-- The autocomplete list -->
-  <div v-if="showSuggestions" class="autocomplete-list">
+  <!-- <div v-if="showSuggestions" class="autocomplete-list">
     <div v-for="suggestion in filteredSuggestions()">
       <div class="autocomplete-item" @click="selectSuggestion(suggestion)">
         {{ suggestion }}
       </div>
     </div>
-  </div>
+  </div> -->
 </template>
 
 <style scoped>
@@ -137,8 +147,13 @@ function clearSuggestions() {
   padding: 8px;
   border: 1px solid #ccc;
   border-radius: 4px;
-  background-color: #a3333d;
+  background-color: #A3333D;
   border-color: white;
+  width: 100%; /* Make the buttons occupy the full width */
+}
+.drink-name {
+  flex: 1; /* Expand to take remaining space */
+  text-align: center; /* Center-align the text */
 }
 
 .drink-button:hover {
