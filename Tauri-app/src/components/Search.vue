@@ -191,7 +191,6 @@ function showMoreDrinks(): void{
 }
 
 input {
-  width: 90%;
   padding: 10px;
   border: 2px solid #2bb4b4;
   border-radius: 5px;
