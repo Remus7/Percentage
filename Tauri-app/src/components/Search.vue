@@ -50,6 +50,7 @@ async function handleInput() {
   try {
     [suggestions.value] = await invoke("get_possible_ingredients");
   } catch (e) {
+    debugMsg.value = e as string;
     console.log(e);
   }
   showSuggestions.value = true;
