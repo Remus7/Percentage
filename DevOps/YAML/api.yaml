@@ -3,6 +3,7 @@ kind: Deployment
 metadata:
   name: papi
 spec:
+  replicas: 3
   selector:
     matchLabels:
       app: papi
@@ -13,7 +14,7 @@ spec:
     spec:
       containers:
       - name: papi
-        image: dynow/papi:1.11
+        image: dynow/papi:1.13
         resources:
           limits:
             memory: "128Mi"
@@ -22,7 +23,7 @@ spec:
         - containerPort: 5000
         env:
         - name: "REDIS_HOST"
-          value: "redis"
+          value: "my-release-redis-master"
 ---
 apiVersion: v1
 kind: Service
