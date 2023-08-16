@@ -56,12 +56,9 @@ async function handleInput() {
     debugMsg.value = e as string;
   }
 }
-<<<<<<< HEAD
-=======
 // function clearSuggestions() {
 //   showSuggestions.value = false;
 // }
->>>>>>> c8b6e40609f9989c6a14eaa8632c99fc467ffcbb
 
 function showMoreDrinks(): void{
   showMore.value = true;
@@ -92,7 +89,11 @@ function showMoreDrinks(): void{
   <button class="butAdd" @click="addIngredient">Add Ingredient</button>
   <button class="searchbut" @click="SearchDrink">Search for drinks</button>
 
+<<<<<<< HEAD
   <button class="ingredient-item" @click="selectSuggestion(suggestion)" v-for="(ingredient, index) in Ingredients">
+=======
+  <button class="ingredient-item" v-for="(ingredient, index) in Ingredients">
+>>>>>>> 5e2598e6febc94713234e6a76b2b6c277c8a9554
     {{ ingredient }}
     <button class="remove" @click="removeIngredient(index)">X</button>
   </button>
