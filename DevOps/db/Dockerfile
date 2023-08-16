@@ -6,6 +6,6 @@ COPY . /src/
 
 WORKDIR /src/
 
-ENV REDIS_HOST=redis
+ENV REDIS_HOST=my-release-redis-master
 
-CMD ["python", "Script.py"]
+CMD ["python", "script.py"]
