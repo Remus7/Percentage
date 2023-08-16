@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
       - name: papi
-        image: dynow/papi:1.13
+        image: dynow/papi:1.14
         resources:
           limits:
             memory: "128Mi"
@@ -24,6 +24,11 @@ spec:
         env:
         - name: "REDIS_HOST"
           value: "my-release-redis-master"
+        - name: redis-passwd
+          valueFrom:
+            secretKeyRef:
+              name: redis-db
+              key: redis-passwd
 ---
 apiVersion: v1
 kind: Service

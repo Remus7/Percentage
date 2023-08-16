@@ -5,7 +5,7 @@ import json
 
 app = Flask(__name__)
 
-r = redis.StrictRedis(host=os.environ['REDIS_HOST'], port=6379,password="Parola", decode_responses=True)
+r = redis.StrictRedis(host=os.environ['REDIS_HOST'], port=6379,password=os.environ["redis-passwd"], decode_responses=True)
 
 @app.route("/get_drinks/<ingredient>", methods=["GET"])
 def get_drinks_by_i(ingredient):
