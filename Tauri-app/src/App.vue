@@ -8,6 +8,8 @@ import { RouterLink, RouterView } from 'vue-router'
 
 <script lang="ts">
 export const favoriteDrinks: Ref<string[]> = ref([]);
+export const AvailableDrinks: Ref<string[]> = ref([]); //VECTORUL PRIMIT DIN RUST CU BAUTURILE AVAILABLE
+export const Ingredients: Ref<string[]> = ref([]);
 const agePrompt: Ref<boolean> = ref(true);
 
 export async function ageConfirm() {
@@ -88,7 +90,7 @@ export async function ageCancel() {
 }
 
 .close-button:hover {
-  background-color: #0056b3;
+  background-color: #185557;
 }
 
 .navImage{
