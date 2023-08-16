@@ -24,6 +24,7 @@ export async function ageCancel() {
     <v-card>
       <v-card-title class="titleAge">Confirm Age</v-card-title>
       <br>
+      <br>
       <v-card-text class="textAge" >
         Are you over 18 years old?
       </v-card-text>
