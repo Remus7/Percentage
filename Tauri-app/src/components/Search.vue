@@ -57,9 +57,9 @@ async function handleInput() {
     debugMsg.value = e as string;
   }
 }
-function clearSuggestions() {
-  showSuggestions.value = false;
-}
+// function clearSuggestions() {
+//   showSuggestions.value = false;
+// }
 
 function showMoreDrinks(): void{
   showMore.value = true;
@@ -69,18 +69,27 @@ function showMoreDrinks(): void{
 
 <template>
   <p>{{ debugMsg }}</p>
+  <div class="autocomplete-container">
   <input
     class="input"
     v-model="Ingredient"
     placeholder="Type ingredient name"
     @input="handleInput"
     v-on:keyup.enter="addIngredient"
-    @blur="clearSuggestions"
   />
+  <!-- The autocomplete list -->
+  <div v-if="showSuggestions" class="autocomplete-list">
+    <div v-for="suggestion in filteredSuggestions()">
+      <button class="autocomplete-item" @click="selectSuggestion(suggestion)">
+        {{ suggestion }}
+      </button>
+    </div>
+  </div> 
+  </div>
   <button class="butAdd" @click="addIngredient">Add Ingredient</button>
   <button class="searchbut" @click="SearchDrink">Search for drinks</button>
 
-  <button class="ingredient-item" @click="selectSuggestion(ingredient)" v-for="(ingredient, index) in Ingredients">
+  <button class="ingredient-item" v-for="(ingredient, index) in Ingredients">
     {{ ingredient }}
     <button class="remove" @click="removeIngredient(index)">X</button>
   </button>
@@ -95,22 +104,11 @@ function showMoreDrinks(): void{
         <button class="favorite" @click="addFavorite(drink)">	&#127864;</button>
       </button>  
     </div>  
-  
-    
-  <!-- <input type="text" v-model="searchText" @input="handleInput" @blur="clearSuggestions" placeholder="Enter a word"> -->
 
-  <!-- The autocomplete list -->
-  <!-- <div v-if="showSuggestions" class="autocomplete-list">
-    <div v-for="suggestion in filteredSuggestions()">
-      <div class="autocomplete-item" @click="selectSuggestion(suggestion)">
-        {{ suggestion }}
-      </div>
-    </div>
-  </div> -->
 </template>
-
 <style scoped>
 .ingredient-item {
+  float:left;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -200,5 +198,50 @@ input {
   color: #333;
   font-size: 16px;
   transition: border-color 0.3s, background-color 0.3s;
+}
+.autocomplete-container {
+  position: relative;
+}
+
+.input {
+  padding: 8px;
+  width: 100%;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.autocomplete-list {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  z-index: 1;
+  width: 100%; /* Set the width to match the input */
+  margin-top: 4px; /* Add margin to avoid overlap */
+  background-color: #fff;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  max-height: 200px;
+  overflow-y: auto;
+}
+
+.autocomplete-item {
+  padding: 8px 16px;
+  display: block;
+  text-align: left;
+  cursor: pointer;
+  border: none;
+  background-color: transparent;
+  width: 100%;
+  color: black;
+}
+
+.autocomplete-item:hover {
+  background-color: #f2f2f2;
+}
+
+.autocomplete-item:focus {
+  outline: none;
+  background-color: #f2f2f2;
 }
 </style>
