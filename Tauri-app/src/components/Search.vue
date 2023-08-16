@@ -68,6 +68,7 @@ function clearSuggestions() {
     v-model="Ingredient"
     placeholder="Type ingredient name"
     @input="handleInput"
+    v-on:keyup.enter="addIngredient"
     @blur="clearSuggestions"
   />
   <button class="butAdd" @click="addIngredient">Add Ingredient</button>
