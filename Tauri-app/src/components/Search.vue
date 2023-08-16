@@ -73,9 +73,9 @@ function clearSuggestions() {
   <button class="butAdd" @click="addIngredient">Add Ingredient</button>
   <button class="searchbut" @click="SearchDrink">Search for drinks</button>
 
-  <button class="ingredient-item" v-for="(ingredient, index) in Ingredients">
+  <button class="ingredient-item" @click="selectSuggestion()" v-for="(ingredient, index) in Ingredients">
     {{ ingredient }}
-    <button class="remove" @click="removeIngredient(index)">X</button>
+    <!-- <button class="remove" @click="removeIngredient(index)">X</button> -->
   </button>
 
   <p v-if="!areDrinks">ingredients are invalid. No drink available.</p>
