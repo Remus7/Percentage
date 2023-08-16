@@ -6,17 +6,12 @@ import { favoriteDrinks, AvailableDrinks, Ingredients } from "../App.vue";
 
 const Ingredient: Ref<string> = ref("");
 
-const areDrinks = ref(true); //catches if there are drinks possible to be served
+const areDrinks = ref(false); //catches if there are drinks possible to be served
 const debugMsg = ref("");
 const showSuggestions: Ref<boolean> = ref(false);
 const suggestions: Ref<string[]> = ref([]);
 const showMore: Ref<boolean> = ref(false);
 
-// function submitForm() {
-//   if (!Ingredient.value) {
-//     showSuggestions.value = false;
-//   }
-// }
 async function SearchDrink() {
   try {
     AvailableDrinks.value = await invoke("drink_from_ingredients", {
@@ -79,22 +74,21 @@ function showMoreDrinks(): void {
 <template>
   <p>{{ debugMsg }}</p>
   <div class="autocomplete-container">
-    <input
-      class="input"
-      v-model="Ingredient"
-      placeholder="Type ingredient name"
-      @input="handleInput"
-      v-on:keyup.enter="addIngredient"
-    />
-
-    <!-- The autocomplete list -->
-    <div v-if="showSuggestions" class="autocomplete-list">
-      <div v-for="suggestion in filteredSuggestions()">
-        <button class="autocomplete-item" @click="selectSuggestion(suggestion)">
-          {{ suggestion }}
-        </button>
-      </div>
+  <input
+    class="input"
+    v-model="Ingredient"
+    placeholder="Type ingredient name"
+    @input="handleInput"
+    v-on:keyup.enter="addIngredient"
+  />
+  <!-- The autocomplete list -->
+  <div v-if="showSuggestions" class="autocomplete-list">
+    <div v-for="suggestion in filteredSuggestions()">
+      <button class="autocomplete-item" @click="selectSuggestion(suggestion)">
+        {{ suggestion }}
+      </button>
     </div>
+  </div> 
   </div>
   <button class="butAdd" @click="addIngredient">Add Ingredient</button>
   <button class="searchbut" @click="SearchDrink">Search for drinks</button>
@@ -106,14 +100,14 @@ function showMoreDrinks(): void {
 
   <p v-if="!areDrinks">ingredients are invalid. No drink available.</p>
   <br />
-
+  
   <button @click="showMoreDrinks">Show more</button>
-  <div v-for="(drink, index) in AvailableDrinks">
-    <button v-if="index < 5 || showMore === true" class="drink-button">
-      <span class="drink-name">{{ drink }}</span>
-      <button class="favorite" @click="addFavorite(drink)">&#127864;</button>
-    </button>
-  </div>
+    <div v-for="(drink, index) in AvailableDrinks">
+      <button v-if="index < 5 || showMore === true" class="drink-button">
+        <span class="drink-name">{{ drink }}</span>
+        <button class="favorite" @click="addFavorite(drink)">	&#127864;</button>
+      </button>  
+    </div>  
 
   <!-- The autocomplete list -->
   <div v-if="showSuggestions" class="autocomplete-list">

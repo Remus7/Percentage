@@ -101,7 +101,7 @@ export async function ageCancel() {
 }
 
 .navbar{
-  height: 40px;
+  height: 55px;
   background-color: #1EAF90;
   overflow: hidden;
   padding-top:12px;
