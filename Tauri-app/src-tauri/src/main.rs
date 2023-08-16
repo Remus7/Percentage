@@ -103,18 +103,13 @@ async fn get_details(drink: String, request_type: u32) -> Result<String, Command
 }
 
 #[tauri::command]
-async fn get_possible_ingredients() -> Vec<String> {
+async fn get_possible_ingredients() -> Result<Vec<String>, CommandError > {
     let url = format!("http://172.20.50.2/get_ingredients");
-    let response = reqwest::get(url).await.map_err(|err| CommandError::Error(format!("{:?}", err))).unwrap().text().await.map_err(|err| CommandError::Error(format!("{:?}", err))).unwrap();
-    let details: HashMap<u32, String> = serde_json::from_str(&response).map_err(|err| CommandError::Error(format!("Bonus: {:?}", err))).unwrap();
+    let response = reqwest::get(url).await.map_err(|err| CommandError::Error(format!("{:?}", err)))?.text().await.map_err(|err| CommandError::Error(format!("{:?}", err)))?;
 
-    let mut ingredients = vec![];
+    let details: Vec<String> = serde_json::from_str(&response).map_err(|err| CommandError::Error(format!("Bonus: {:?}", err)))?;
 
-    for (_id, name) in details{
-        ingredients.push(name);
-    }
-
-    return ingredients
+    Ok(details)
 }
 
 fn main() {
