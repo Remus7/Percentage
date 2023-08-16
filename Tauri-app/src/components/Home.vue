@@ -54,6 +54,7 @@ body {
   height: 100vh;
   margin: 0;
   background-color: #1EAF90;
+  overflow-y: hidden;
 }
 
 .animation-container {
