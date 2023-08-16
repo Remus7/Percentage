@@ -6,7 +6,7 @@ import { favoriteDrinks, AvailableDrinks, Ingredients } from "../App.vue";
 
 const Ingredient: Ref<string> = ref("");
 
-const areDrinks = ref(true); //catches if there are drinks possible to be served
+const areDrinks = ref(false); //catches if there are drinks possible to be served
 const debugMsg = ref("");
 const showSuggestions: Ref<boolean> = ref(false);
 const suggestions: Ref<string[]> = ref([]);
@@ -106,7 +106,7 @@ function showMoreDrinks(): void {
     </button>  
   </div>  
   </div>
-  <button @click="showMoreDrinks">Show more</button>
+  <button v-if="areDrinks" @click="showMoreDrinks">Show more</button>
 
   <!-- The autocomplete list -->
   <div v-if="showSuggestions" class="autocomplete-list">
