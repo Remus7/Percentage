@@ -56,12 +56,9 @@ async function handleInput() {
     debugMsg.value = e as string;
   }
 }
-<<<<<<< HEAD
-=======
 // function clearSuggestions() {
 //   showSuggestions.value = false;
 // }
->>>>>>> c8b6e40609f9989c6a14eaa8632c99fc467ffcbb
 
 function showMoreDrinks(): void{
   showMore.value = true;
@@ -78,10 +75,7 @@ function showMoreDrinks(): void{
     placeholder="Type ingredient name"
     @input="handleInput"
     v-on:keyup.enter="addIngredient"
-<<<<<<< HEAD
     
-=======
->>>>>>> c8b6e40609f9989c6a14eaa8632c99fc467ffcbb
   />
   <!-- The autocomplete list -->
   <div v-if="showSuggestions" class="autocomplete-list">
@@ -95,11 +89,7 @@ function showMoreDrinks(): void{
   <button class="butAdd" @click="addIngredient">Add Ingredient</button>
   <button class="searchbut" @click="SearchDrink">Search for drinks</button>
 
-<<<<<<< HEAD
-  <button class="ingredient-item" @click="selectSuggestion(suggestion)" v-for="(ingredient, index) in Ingredients">
-=======
   <button class="ingredient-item" v-for="(ingredient, index) in Ingredients">
->>>>>>> c8b6e40609f9989c6a14eaa8632c99fc467ffcbb
     {{ ingredient }}
     <button class="remove" @click="removeIngredient(index)">X</button>
   </button>
@@ -115,7 +105,6 @@ function showMoreDrinks(): void{
       </button>  
     </div>  
 
-<<<<<<< HEAD
   <!-- The autocomplete list -->
   <div v-if="showSuggestions" class="autocomplete-list">
     <div class="divAutofill" v-for="suggestion in filteredSuggestions()">
@@ -124,8 +113,6 @@ function showMoreDrinks(): void{
       </button>
     </div>
   </div> 
-=======
->>>>>>> c8b6e40609f9989c6a14eaa8632c99fc467ffcbb
 </template>
 <style scoped>
 .autocomplete-item{
