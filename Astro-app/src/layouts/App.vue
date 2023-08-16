@@ -2,8 +2,6 @@
 // This starter template is using Vue 3 <script setup> SFCs
 // Check out https://vuejs.org/api/sfc-script-setup.html#script-setup
 import { ref, Ref } from "vue";
-import { RouterLink, RouterView } from 'vue-router'
-
 </script>
 
 <script lang="ts">
@@ -41,8 +39,7 @@ export async function ageCancel() {
      <RouterLink class="links" to="/favorite"><img class="navImage" src="/images/fav_icon.png" alt="Favourites"></RouterLink>
      <RouterLink class="links" to="/github" ><img class="navImage" src="/images/github_icon.png" alt="GitHub"> </RouterLink>
     </div>
-
-    <RouterView />
+    <slot name="app"/>
   </div>
 </template>
 
