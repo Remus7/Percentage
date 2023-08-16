@@ -80,7 +80,7 @@ function showMoreDrinks(): void{
   <button class="butAdd" @click="addIngredient">Add Ingredient</button>
   <button class="searchbut" @click="SearchDrink">Search for drinks</button>
 
-  <button class="ingredient-item" @click="selectSuggestion(ingredient)" v-for="(ingredient, index) in Ingredients">
+  <button class="ingredient-item" @click="selectSuggestion()" v-for="(ingredient, index) in Ingredients">
     {{ ingredient }}
     <button class="remove" @click="removeIngredient(index)">X</button>
   </button>
@@ -100,17 +100,18 @@ function showMoreDrinks(): void{
   <!-- <input type="text" v-model="searchText" @input="handleInput" @blur="clearSuggestions" placeholder="Enter a word"> -->
 
   <!-- The autocomplete list -->
-  <!-- <div v-if="showSuggestions" class="autocomplete-list">
+  <div v-if="showSuggestions" class="autocomplete-list">
     <div v-for="suggestion in filteredSuggestions()">
       <div class="autocomplete-item" @click="selectSuggestion(suggestion)">
-        {{ suggestion }}
+        {{ Ingredient }}
       </div>
     </div>
-  </div> -->
+  </div> 
 </template>
 
 <style scoped>
 .ingredient-item {
+  float:left;
   display: flex;
   align-items: center;
   justify-content: space-between;
