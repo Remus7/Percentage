@@ -8,7 +8,7 @@ import { RouterLink, RouterView } from 'vue-router'
 
 <script lang="ts">
 export const favoriteDrinks: Ref<string[]> = ref([]);
-const agePrompt: Ref<bool> = ref(true);
+const agePrompt: Ref<boolean> = ref(true);
 
 export async function ageConfirm() {
   agePrompt.value = false;
@@ -40,7 +40,7 @@ export async function ageCancel() {
      <RouterLink class="links" to="/"> <img class="navImage" src="/images/home_icon.png" alt="Home"> </RouterLink>
      <RouterLink class="links" to="/search"><img class="navImage" src="/images/search_icon.png" alt="Search"></RouterLink>
      <RouterLink class="links" to="/favorite"><img class="navImage" src="/images/fav_icon.png" alt="Favourites"></RouterLink>
-     <RouterLink class="links" to="/github" ><img class="navImage" src="/images/github_icon.png" alt="GitHub"> </RouterLink>
+     <a class="links" href="https://github.com/Remus7/Percentage" target="_blank"><img class="navImage" src="/images/github_icon.png" alt="GitHub"> </a>
     </div>
 
     <RouterView />
@@ -50,8 +50,8 @@ export async function ageCancel() {
 <style scoped>
 .container {
   font-family: Arial, sans-serif;
-  text-align: center center;
-  margin-top: 100px;
+  text-align: center;
+  margin-top: 6%;
 }
 
 .titleAge {

@@ -103,10 +103,10 @@ async fn get_details(drink: String, request_type: u32) -> Result<String, Command
 }
 
 #[tauri::command]
-async fn get_possible_ingredients() -> Result<Vec<String>, CommandError> {
+async fn get_possible_ingredients() -> Vec<String> {
     let url = format!("http://172.20.50.2/get_ingredients");
-    let response = reqwest::get(url).await.map_err(|err| CommandError::Error(format!("{:?}", err)))?.text().await.map_err(|err| CommandError::Error(format!("{:?}", err)))?;
-    let details: HashMap<u32, String> = serde_json::from_str(&response).map_err(|err| CommandError::Error(format!("Bonus: {:?}", err)))?;
+    let response = reqwest::get(url).await.map_err(|err| CommandError::Error(format!("{:?}", err))).unwrap().text().await.map_err(|err| CommandError::Error(format!("{:?}", err))).unwrap();
+    let details: HashMap<u32, String> = serde_json::from_str(&response).map_err(|err| CommandError::Error(format!("Bonus: {:?}", err))).unwrap();
 
     let mut ingredients = vec![];
 
@@ -114,7 +114,7 @@ async fn get_possible_ingredients() -> Result<Vec<String>, CommandError> {
         ingredients.push(name);
     }
 
-    Ok(ingredients)
+    return ingredients
 }
 
 fn main() {
@@ -122,7 +122,8 @@ fn main() {
         .invoke_handler(tauri::generate_handler![
             drink_from_ingredients,
             get_details,
-            get_ingredients
+            get_ingredients,
+            get_possible_ingredients
         ])
         .run(tauri::generate_context!())
         .expect("error while running tauri application");

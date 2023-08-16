@@ -4,40 +4,59 @@ import { invoke } from "@tauri-apps/api/tauri";
 import { favoriteDrinks } from "../App.vue";
 
 const Ingredients: Ref<string[]> = ref([]);
-const Ingredient = ref("");
+const Ingredient: Ref<string> = ref("");
 
 const areDrinks = ref(true); //catches if there are drinks possible to be served
 const AvailableDrinks: Ref<string[]> = ref([]); //VECTORUL PRIMIT DIN RUST CU BAUTURILE AVAILABLE
 const debugMsg = ref("");
-const showMore: Ref<boolean> = ref(false);
+const showSuggestions: Ref<boolean> = ref(true);
+const suggestions: Ref<string[]> = ref([]);
 
-async function SearchDrink(){
-  try{
-      AvailableDrinks.value = await invoke ("drink_from_ingredients", {ingredientVec: Ingredients.value})
-      areDrinks.value = true;
-  } catch(error){
-      areDrinks.value = false;
-      debugMsg.value = error as string;
+async function SearchDrink() {
+  try {
+    AvailableDrinks.value = await invoke("drink_from_ingredients", {
+      ingredientVec: Ingredients.value,
+    });
+    areDrinks.value = true;
+  } catch (error) {
+    areDrinks.value = false;
+    debugMsg.value = error as string;
   }
 }
 function removeIngredient(index: number): void {
-    Ingredients.value.splice(index, 1);
-};
+  Ingredients.value.splice(index, 1);
+}
 
 async function addIngredient() {
   Ingredients.value.push(Ingredient.value);
   Ingredient.value = "";
 }
 
-function addFavorite(drink: string){ 
-  if(favoriteDrinks.value.indexOf(drink) === -1)
-    favoriteDrinks.value.push(drink);                        
+async function addFavorite(drink: string) {
+  if (favoriteDrinks.value.indexOf(drink) === -1)
+    favoriteDrinks.value.push(drink);
+}
+function filteredSuggestions() {
+  return suggestions.value.filter((suggestion) =>
+    suggestion.toLowerCase().startsWith(Ingredient.value)
+  );
 }
 
-function showMoreDrinks(): void{
-  showMore.value = true;
+function selectSuggestion(suggestion: string) {
+  Ingredient.value = suggestion;
+  showSuggestions.value = false;
 }
-
+async function handleInput() {
+  try {
+    [suggestions.value] = await invoke("get_possible_ingredients");
+  } catch (e) {
+    console.log(e);
+  }
+  showSuggestions.value = true;
+}
+function clearSuggestions() {
+  showSuggestions.value = false;
+}
 </script>
 
 <template>
@@ -46,26 +65,35 @@ function showMoreDrinks(): void{
     class="input"
     v-model="Ingredient"
     placeholder="Type ingredient name"
+    @input="handleInput"
+    @blur="clearSuggestions"
   />
   <button class="butAdd" @click="addIngredient">Add Ingredient</button>
   <button class="searchbut" @click="SearchDrink">Search for drinks</button>
 
-  <button class="ingredient-item" v-for="(ingredient, index) in Ingredients" :key="index">
+  <button class="ingredient-item" v-for="(ingredient, index) in Ingredients">
     {{ ingredient }}
     <button class="remove" @click="removeIngredient(index)">X</button>
   </button>
-  
+
   <p v-if="!areDrinks">ingredients are invalid. No drink available.</p>
   <br />
 
-  <div v-for="(drink, index) in AvailableDrinks">
-    <button v-if="index < 5 || showMore === true" class="drink-button">
-      <span class="drink-name">{{ drink }}</span>
-    <button class="favorite" @click="addFavorite(drink)">	&#127864;</button>
-  </button> 
+  <button v-for="drink in AvailableDrinks" class="drink-button">
+    {{ drink }}
+    <button class="favorite" @click="addFavorite(drink)">&#127864;</button>
+  </button>
+
+  <!-- <input type="text" v-model="searchText" @input="handleInput" @blur="clearSuggestions" placeholder="Enter a word"> -->
+
+  <!-- The autocomplete list -->
+  <div v-if="showSuggestions" class="autocomplete-list">
+    <div v-for="suggestion in filteredSuggestions()">
+      <div class="autocomplete-item" @click="selectSuggestion(suggestion)">
+        {{ suggestion }}
+      </div>
+    </div>
   </div>
-  <button @click="showMoreDrinks">Show more</button>
-  
 </template>
 
 <style scoped>
@@ -76,15 +104,15 @@ function showMoreDrinks(): void{
   margin-bottom: 8px;
   padding: 8px;
   border: 1px solid white;
-  background-color: #0E4749;
+  background-color: #0e4749;
   color: white;
   border-radius: 4px;
 }
-.ingredient-item:hover{
-  opacity:0.8;
+.ingredient-item:hover {
+  opacity: 0.8;
 }
 .remove {
-  text-align: center  ;
+  text-align: center;
   background-color: #f44336;
   color: white;
   border: none;
@@ -97,19 +125,6 @@ function showMoreDrinks(): void{
   background-color: #d32f2f;
 }
 
-/* .drink-button {
-  color: white;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  margin-bottom: 5px;
-  padding: 8px;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  background-color:#A3333D;
-  border-color: white;
-}
-` */
 .drink-button {
   color: white;
   display: flex;
@@ -119,22 +134,15 @@ function showMoreDrinks(): void{
   padding: 8px;
   border: 1px solid #ccc;
   border-radius: 4px;
-  background-color: #A3333D;
+  background-color: #a3333d;
   border-color: white;
-  width: 100%; /* Make the buttons occupy the full width */
-}
-
-.drink-name {
-  flex: 1; /* Expand to take remaining space */
-  text-align: center; /* Center-align the text */
 }
 
 .drink-button:hover {
-  opacity:0.9;
+  opacity: 0.9;
 }
 .favorite {
-
-  background-color: #F64740;
+  background-color: #f64740;
   color: red;
   border: none;
   border-radius: 50%;
@@ -145,32 +153,32 @@ function showMoreDrinks(): void{
 .favorite:hover {
   background-color: #d32f2f;
 }
-.searchbut{
-  margin-top:6px; 
+.searchbut {
+  margin-top: 6px;
   margin-bottom: 25px;
   border-radius: 15px;
-  box-shadow: 5px 5px  black;
+  box-shadow: 5px 5px black;
 }
-.searchbut:hover{
-  opacity:0.8;
-  transition:1.5 s;
+.searchbut:hover {
+  opacity: 0.8;
+  transition: 1.5 s;
 }
-.butAdd{
-  margin-top:4px; ;
+.butAdd {
+  margin-top: 4px;
   border-radius: 15px;
-  box-shadow: 5px 5px  black;
+  box-shadow: 5px 5px black;
 }
-.butAdd:hover{
-  opacity:0.8;
-  transition:1.5 s;
+.butAdd:hover {
+  opacity: 0.8;
+  transition: 1.5 s;
 }
 
-input{
+input {
   width: 90%;
   padding: 10px;
-  border: 2px solid #2BB4B4; 
+  border: 2px solid #2bb4b4;
   border-radius: 5px;
-  background-color: #F0F7F7; 
+  background-color: #f0f7f7;
   color: #333;
   font-size: 16px;
   transition: border-color 0.3s, background-color 0.3s;
