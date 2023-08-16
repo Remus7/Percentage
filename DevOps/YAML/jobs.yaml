@@ -8,10 +8,17 @@ spec:
     spec:
       containers:
       - name: myjob
-        image: dynow/papi-script:1.21
+        image: dynow/papi-script:1.22
         resources:
           limits:
             cpu: "0"
             memory: "0"
+        env:
+        - name: redis-passwd
+          valueFrom:
+            secretKeyRef:
+              name: redis-db
+              key: redis-passwd
+
       restartPolicy: Never
   backoffLimit: 3

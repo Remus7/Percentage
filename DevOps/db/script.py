@@ -2,7 +2,7 @@ import redis
 import json
 import os
 
-r = redis.StrictRedis(host=os.environ["REDIS_HOST"], port=6379, password="Parola", decode_responses=True)
+r = redis.StrictRedis(host=os.environ["REDIS_HOST"], port=6379, password=os.environ["redis-passwd"], decode_responses=True)
 
 f = open('cocktails3.json')
 

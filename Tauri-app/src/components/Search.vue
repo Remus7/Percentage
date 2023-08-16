@@ -1,13 +1,12 @@
+<router-view :key="$route.path" />
 <script setup lang="ts">
 import { ref, Ref } from "vue";
 import { invoke } from "@tauri-apps/api/tauri";
-import { favoriteDrinks } from "../App.vue";
+import { favoriteDrinks, AvailableDrinks, Ingredients } from "../App.vue";
 
-const Ingredients: Ref<string[]> = ref([]);
 const Ingredient: Ref<string> = ref("");
 
 const areDrinks = ref(true); //catches if there are drinks possible to be served
-const AvailableDrinks: Ref<string[]> = ref([]); //VECTORUL PRIMIT DIN RUST CU BAUTURILE AVAILABLE
 const debugMsg = ref("");
 const showSuggestions: Ref<boolean> = ref(true);
 const suggestions: Ref<string[]> = ref([]);
@@ -57,6 +56,12 @@ async function handleInput() {
     debugMsg.value = e as string;
   }
 }
+<<<<<<< HEAD
+=======
+// function clearSuggestions() {
+//   showSuggestions.value = false;
+// }
+>>>>>>> c8b6e40609f9989c6a14eaa8632c99fc467ffcbb
 
 function showMoreDrinks(): void{
   showMore.value = true;
@@ -66,18 +71,35 @@ function showMoreDrinks(): void{
 
 <template>
   <p>{{ debugMsg }}</p>
+  <div class="autocomplete-container">
   <input
     class="input"
     v-model="Ingredient"
     placeholder="Type ingredient name"
     @input="handleInput"
     v-on:keyup.enter="addIngredient"
+<<<<<<< HEAD
     
+=======
+>>>>>>> c8b6e40609f9989c6a14eaa8632c99fc467ffcbb
   />
+  <!-- The autocomplete list -->
+  <div v-if="showSuggestions" class="autocomplete-list">
+    <div v-for="suggestion in filteredSuggestions()">
+      <button class="autocomplete-item" @click="selectSuggestion(suggestion)">
+        {{ suggestion }}
+      </button>
+    </div>
+  </div> 
+  </div>
   <button class="butAdd" @click="addIngredient">Add Ingredient</button>
   <button class="searchbut" @click="SearchDrink">Search for drinks</button>
 
+<<<<<<< HEAD
   <button class="ingredient-item" @click="selectSuggestion(suggestion)" v-for="(ingredient, index) in Ingredients">
+=======
+  <button class="ingredient-item" v-for="(ingredient, index) in Ingredients">
+>>>>>>> c8b6e40609f9989c6a14eaa8632c99fc467ffcbb
     {{ ingredient }}
     <button class="remove" @click="removeIngredient(index)">X</button>
   </button>
@@ -92,10 +114,8 @@ function showMoreDrinks(): void{
         <button class="favorite" @click="addFavorite(drink)">	&#127864;</button>
       </button>  
     </div>  
-  
-    
-  <!-- <input type="text" v-model="searchText" @input="handleInput" @blur="clearSuggestions" placeholder="Enter a word"> -->
 
+<<<<<<< HEAD
   <!-- The autocomplete list -->
   <div v-if="showSuggestions" class="autocomplete-list">
     <div class="divAutofill" v-for="suggestion in filteredSuggestions()">
@@ -104,8 +124,9 @@ function showMoreDrinks(): void{
       </button>
     </div>
   </div> 
+=======
+>>>>>>> c8b6e40609f9989c6a14eaa8632c99fc467ffcbb
 </template>
-
 <style scoped>
 .autocomplete-item{
   background-color: white;
@@ -199,7 +220,6 @@ function showMoreDrinks(): void{
 }
 
 input {
-  width: 90%;
   padding: 10px;
   border: 2px solid #2bb4b4;
   border-radius: 5px;
@@ -207,5 +227,50 @@ input {
   color: #333;
   font-size: 16px;
   transition: border-color 0.3s, background-color 0.3s;
+}
+.autocomplete-container {
+  position: relative;
+}
+
+.input {
+  padding: 8px;
+  width: 100%;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.autocomplete-list {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  z-index: 1;
+  width: 100%; /* Set the width to match the input */
+  margin-top: 4px; /* Add margin to avoid overlap */
+  background-color: #fff;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  max-height: 200px;
+  overflow-y: auto;
+}
+
+.autocomplete-item {
+  padding: 8px 16px;
+  display: block;
+  text-align: left;
+  cursor: pointer;
+  border: none;
+  background-color: transparent;
+  width: 100%;
+  color: black;
+}
+
+.autocomplete-item:hover {
+  background-color: #f2f2f2;
+}
+
+.autocomplete-item:focus {
+  outline: none;
+  background-color: #f2f2f2;
 }
 </style>
