@@ -69,7 +69,7 @@ async function getDetails(drink: string) {
     <div class="dropdown">
   <button id="asdf">&#9432;</button>
   <div class="dropdown-content">
-    <button data-toggle="dropdown" id="asd"><u>Ingredients:</u>
+    <button class="dropdown-square" data-toggle="dropdown" id="asd"><u>Ingredients:</u>
       <select v-model="ingredientList">
         <option v-for="(detail, detailIndex) in drinkDetails" :key="detailIndex">{{ detail }}</option>
       </select>
@@ -156,7 +156,7 @@ async function getDetails(drink: string) {
 
 .dropdown-square{
   color:black;
-
+ border-radius: 0px;;
 }
 
 </style>

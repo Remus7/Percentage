@@ -8,7 +8,7 @@ import { RouterLink, RouterView } from 'vue-router'
 
 <script lang="ts">
 export const favoriteDrinks: Ref<string[]> = ref([]);
-const agePrompt: Ref<bool> = ref(false);
+const agePrompt: Ref<boolean> = ref(false);
 
 export async function ageConfirm() {
   agePrompt.value = false;
