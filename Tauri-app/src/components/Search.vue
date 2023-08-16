@@ -8,10 +8,15 @@ const Ingredient: Ref<string> = ref("");
 
 const areDrinks = ref(true); //catches if there are drinks possible to be served
 const debugMsg = ref("");
-const showSuggestions: Ref<boolean> = ref(true);
+const showSuggestions: Ref<boolean> = ref(false);
 const suggestions: Ref<string[]> = ref([]);
 const showMore: Ref<boolean> = ref(false);
 
+// function submitForm() {
+//   if (!Ingredient.value) {
+//     showSuggestions.value = false;
+//   }
+// }
 async function SearchDrink() {
   try {
     AvailableDrinks.value = await invoke("drink_from_ingredients", {
@@ -30,6 +35,7 @@ function removeIngredient(index: number): void {
 async function addIngredient() {
   Ingredients.value.push(Ingredient.value);
   Ingredient.value = "";
+  showSuggestions.value = false;
 }
 
 async function addFavorite(drink: string) {
@@ -55,90 +61,81 @@ async function handleInput() {
   } catch (e) {
     debugMsg.value = e as string;
   }
+  
+  if (Ingredient.value == "") {
+    showSuggestions.value = false;
+  }
 }
-<<<<<<< HEAD
-=======
+
 // function clearSuggestions() {
 //   showSuggestions.value = false;
 // }
->>>>>>> c8b6e40609f9989c6a14eaa8632c99fc467ffcbb
 
-function showMoreDrinks(): void{
+function showMoreDrinks(): void {
   showMore.value = true;
 }
-
 </script>
 
 <template>
   <p>{{ debugMsg }}</p>
   <div class="autocomplete-container">
-  <input
-    class="input"
-    v-model="Ingredient"
-    placeholder="Type ingredient name"
-    @input="handleInput"
-    v-on:keyup.enter="addIngredient"
-<<<<<<< HEAD
-    
-=======
->>>>>>> c8b6e40609f9989c6a14eaa8632c99fc467ffcbb
-  />
-  <!-- The autocomplete list -->
-  <div v-if="showSuggestions" class="autocomplete-list">
-    <div v-for="suggestion in filteredSuggestions()">
-      <button class="autocomplete-item" @click="selectSuggestion(suggestion)">
-        {{ suggestion }}
-      </button>
+    <input
+      class="input"
+      v-model="Ingredient"
+      placeholder="Type ingredient name"
+      @input="handleInput"
+      v-on:keyup.enter="addIngredient"
+    />
+
+    <!-- The autocomplete list -->
+    <div v-if="showSuggestions" class="autocomplete-list">
+      <div v-for="suggestion in filteredSuggestions()">
+        <button class="autocomplete-item" @click="selectSuggestion(suggestion)">
+          {{ suggestion }}
+        </button>
+      </div>
     </div>
-  </div> 
   </div>
   <button class="butAdd" @click="addIngredient">Add Ingredient</button>
   <button class="searchbut" @click="SearchDrink">Search for drinks</button>
 
-<<<<<<< HEAD
-  <button class="ingredient-item" @click="selectSuggestion(suggestion)" v-for="(ingredient, index) in Ingredients">
-=======
   <button class="ingredient-item" v-for="(ingredient, index) in Ingredients">
->>>>>>> c8b6e40609f9989c6a14eaa8632c99fc467ffcbb
     {{ ingredient }}
     <button class="remove" @click="removeIngredient(index)">X</button>
   </button>
 
   <p v-if="!areDrinks">ingredients are invalid. No drink available.</p>
   <br />
-  
-  <button @click="showMoreDrinks">Show more</button>
-    <div v-for="(drink, index) in AvailableDrinks">
-      <button v-if="index < 5 || showMore === true" class="drink-button">
-        <span class="drink-name">{{ drink }}</span>
-        <button class="favorite" @click="addFavorite(drink)">	&#127864;</button>
-      </button>  
-    </div>  
 
-<<<<<<< HEAD
+  <button @click="showMoreDrinks">Show more</button>
+  <div v-for="(drink, index) in AvailableDrinks">
+    <button v-if="index < 5 || showMore === true" class="drink-button">
+      <span class="drink-name">{{ drink }}</span>
+      <button class="favorite" @click="addFavorite(drink)">&#127864;</button>
+    </button>
+  </div>
+
   <!-- The autocomplete list -->
   <div v-if="showSuggestions" class="autocomplete-list">
     <div class="divAutofill" v-for="suggestion in filteredSuggestions()">
       <button class="autocomplete-item" @click="selectSuggestion(suggestion)">
-         {{ suggestion }}
+        {{ suggestion }}
       </button>
     </div>
-  </div> 
-=======
->>>>>>> c8b6e40609f9989c6a14eaa8632c99fc467ffcbb
+  </div>
 </template>
 <style scoped>
-.autocomplete-item{
+.autocomplete-item {
   background-color: white;
-  border-style:none;
-  position:relative;
+  border-style: none;
+  position: relative;
 }
-.divAutofill{
+.divAutofill {
   position: absolute;
   left: 1000px;
 }
 .ingredient-item {
-  float:left;
+  float: left;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -175,7 +172,7 @@ function showMoreDrinks(): void{
   padding: 8px;
   border: 1px solid #ccc;
   border-radius: 4px;
-  background-color: #A3333D;
+  background-color: #a3333d;
   border-color: white;
   width: 100%; /* Make the buttons occupy the full width */
 }
