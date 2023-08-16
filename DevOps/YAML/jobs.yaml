@@ -1,0 +1,17 @@
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: myjob
+spec:
+  ttlSecondsAfterFinished: 100
+  template:
+    spec:
+      containers:
+      - name: myjob
+        image: dynow/papi-script:1.21
+        resources:
+          limits:
+            cpu: "0"
+            memory: "0"
+      restartPolicy: Never
+  backoffLimit: 3
