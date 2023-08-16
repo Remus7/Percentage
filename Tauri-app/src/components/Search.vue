@@ -1,13 +1,12 @@
+<router-view :key="$route.path" />
 <script setup lang="ts">
 import { ref, Ref } from "vue";
 import { invoke } from "@tauri-apps/api/tauri";
-import { favoriteDrinks } from "../App.vue";
+import { favoriteDrinks, AvailableDrinks, Ingredients } from "../App.vue";
 
-const Ingredients: Ref<string[]> = ref([]);
 const Ingredient: Ref<string> = ref("");
 
 const areDrinks = ref(true); //catches if there are drinks possible to be served
-const AvailableDrinks: Ref<string[]> = ref([]); //VECTORUL PRIMIT DIN RUST CU BAUTURILE AVAILABLE
 const debugMsg = ref("");
 const showSuggestions: Ref<boolean> = ref(true);
 const suggestions: Ref<string[]> = ref([]);
@@ -190,7 +189,6 @@ function showMoreDrinks(): void{
 }
 
 input {
-  width: 90%;
   padding: 10px;
   border: 2px solid #2bb4b4;
   border-radius: 5px;
