@@ -3,6 +3,7 @@
 // Check out https://vuejs.org/api/sfc-script-setup.html#script-setup
 import { ref, Ref } from "vue";
 import { RouterLink, RouterView } from 'vue-router'
+import "./assets/style.css";
 
 </script>
 
@@ -48,81 +49,3 @@ export async function ageCancel() {
     <RouterView />
   </div>
 </template>
-
-<style scoped>
-.container {
-  font-family: Arial, sans-serif;
-  text-align: center;
-  margin-top: 6%;
-}
-
-.titleAge {
-  font-size: 45px;
-  margin-bottom: 50px;
-  color:black;
-}
-.textAge {
-  font-size: 30px;
-  margin-bottom: 30px;
-  color: black;
-}
-
-.button-container {
-  display: flex;
-  justify-content: center;
-  margin-top: 20px;
-}
-
-.close-button {
-  display: flex;
-  text-align: center, center;
-  align-items: center;
-  justify-content: space-between;
-  margin-bottom: 8px;
-  margin-left: 40px;
-  margin-right: 40px;
-  width: 50px;
-  padding: 8px;
-  border: 1px solid white;
-  background-color: #0E4749;
-  color: white;
-  border-radius: 4px;
-}
-
-.close-button:hover {
-  background-color: #185557;
-}
-
-.navImage{
-  height: 40px;
-  width: auto;
-  z-index: 1;
-  color: white;
-}
-
-.navbar{
-  height: 55px;
-  background-color: #1EAF90;
-  overflow: hidden;
-  padding-top:12px;
-  margin-top: 25px;
-}
-.links{
-  color: white;
-  text-align: center;
-  padding:10px;
-  /* text-decoration: none; */
-  font-size: 17px;
-}
-
-.links:hover{
-  opacity:0.7;
-  /* color:black; */
-}
-.navbar{
-  margin-bottom:50px;
-}
-
-
-
-</style>

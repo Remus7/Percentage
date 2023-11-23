@@ -1,21 +1,8 @@
 <script setup lang="ts">
-
+import "../assets/home.css";
 </script>
 
 <template>
-  <!-- <div class="animation-container">
-    <svg class="animation-svg" xmlns="http://www.w3.org/2000/svg" 
-        xmlns:xlink="http://www.w3.org/1999/xlink"
-        xmlns:krita="http://krita.org/namespaces/svg/krita"
-        xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
-        width="85pt"
-        height="85pt"
-        viewBox="0 0 85 85">
-    <defs/>
-    <text id="shape0" transform="matrix(1 0 0 1 10 75)" fill="#ffffff" font-family="Abyssinica SIL" font-size="100" font-size-adjust="0.349432" font-stretch="normal"><tspan x="0">%</tspan></text>
-    </svg>
-  </div> -->
-
   <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="960" height="540"
     viewBox="0 0 1920 1080">
     <image x="236" y="294" width="200" height="269"
@@ -27,83 +14,3 @@
     <text id="percentage" class="cls-2" x="540.743" y="600">percentage</text>
   </svg>
 </template>
-
-
-<style>
-@font-face {
-  font-family: "QueensidesLight";
-  src: url("/QueensidesLight.ttf");
-}
-
-.cls-1 {
-  fill-rule: evenodd;
-}
-
-.cls-2 {
-  font-size: 250px;
-  font-family: "QueensidesLight";
-  font-weight: 300;
-}
-
-body {
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  /* Align content at the top */
-  align-items: center;
-  height: 100vh;
-  margin: 0;
-  background-color: #1EAF90;
-  overflow-y: hidden;
-}
-
-.animation-container {
-  position: relative;
-  width: 500px;
-  height: 500px;
-  overflow: hidden;
-}
-
-.animation-svg {
-  width: 100%;
-  height: 100%;
-  transform-origin: center center;
-  animation: zoomOut 2s ease-in-out, idleAnim 2s ease-in-out infinite;
-  animation-delay: 0s, 2s;
-}
-
-.change-yellow {
-  fill: #B9A44C;
-}
-
-.change-blue {
-  fill: #0C4767;
-}
-
-@keyframes zoomOut {
-  0% {
-    transform: scale(1);
-  }
-
-  100% {
-    transform: scale(0.3);
-  }
-}
-
-@keyframes idleAnim {
-  0% {
-    transform: scale(0.3) rotate(0deg);
-  }
-
-  25% {
-    transform: scale(0.3) rotate(20deg);
-  }
-
-  75% {
-    transform: scale(0.3) rotate(-20deg);
-  }
-
-  100% {
-    transform: scale(0.3) rotate(0deg);
-  }
-}</style>
