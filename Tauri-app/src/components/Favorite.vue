@@ -2,6 +2,8 @@
 import { ref, Ref } from "vue";
 import { invoke } from "@tauri-apps/api/tauri";
 import { favoriteDrinks } from "../App.vue";
+import "../assets/favorite.css"
+
 const ingredientList: Ref<String[]> = ref([])
 const activ: Ref<boolean> = ref(false);
 
@@ -22,7 +24,6 @@ async function getDetails(drink: string) {
     currentDrink.value = drink;
     debugMsg.value = "";
     activ.value = true;
-    // console.log(await invoke ("get_details", {drink: drink}));
 
     imageUrl.value = "";
     glassText.value = "Loading ..."
@@ -38,30 +39,9 @@ async function getDetails(drink: string) {
     }
   }
 }
-
-// async function showIngredientList(){
-//   try{
-//   console.log(activ.value);
-//   console.log(ingredientList.value);
-//   drinkDetails.value = await invoke ("get_details", {drink: drink});
-//   console.log(ingredientList.value);
-//   }catch{
-//     console.log("No details found");
-//   }
-// }
-
 </script>
 
 <template>
-
-<!-- <div class="dropdown">
-  <button>Details</button>
-  <div class="dropdown-content">
-    <button >Button 1</button>
-    <button>Button 2</button>
-    <button>Button 3</button>
-  </div>
-</div> -->
 
 <button class="favorite-drink" data-toggle="dropdown" v-for="(drink, index) in favoriteDrinks" :key="drink" @mouseover="getDetails(drink)">
     {{ drink }}:
@@ -82,80 +62,4 @@ async function getDetails(drink: string) {
     <button class="remove" @click="removeFavorite(index)">X</button>
 </button>
 
-
 </template>
-
-<style>
-.dropdown-square{
-  color: white;
-}
-
-.favorite-drink { 
-  background-color:#A3333D ;
-  color:white;
-  margin-top: 10px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  margin-bottom: 8px;
-  padding: 8px;
-  border-width: 2px;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-}
-.favorite-drink:active{
-  /* opacity:0.8; */
-  background-color: #7d262d;
-}
-
-.remove {
-  background-color: #f44336;
-  color: white;
-  border: none;
-  border-radius: 50%;
-  padding: 4px 8px;
-  cursor: pointer;
-  transition: background-color 0.3s ease-in-out;
-}
-.remove:hover {
-  background-color: #d32f2f;
-}
-
-.dropdown {
-  position: relative;
-  display: inline-block;
-  border-radius: 0px;
-}
-
-.dropdown-content {
-  border-radius: 0px;
-  display: none;
-  position: absolute;
-  /* background-color: #1EAF90; */
-  min-width: 20px;
-  box-sizing: 20px 100px;
-  z-index: 1;
-
-}
-
-.dropdown:hover .dropdown-content {
-  display: block;
-}
-
-#asd{
- width:100%;
-}
-
-#asdf{
-  background-color: #F64740;
-  border-width: 1px;
-  border-style: solid;
-  border-color: #ccc;
-}
-
-.dropdown-square{
-  /*color:black;*/
-  border-radius: 0px;;
-}
-
-</style>

@@ -1,0 +1,77 @@
+@font-face {
+    font-family: "QueensidesLight";
+    src: url("/QueensidesLight.ttf");
+}
+
+.cls-1 {
+    fill-rule: evenodd;
+}
+
+.cls-2 {
+    font-size: 250px;
+    font-family: "QueensidesLight";
+    font-weight: 300;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    /* Align content at the top */
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background-color: #1EAF90;
+    overflow-y: hidden;
+}
+
+.animation-container {
+    position: relative;
+    width: 500px;
+    height: 500px;
+    overflow: hidden;
+}
+
+.animation-svg {
+    width: 100%;
+    height: 100%;
+    transform-origin: center center;
+    animation: zoomOut 2s ease-in-out, idleAnim 2s ease-in-out infinite;
+    animation-delay: 0s, 2s;
+}
+
+.change-yellow {
+    fill: #B9A44C;
+}
+
+.change-blue {
+    fill: #0C4767;
+}
+
+@keyframes zoomOut {
+    0% {
+        transform: scale(1);
+    }
+
+    100% {
+        transform: scale(0.3);
+    }
+}
+
+@keyframes idleAnim {
+    0% {
+        transform: scale(0.3) rotate(0deg);
+    }
+
+    25% {
+        transform: scale(0.3) rotate(20deg);
+    }
+
+    75% {
+        transform: scale(0.3) rotate(-20deg);
+    }
+
+    100% {
+        transform: scale(0.3) rotate(0deg);
+    }
+}

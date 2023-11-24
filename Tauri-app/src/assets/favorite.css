@@ -1,0 +1,70 @@
+.dropdown-square {
+    color: white;
+}
+
+.favorite-drink {
+    background-color: #A3333D;
+    color: white;
+    margin-top: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 8px;
+    padding: 8px;
+    border-width: 2px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.favorite-drink:active {
+    background-color: #7d262d;
+}
+
+.remove {
+    background-color: #f44336;
+    color: white;
+    border: none;
+    border-radius: 50%;
+    padding: 4px 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease-in-out;
+}
+
+.remove:hover {
+    background-color: #d32f2f;
+}
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+    border-radius: 0px;
+}
+
+.dropdown-content {
+    border-radius: 0px;
+    display: none;
+    position: absolute;
+    min-width: 20px;
+    box-sizing: 20px 100px;
+    z-index: 1;
+
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+#asd {
+    width: 100%;
+}
+
+#asdf {
+    background-color: #F64740;
+    border-width: 1px;
+    border-style: solid;
+    border-color: #ccc;
+}
+
+.dropdown-square {
+    border-radius: 0px;
+}

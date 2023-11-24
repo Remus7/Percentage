@@ -3,6 +3,7 @@
 import { ref, Ref } from "vue";
 import { invoke } from "@tauri-apps/api/tauri";
 import { favoriteDrinks, AvailableDrinks, Ingredients } from "../App.vue";
+import "../assets/search.css";
 
 const Ingredient: Ref<string> = ref("");
 
@@ -62,10 +63,6 @@ async function handleInput() {
   }
 }
 
-// function clearSuggestions() {
-//   showSuggestions.value = false;
-// }
-
 function showMoreDrinks(): void {
   showMore.value = true;
 }
@@ -117,153 +114,3 @@ function showMoreDrinks(): void {
     </div>
   </div>
 </template>
-<style scoped>
-.autocomplete-item {
-  background-color: white;
-  border-style: none;
-  position: relative;
-}
-.divAutofill {
-  position: absolute;
-  left: 1000px;
-}
-.ingredient-item {
-  float: left;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  margin-bottom: 8px;
-  padding: 8px;
-  border: 1px solid white;
-  background-color: #0e4749;
-  color: white;
-  border-radius: 4px;
-}
-.ingredient-item:hover {
-  opacity: 0.8;
-}
-.remove {
-  text-align: center;
-  background-color: #f44336;
-  color: white;
-  border: none;
-  border-radius: 50%;
-  padding: 4px 8px;
-  cursor: pointer;
-  transition: background-color 0.3s ease-in-out;
-}
-.remove:hover {
-  background-color: #d32f2f;
-}
-.drink-list-container {
-  max-height: 300px; /* Set the maximum height for the scrollable container */
-  overflow: auto; /* Enable vertical scrolling if content overflows */
-}
-.drink-button {
-  color: white;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  margin-bottom: 5px;
-  padding: 8px;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  background-color: #a3333d;
-  border-color: white;
-  width: 100%; /* Make the buttons occupy the full width */
-}
-.drink-name {
-  flex: 1; /* Expand to take remaining space */
-  text-align: center; /* Center-align the text */
-}
-
-.drink-button:hover {
-  opacity: 0.9;
-}
-.favorite {
-  background-color: #f64740;
-  color: red;
-  border: none;
-  border-radius: 50%;
-  padding: 4px 8px;
-  cursor: pointer;
-  /* transition: background-color 2s ease-in-out; */
-}
-.favorite:hover {
-  background-color: #d32f2f;
-}
-.searchbut {
-  margin-top: 6px;
-  margin-bottom: 25px;
-  border-radius: 15px;
-  box-shadow: 5px 5px black;
-}
-.searchbut:hover {
-  opacity: 0.8;
-  transition: 1.5 s;
-}
-.butAdd {
-  margin-top: 4px;
-  border-radius: 15px;
-  box-shadow: 5px 5px black;
-}
-.butAdd:hover {
-  opacity: 0.8;
-  transition: 1.5 s;
-}
-
-input {
-  padding: 10px;
-  border: 2px solid #2bb4b4;
-  border-radius: 5px;
-  background-color: #f0f7f7;
-  color: #333;
-  font-size: 16px;
-  transition: border-color 0.3s, background-color 0.3s;
-}
-.autocomplete-container {
-  position: relative;
-}
-
-.input {
-  padding: 8px;
-  width: 100%;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-}
-
-.autocomplete-list {
-  position: absolute;
-  top: 100%;
-  left: 0;
-  z-index: 1;
-  width: 100%; /* Set the width to match the input */
-  margin-top: 4px; /* Add margin to avoid overlap */
-  background-color: #fff;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  max-height: 200px;
-  overflow-y: auto;
-}
-
-.autocomplete-item {
-  padding: 8px 16px;
-  display: block;
-  text-align: left;
-  cursor: pointer;
-  border: none;
-  background-color: transparent;
-  width: 100%;
-  color: black;
-}
-
-.autocomplete-item:hover {
-  background-color: #f2f2f2;
-}
-
-.autocomplete-item:focus {
-  outline: none;
-  background-color: #f2f2f2;
-}
-</style>
